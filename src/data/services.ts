@@ -579,5 +579,113 @@ export const SERVICES_DATA: ServiceItem[] = [
         description: 'Migrating to live production hosting with SSL and providing step-by-step editorial training.'
       }
     ]
+  },
+  {
+    id: 'seo-services',
+    slug: 'seo-services',
+    shortTitle: 'SEO Optimization',
+    title: 'Search Engine Optimization (SEO)',
+    shortDescription: 'Technical on-page & off-page SEO, high-authority backlink outreach, and keyword strategy to rank your business #1 on Google search results.',
+    fullDescription: 'Comprehensive Search Engine Optimization (SEO) strategies designed to drive sustainable organic traffic, dominate high-intent search keywords, and increase search engine authority across Google and Bing.',
+    bannerHeadline: 'Dominate Search Rankings: Technical SEO, High-Authority Links & Organic Growth',
+    bannerDescription: 'Climb Google page #1 with systematic SEO engineering. We optimize site architecture, core web vitals, schema markup, semantic search intent, and authoritative link networks.',
+    accentColor: '#2E54AD',
+    iconName: 'seo',
+    tools: [
+      { name: 'Google Search Console', color: '#4285F4' },
+      { name: 'Ahrefs', color: '#0066FF' },
+      { name: 'SEMrush', color: '#FF642D' },
+      { name: 'Screaming Frog', color: '#57B52C' },
+      { name: 'Surfer SEO', color: '#7952DE' },
+      { name: 'Yoast / RankMath', color: '#E11D48' }
+    ],
+    deliverablesHeading: 'Sustainable Organic Search Growth & Keyword Authority',
+    deliverablesDescription: 'Transform organic search into your most profitable acquisition channel through comprehensive technical audits, content optimization, and high-tier link building.',
+    keyFeatures: [
+      'Comprehensive Technical Site Audits & Crawl Error Remediation',
+      'High-Intent Keyword Research & Competitor Gap Analysis',
+      'On-Page Semantic Optimization, Header Hierarchy & Meta Tuning',
+      'Rich Snippets, JSON-LD Schema Markup & Core Web Vitals Optimization',
+      'Editorial White-Hat Backlink Outreach & Digital PR',
+      'Local SEO, Google Business Profile (GBP) & Citations Management'
+    ],
+    processSteps: [
+      { number: '01', title: 'Technical SEO Audit', description: 'Deep-crawl site architecture, fix indexation blockers, and accelerate Core Web Vitals.' },
+      { number: '02', title: 'Keyword Strategy & Clustering', description: 'Identify profitable commercial keywords and cluster semantic search intent.' },
+      { number: '03', title: 'On-Page Optimization', description: 'Optimize headings, internal linking graph, schema markup, and content freshness.' },
+      { number: '04', title: 'Authority Building & Tracking', description: 'Acquire high-DA editorial backlinks and track weekly ranking movements.' }
+    ]
+  },
+  {
+    id: 'iot-development',
+    slug: 'iot-development',
+    shortTitle: 'IoT Solutions',
+    title: 'Internet of Things (IoT) Development',
+    shortDescription: 'Smart connected device ecosystems, MQTT telemetry pipelines, edge computing, and real-time sensor analytics dashboards for commercial automation.',
+    fullDescription: 'Engineered IoT ecosystems connecting physical smart hardware devices, microcontrollers, edge gateways, and cloud analytics dashboards for industrial and commercial automation.',
+    bannerHeadline: 'Connected Intelligence: Smart IoT Architecture, Edge Computing & Device Telemetry',
+    bannerDescription: 'Bridge hardware and software with robust IoT solutions. From smart microcontroller firmware to scalable MQTT broker clusters, real-time device telemetry, and web dashboards.',
+    accentColor: '#2E54AD',
+    iconName: 'iot',
+    tools: [
+      { name: 'MQTT / Mosquitto', color: '#660066' },
+      { name: 'AWS IoT Core', color: '#FF9900' },
+      { name: 'Raspberry Pi / ESP32', color: '#C51A4A' },
+      { name: 'InfluxDB', color: '#22ADF6' },
+      { name: 'Grafana', color: '#F46800' },
+      { name: 'Node-RED', color: '#8F0000' }
+    ],
+    deliverablesHeading: 'Industrial & Commercial Connected IoT Ecosystems',
+    deliverablesDescription: 'Build reliable end-to-end hardware-to-cloud communications with low-latency protocol streaming, remote device management, and instant telemetry visualization.',
+    keyFeatures: [
+      'Custom Microcontroller & Embedded Firmware Development (ESP32, STM32, ARM)',
+      'High-Throughput MQTT & WebSocket Telemetry Stream Ingestion',
+      'AWS IoT Core & Azure IoT Hub Cloud Infrastructure Deployment',
+      'Time-Series Sensor Data Storage, Analytics & Custom Real-Time Dashboards',
+      'Over-The-Air (OTA) Secure Remote Firmware Updates',
+      'Industrial IoT (IIoT) Factory Automation & Smart Environmental Monitoring'
+    ],
+    processSteps: [
+      { number: '01', title: 'Hardware Architecture & Protocols', description: 'Selecting sensors, microcontrollers, communication protocols (MQTT, BLE, LoRaWAN).' },
+      { number: '02', title: 'Firmware & Edge Logic', description: 'Developing lightweight, low-power embedded software and sensor calibration.' },
+      { number: '03', title: 'Cloud Telemetry Pipeline', description: 'Deploying brokers, time-series storage, and automated anomaly alert triggers.' },
+      { number: '04', title: 'Web Dashboard & Controls', description: 'Building real-time web portal with remote actuation and performance graphs.' }
+    ]
+  },
+  {
+    id: 'glm-ai-development',
+    slug: 'glm-ai-development',
+    shortTitle: 'GLM & AI Labs',
+    title: 'Generative Language Models (GLM) & Enterprise AI',
+    shortDescription: 'Custom fine-tuned LLMs, generative AI agents, vector embeddings, and autonomous RAG workflows tailored for enterprise operations.',
+    fullDescription: 'State-of-the-art Generative Language Model (GLM) architectures, autonomous AI agents, enterprise RAG pipelines, and intelligent NLP automation built on cutting-edge neural models.',
+    bannerHeadline: 'Next-Gen Intelligence: Custom GLM Models, Autonomous Agents & Enterprise AI',
+    bannerDescription: 'Harness generative AI to transform business efficiency. We engineer domain-specific fine-tuned LLMs, autonomous conversational agents, multi-modal vision systems, and vector databases.',
+    accentColor: '#2E54AD',
+    iconName: 'glm',
+    tools: [
+      { name: 'OpenAI GPT / GLM', color: '#10A37F' },
+      { name: 'Anthropic Claude', color: '#D97706' },
+      { name: 'LangChain / LlamaIndex', color: '#2563EB' },
+      { name: 'Pinecone / ChromaDB', color: '#7C3AED' },
+      { name: 'Hugging Face', color: '#FFD21E' },
+      { name: 'Python PyTorch', color: '#EE4C2C' }
+    ],
+    deliverablesHeading: 'Intelligent Generative AI Pipelines & Autonomous Workflow Automation',
+    deliverablesDescription: 'Empower your company with purpose-built AI agents that read, reason, automate tasks, and interact with internal databases accurately without hallucinations.',
+    keyFeatures: [
+      'Custom LLM Fine-Tuning on Proprietary Enterprise Datasets',
+      'Retrieval-Augmented Generation (RAG) Architecture with Vector Embeddings',
+      'Multi-Agent Autonomous Workflows for Complex Multi-Step Tasks',
+      'Intelligent Customer Support & Conversational AI Chatbots',
+      'AI Document Extraction, Semantic Search & Summarization Engines',
+      'Private Self-Hosted Open-Source LLMs for High Security & Compliance'
+    ],
+    processSteps: [
+      { number: '01', title: 'Use Case & Data Feasibility', description: 'Auditing workflow requirements, private data security boundaries, and LLM selection.' },
+      { number: '02', title: 'Vector Ingestion & RAG Pipeline', description: 'Chunking documentation, generating embeddings, and configuring vector indices.' },
+      { number: '03', title: 'Agent Prompting & Logic Guardrails', description: 'Writing system instructions, function-calling tools, and hallucination safeguards.' },
+      { number: '04', title: 'API Integration & Evaluation', description: 'Deploying latency-optimized inference endpoints with telemetry tracking.' }
+    ]
   }
 ];

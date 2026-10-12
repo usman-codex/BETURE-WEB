@@ -471,6 +471,72 @@ export const ServiceIcon: React.FC<ServiceIconProps> = ({
         </svg>
       );
 
+    case 'seo':
+      return (
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 48 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className={className}
+        >
+          {/* Magnifying Glass */}
+          <circle cx="21" cy="21" r="12" stroke={color} strokeWidth="2.5" />
+          <path d="M30 30L40 40" stroke={color} strokeWidth="2.8" strokeLinecap="round" />
+          {/* Trend Growth Arrow inside */}
+          <path d="M14 24L18 20L22 23L27 16" stroke={accentColor} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M23 16H27V20" stroke={accentColor} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      );
+
+    case 'iot':
+      return (
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 48 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className={className}
+        >
+          {/* Central Hub */}
+          <circle cx="24" cy="24" r="5" stroke={accentColor} strokeWidth="2.5" fill={accentColor} fillOpacity="0.2" />
+          {/* Radiating Waves / Nodes */}
+          <circle cx="24" cy="8" r="3" stroke={color} strokeWidth="2" />
+          <path d="M24 11V19" stroke={color} strokeWidth="2" strokeDasharray="2 2" />
+          <circle cx="38" cy="32" r="3" stroke={color} strokeWidth="2" />
+          <path d="M35 30L28 26" stroke={color} strokeWidth="2" strokeDasharray="2 2" />
+          <circle cx="10" cy="32" r="3" stroke={color} strokeWidth="2" />
+          <path d="M13 30L20 26" stroke={color} strokeWidth="2" strokeDasharray="2 2" />
+          {/* WiFi waves above */}
+          <path d="M16 16C18.5 13.5 29.5 13.5 32 16" stroke={accentColor} strokeWidth="2" strokeLinecap="round" />
+        </svg>
+      );
+
+    case 'glm':
+      return (
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 48 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className={className}
+        >
+          {/* Central AI Processor */}
+          <rect x="14" y="14" width="20" height="20" rx="4" stroke={color} strokeWidth="2.5" />
+          <rect x="20" y="20" width="8" height="8" rx="2" fill={accentColor} />
+          {/* Neural Connections & Pins */}
+          <path d="M20 14V8M28 14V8" stroke={color} strokeWidth="2" strokeLinecap="round" />
+          <path d="M20 34V40M28 34V40" stroke={color} strokeWidth="2" strokeLinecap="round" />
+          <path d="M14 20H8M14 28H8" stroke={color} strokeWidth="2" strokeLinecap="round" />
+          <path d="M34 20H40M34 28H40" stroke={color} strokeWidth="2" strokeLinecap="round" />
+          {/* Sparkle node */}
+          <circle cx="36" cy="12" r="2.5" fill={accentColor} />
+        </svg>
+      );
+
     default:
       return (
         <svg
