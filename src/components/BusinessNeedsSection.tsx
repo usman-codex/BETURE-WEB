@@ -124,30 +124,30 @@ export const BusinessNeedsSection: React.FC<BusinessNeedsSectionProps> = ({
 
                 {/* 2. Slide-Up Overlay Layer with Frosted Glass Blur (Transparent blur background) */}
                 <div 
-                  className="absolute inset-0 w-full h-full rounded-2xl bg-[#011337]/85 backdrop-blur-xl p-5 text-white flex flex-col justify-between translate-y-full group-hover:translate-y-0 transition-transform duration-400 ease-out border border-[#16A5CE]/50 shadow-2xl z-20"
+                  className="absolute inset-0 w-full h-full rounded-2xl bg-[#011337]/50 backdrop-blur-2xl backdrop-saturate-150 p-5 text-white flex flex-col justify-between translate-y-full group-hover:translate-y-0 transition-transform duration-400 ease-out border border-[#16A5CE]/50 shadow-2xl z-20"
                 >
-                  {/* Clean Top Title (Mini icon and dot removed) */}
+                  {/* Clean Top Title */}
                   <div className="border-b border-white/15 pb-2.5">
                     <h4 className="text-base sm:text-lg font-black text-white tracking-tight leading-tight font-heading">
                       {service.shortTitle}
                     </h4>
                   </div>
 
-                  {/* Middle Description Only (Tool pills removed) */}
+                  {/* Middle Description Only */}
                   <div className="my-auto py-1">
                     <p className="text-xs sm:text-sm text-[#D8E6F8] leading-relaxed font-normal line-clamp-4">
                       {service.shortDescription}
                     </p>
                   </div>
 
-                  {/* Bottom Action Bar: "View Details" with left-to-right animated underline on hover */}
+                  {/* Bottom Action Bar: Hover specifically on "View Details" to trigger left-to-right underline & color change */}
                   <div className="pt-3 border-t border-white/15 flex items-center justify-between">
-                    <div className="relative inline-flex flex-col py-1">
-                      <span className="text-xs sm:text-sm font-extrabold tracking-wide text-[#16A5CE] group-hover:text-white transition-colors duration-300 font-heading">
+                    <div className="group/details relative inline-flex flex-col py-1 cursor-pointer">
+                      <span className="text-xs sm:text-sm font-extrabold tracking-wide text-[#16A5CE] group-hover/details:text-white transition-colors duration-300 font-heading">
                         View Details
                       </span>
-                      {/* Left-to-right underline animation on hover */}
-                      <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#16A5CE] to-white origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out rounded-full shadow-[0_0_8px_#16A5CE]" />
+                      {/* Left-to-right underline animation ONLY when hovering View Details */}
+                      <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#16A5CE] to-white origin-left scale-x-0 group-hover/details:scale-x-100 transition-transform duration-300 ease-out rounded-full shadow-[0_0_8px_#16A5CE]" />
                     </div>
 
                     <span className="w-7 h-7 rounded-full bg-[#16A5CE] text-[#011337] flex items-center justify-center transform group-hover:translate-x-1 transition-transform shadow-md">
