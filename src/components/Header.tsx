@@ -62,10 +62,10 @@ export const Header: React.FC<HeaderProps> = ({
 
   return (
     <header 
-      className={`sticky top-0 z-50 transition-all duration-300 ease-in-out bg-[#011337] border-b border-[#2E54AD]/30 text-white ${
+      className={`sticky top-0 z-50 transition-all duration-500 ease-out text-white ${
         isScrolled
-          ? 'bg-[#011337]/95 backdrop-blur-xl border-[#16A5CE]/40 shadow-2xl py-2.5'
-          : 'shadow-md py-3.5'
+          ? 'bg-[#011337]/65 backdrop-blur-xl backdrop-saturate-150 border-b border-[#16A5CE]/30 shadow-[0_10px_35px_-5px_rgba(1,19,55,0.45)] py-2.5'
+          : 'bg-[#011337] border-b border-[#2E54AD]/25 shadow-md py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
@@ -81,7 +81,11 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Desktop Navigation */}
         <nav 
           onMouseLeave={() => setHoveredTab(null)}
-          className="hidden lg:flex items-center p-1 rounded-full border border-[#2E54AD]/40 bg-[#06183F]/80 backdrop-blur-md shadow-inner relative"
+          className={`hidden lg:flex items-center p-1 rounded-full border transition-all duration-500 relative ${
+            isScrolled
+              ? 'border-[#16A5CE]/30 bg-[#011337]/50 backdrop-blur-lg shadow-lg shadow-black/25'
+              : 'border-[#2E54AD]/40 bg-[#06183F]/85 backdrop-blur-md shadow-inner'
+          }`}
         >
           {navItems.map((item) => {
             const isHighlighted = currentPillTarget === item.id;
@@ -146,7 +150,7 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-b border-[#2E54AD]/40 bg-[#011337] px-4 pt-3 pb-6 space-y-3 mt-2 shadow-2xl">
+        <div className="lg:hidden border-b border-[#2E54AD]/40 bg-[#011337]/90 backdrop-blur-xl px-4 pt-3 pb-6 space-y-3 mt-2 shadow-2xl">
           <div className="space-y-1">
             {navItems.map((item) => (
               <button
