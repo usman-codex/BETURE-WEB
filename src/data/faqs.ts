@@ -3,39 +3,51 @@ import { FaqItem, Testimonial } from '../types';
 export const FAQS_DATA: FaqItem[] = [
   {
     id: 'f1',
-    question: 'What is Beture Web and what programs do you offer?',
-    answer: 'Beture Web is a premier educational platform providing practical training in FinTech, Blockchain, Web3, and AI. We offer self-paced video courses, hands-on project roadmaps, an All-Access Bundle with 1-on-1 coaching, and career placement support.',
-    category: 'General'
+    question: 'What web development technologies and frameworks do you use?',
+    answer: 'We engineer high-performance web applications using modern full-stack architectures including React, Next.js, TypeScript, Node.js, Python, PostgreSQL, and scalable cloud infrastructures (AWS, Docker, Vercel). Every project is designed for ultra-fast loading, mobile responsiveness, and bank-grade security.',
+    category: 'Web Development'
   },
   {
     id: 'f2',
-    question: 'Do I need prior coding or finance experience to enroll?',
-    answer: 'No! Many of our foundational courses, such as Airdrop Mastery and Zero-Cost Earning Skill, are tailored specifically for absolute beginners. Advanced modules clearly state prerequisites like basic Python or crypto wallet usage.',
-    category: 'Courses'
+    question: 'How do your SEO services help rank our website on Google #1?',
+    answer: 'Our SEO engineering combines in-depth technical audits (Core Web Vitals, crawlability, indexing), high-intent commercial keyword clustering, rich JSON-LD schema markup, and authoritative white-hat editorial backlinks to generate sustainable organic traffic that converts into revenue.',
+    category: 'SEO'
   },
   {
     id: 'f3',
-    question: 'How long do I have access to the course content?',
-    answer: 'Enrolling in any Beture Web course gives you lifetime access to all recorded video lessons, downloadable templates, resource sheets, and future curriculum updates.',
-    category: 'Courses'
+    question: 'What digital marketing services and ad networks do you manage?',
+    answer: 'We run full-funnel performance marketing campaigns across Google Search & Display Ads, Meta (Facebook & Instagram) Ads, TikTok Ads, and automated CRM email funnels. Our media buyers focus strictly on maximizing Return On Ad Spend (ROAS) and lowering cost-per-acquisition (CPA).',
+    category: 'Digital Marketing'
   },
   {
     id: 'f4',
-    question: 'What payment methods are supported?',
-    answer: 'We accept Credit/Debit Cards (Visa, Mastercard), direct Bank Transfer, EasyPaisa / JazzCash (for Pakistani students), and major Crypto payments (USDT / USDC).',
-    category: 'Payment'
+    question: 'How do you help creators and pages with Facebook Monetization?',
+    answer: 'We provide end-to-end support for Facebook In-Stream Ads approval, Reels Performance Bonuses, policy compliance resolution (fixing Limited Originality of Content and Yellow/Red flags), international payout bank setups, and viral high-retention video production.',
+    category: 'Facebook Monetization'
   },
   {
     id: 'f5',
-    question: 'How does the 1-on-1 Mentorship in the All Access Bundle work?',
-    answer: 'When you purchase the All Access Bundle, you unlock direct booking access to our senior mentors. You can schedule 1-on-1 video calls to review your Web3 wallet strategies, CV, portfolio, or custom learning goals.',
-    category: 'Coaching'
+    question: 'What IoT (Internet of Things) and connected solutions do you build?',
+    answer: 'We develop custom embedded firmware (ESP32, STM32, ARM, Raspberry Pi), low-latency MQTT and WebSocket telemetry streaming pipelines, edge computing modules, and real-time cloud analytics dashboards for industrial and commercial automation.',
+    category: 'IoT Solutions'
   },
   {
     id: 'f6',
-    question: 'Will I receive a certificate upon completion?',
-    answer: 'Yes! Upon completing 100% of course lessons and passing the practical assessment, you will be issued a verifiable digital Beture Web Certificate of Completion.',
-    category: 'General'
+    question: 'Can you integrate Generative Language Models (GLM) and AI into our business?',
+    answer: 'Yes! We develop domain-specific Generative AI solutions including enterprise Retrieval-Augmented Generation (RAG) pipelines, autonomous workflow AI agents, custom fine-tuned LLMs, vector database search (Pinecone, ChromaDB), and zero-hallucination customer support bots.',
+    category: 'GLM & AI'
+  },
+  {
+    id: 'f7',
+    question: 'Do you build custom E-Commerce stores with secure payment gateways?',
+    answer: 'Yes, we build scalable e-commerce platforms using headless Next.js, Shopify, and WooCommerce. We integrate international and local payment gateways (Stripe, PayPal, credit cards), automated inventory management, abandoned cart recovery, and high-converting checkout flows.',
+    category: 'E-Commerce'
+  },
+  {
+    id: 'f8',
+    question: 'How do we start a project and get a cost estimation?',
+    answer: 'You can reach out through our Contact page or call our senior tech team directly at +92 311 1222 595 for a free discovery consultation. We analyze your requirements, provide a transparent project roadmap with milestone deliverables, and execute through agile sprints.',
+    category: 'Consultation'
   }
 ];
 
@@ -43,34 +55,34 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
   {
     id: 't1',
     name: 'Hamza Malik',
-    role: 'Web3 Growth Manager',
-    company: 'Decentralized Labs',
+    role: 'CEO & Founder',
+    company: 'FinTech Growth Labs',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
     rating: 5,
-    courseTaken: 'Airdrop Mastery & Web3 Marketing',
-    content: 'Beture Web completely changed my career path. The Airdrop Mastery course taught me systematic strategies that helped me qualify for major Layer 2 drops, and the Web3 Marketing skills landed me a remote role at a Web3 startup!',
+    courseTaken: 'Web Development & SEO Scaling',
+    content: 'Beture Web delivered our enterprise SaaS platform ahead of schedule with flawless architecture. Their technical SEO optimization tripled our organic lead generation within 90 days!',
     location: 'Lahore, Pakistan'
   },
   {
     id: 't2',
     name: 'Ayesha Khan',
-    role: 'FinTech Analyst',
-    company: 'PayTech Solutions',
+    role: 'Digital Marketing Director',
+    company: 'PayTech Global',
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
     rating: 5,
-    courseTaken: 'AI in FinTech Automation',
-    content: 'The depth of content and hands-on Python scripts in the AI in FinTech course gave me a huge advantage during my interview. The mentors are always active in the community to clear doubts.',
+    courseTaken: 'Digital Marketing & AI Automation',
+    content: 'The AI automation pipelines and targeted ad campaigns managed by Beture Web reduced our customer acquisition cost by 42%. Their technical expertise and communication are exceptional.',
     location: 'Karachi, Pakistan'
   },
   {
     id: 't3',
     name: 'Usman Chaudhry',
-    role: 'Full-Time Crypto Researcher',
-    company: 'Self-Employed',
+    role: 'Managing Director',
+    company: 'Apex Media Network',
     avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80',
     rating: 5,
-    courseTaken: 'All Access Bundle + 1-on-1 Coaching',
-    content: 'The All Access Bundle was the best investment I made this year. Having direct 1-on-1 sessions with senior mentors helped me avoid scam protocols and focus strictly on high-yield opportunities.',
+    courseTaken: 'Facebook Monetization & E-Commerce',
+    content: 'Beture Web solved our Facebook policy monetization issues within days and scaled our monthly in-stream ad revenue dramatically. They are our go-to technology partner.',
     location: 'Islamabad, Pakistan'
   }
 ];

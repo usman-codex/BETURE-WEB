@@ -19,7 +19,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ faqs }) => {
             Frequently Asked Questions
           </h2>
           <p className="text-[#162E66] text-sm sm:text-base font-poppins">
-            Everything you need to know about course access, certificates, drip schedules, and payment options.
+            Everything you need to know about our web development, SEO, digital marketing, AI, IoT, and software solutions.
           </p>
         </div>
 

@@ -76,7 +76,7 @@ export interface FaqItem {
   id: string;
   question: string;
   answer: string;
-  category: 'General' | 'Courses' | 'Payment' | 'Coaching';
+  category: 'General' | 'Courses' | 'Payment' | 'Coaching' | string;
 }
 
 export interface ToolTechnology {
