@@ -2,7 +2,7 @@ import React from 'react';
 import { 
   PhoneCall, 
   Code2, 
-  Sparkles, 
+  Cpu, 
   Headphones 
 } from 'lucide-react';
 import { motion } from 'motion/react';
@@ -110,7 +110,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
           {/* Box 3: AI & Automation Solutions */}
           <div className="p-6 rounded-2xl bg-black/40 backdrop-blur-md border border-white/15 shadow-md hover:border-[#16A5CE] hover:bg-black/55 transition-all duration-300 group flex flex-col justify-start space-y-3.5">
             <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#16A5CE]/20 to-[#2E54AD]/30 border border-[#16A5CE]/40 flex items-center justify-center text-[#16A5CE] shadow-lg shadow-[#16A5CE]/15 group-hover:scale-110 group-hover:bg-[#16A5CE] group-hover:text-[#011337] transition-all duration-300">
-              <Sparkles className="w-6 h-6" />
+              <Cpu className="w-6 h-6" />
             </div>
             <h3 className="text-base font-extrabold text-white group-hover:text-[#16A5CE] transition-colors">
               AI & Automation Labs
