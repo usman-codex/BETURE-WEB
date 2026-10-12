@@ -8,7 +8,6 @@ import { OurFoundersSection } from '../components/OurFoundersSection';
 import { BundleSection } from '../components/BundleSection';
 import { TestimonialsSection } from '../components/TestimonialsSection';
 import { FaqSection } from '../components/FaqSection';
-import { CtaSection } from '../components/CtaSection';
 
 import { Course, BlogPost, Testimonial, FaqItem, ServiceItem } from '../types';
 
@@ -89,12 +88,6 @@ export const HomePage: React.FC<HomePageProps> = ({
 
       {/* FAQs */}
       <FaqSection faqs={faqs} />
-
-      {/* CTA Section */}
-      <CtaSection
-        onExploreCourses={onExploreCourses}
-        onContactUs={onNavigateToContact}
-      />
     </div>
   );
 };
