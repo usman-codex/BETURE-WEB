@@ -13,7 +13,7 @@ import {
   LayoutGrid
 } from 'lucide-react';
 
-export const LOGO_IMAGE_URL = '/beture-logo.svg';
+export const LOGO_IMAGE_URL = '/beture-logo.png';
 
 interface HeaderProps {
   activeTab: string;
@@ -62,30 +62,26 @@ export const Header: React.FC<HeaderProps> = ({
 
   return (
     <header 
-      className={`sticky top-0 z-50 transition-all duration-300 ease-in-out ${
+      className={`sticky top-0 z-50 transition-all duration-300 ease-in-out bg-[#011337] border-b border-[#2E54AD]/30 text-white ${
         isScrolled
-          ? 'bg-[#011337]/95 backdrop-blur-xl border-b border-[#2E54AD]/40 text-white shadow-2xl py-2.5'
-          : 'bg-white border-b border-[#D8E6F8] text-[#011337] shadow-xs py-3.5'
+          ? 'bg-[#011337]/95 backdrop-blur-xl border-[#16A5CE]/40 shadow-2xl py-2.5'
+          : 'shadow-md py-3.5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
         
-        {/* Brand Logo & Name */}
+        {/* Brand Logo & Name (BETURE white + WEB #16A5CE) */}
         <div 
           onClick={() => setActiveTab('home')} 
           className="flex items-center cursor-pointer group shrink-0 select-none"
         >
-          <BetureLogo isDark={isScrolled} size="md" />
+          <BetureLogo size="md" showText={true} />
         </div>
 
         {/* Desktop Navigation */}
         <nav 
           onMouseLeave={() => setHoveredTab(null)}
-          className={`hidden lg:flex items-center p-1 rounded-full border transition-all duration-300 relative ${
-            isScrolled
-              ? 'bg-[#011337]/80 border-[#2E54AD]/40 backdrop-blur-md shadow-inner'
-              : 'bg-[#D8E6F8]/40 border-[#D8E6F8] shadow-xs'
-          }`}
+          className="hidden lg:flex items-center p-1 rounded-full border border-[#2E54AD]/40 bg-[#06183F]/80 backdrop-blur-md shadow-inner relative"
         >
           {navItems.map((item) => {
             const isHighlighted = currentPillTarget === item.id;
@@ -99,13 +95,9 @@ export const Header: React.FC<HeaderProps> = ({
                 }}
                 onMouseEnter={() => setHoveredTab(item.id)}
                 className={`relative px-4 py-2 rounded-full text-xs font-bold transition-colors duration-200 cursor-pointer z-10 whitespace-nowrap ${
-                  isScrolled
-                    ? isHighlighted
-                      ? 'text-white'
-                      : 'text-[#D8E6F8] hover:text-white'
-                    : isHighlighted
+                  isHighlighted
                     ? 'text-white'
-                    : 'text-[#011337] hover:text-[#2E54AD]'
+                    : 'text-[#D8E6F8]/80 hover:text-[#16A5CE]'
                 }`}
               >
                 {isHighlighted && (
@@ -116,11 +108,7 @@ export const Header: React.FC<HeaderProps> = ({
                       stiffness: 420,
                       damping: 32,
                     }}
-                    className={`absolute inset-0 rounded-full -z-10 shadow-md ${
-                      isScrolled
-                        ? 'bg-gradient-to-r from-[#2E54AD] to-[#1BBCE0] shadow-[#2E54AD]/40'
-                        : 'bg-[#2E54AD] shadow-[#2E54AD]/30'
-                    }`}
+                    className="absolute inset-0 rounded-full -z-10 bg-gradient-to-r from-[#2E54AD] to-[#16A5CE] shadow-md shadow-[#16A5CE]/30"
                   />
                 )}
                 <span>{item.label}</span>
@@ -135,10 +123,8 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={() => setActiveTab('contact')}
             className={`px-5 py-2.5 rounded-full text-xs font-extrabold flex items-center gap-2 transition-all duration-300 shadow-md cursor-pointer ${
               activeTab === 'contact'
-                ? 'bg-[#1BBCE0] text-[#011337] ring-2 ring-white shadow-lg'
-                : isScrolled
-                ? 'bg-[#2E54AD] hover:bg-[#1BBCE0] text-white hover:text-[#011337] shadow-[#2E54AD]/30 hover:scale-105'
-                : 'bg-[#2E54AD] hover:bg-[#1BBCE0] text-white hover:text-[#011337] shadow-[#2E54AD]/25 hover:scale-105'
+                ? 'bg-[#16A5CE] text-[#011337] ring-2 ring-white shadow-lg'
+                : 'bg-gradient-to-r from-[#2E54AD] to-[#16A5CE] hover:brightness-110 text-white shadow-[#16A5CE]/25 hover:scale-105'
             }`}
           >
             <PhoneCall className="w-3.5 h-3.5" />
@@ -150,11 +136,7 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="flex items-center gap-2 lg:hidden">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className={`p-2 rounded-xl border transition-colors ${
-              isScrolled
-                ? 'bg-[#162E66]/60 border-[#2E54AD]/40 text-white'
-                : 'bg-white border-[#D8E6F8] text-[#011337]'
-            }`}
+            className="p-2 rounded-xl border border-[#2E54AD]/40 bg-[#06183F] text-white hover:border-[#16A5CE]/50 transition-colors"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -164,13 +146,7 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div 
-          className={`lg:hidden border-b px-4 pt-3 pb-6 space-y-3 mt-2 transition-all ${
-            isScrolled
-              ? 'bg-[#011337] border-[#2E54AD]/40 text-white'
-              : 'bg-white border-[#D8E6F8] text-[#011337]'
-          }`}
-        >
+        <div className="lg:hidden border-b border-[#2E54AD]/40 bg-[#011337] px-4 pt-3 pb-6 space-y-3 mt-2 shadow-2xl">
           <div className="space-y-1">
             {navItems.map((item) => (
               <button
@@ -181,13 +157,11 @@ export const Header: React.FC<HeaderProps> = ({
                 }}
                 className={`w-full text-left px-4 py-3 rounded-xl text-sm font-bold flex items-center gap-3 transition-all ${
                   activeTab === item.id
-                    ? 'bg-[#2E54AD] text-white shadow-md'
-                    : isScrolled
-                    ? 'text-[#D8E6F8] hover:bg-[#162E66]/50'
-                    : 'text-[#011337] hover:bg-[#D8E6F8]/40'
+                    ? 'bg-gradient-to-r from-[#2E54AD] to-[#16A5CE] text-white shadow-md'
+                    : 'text-[#D8E6F8] hover:bg-[#06183F]'
                 }`}
               >
-                <item.icon className="w-4 h-4 text-[#1BBCE0]" />
+                <item.icon className="w-4 h-4 text-[#16A5CE]" />
                 {item.label}
               </button>
             ))}
@@ -199,8 +173,8 @@ export const Header: React.FC<HeaderProps> = ({
               }}
               className={`w-full text-left px-4 py-3 rounded-xl text-sm font-bold flex items-center gap-3 transition-all ${
                 activeTab === 'contact'
-                  ? 'bg-[#1BBCE0] text-[#011337] font-black'
-                  : 'bg-[#2E54AD] text-white'
+                  ? 'bg-[#16A5CE] text-[#011337] font-black'
+                  : 'bg-gradient-to-r from-[#2E54AD] to-[#16A5CE] text-white'
               }`}
             >
               <PhoneCall className="w-4 h-4" />

@@ -26,13 +26,13 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ testim
           {testimonials.map((t) => (
             <div
               key={t.id}
-              className="bg-white rounded-2xl p-6 border border-[#D8E6F8] hover:border-[#1BBCE0] transition-all duration-300 shadow-md hover:shadow-xl flex flex-col justify-between text-[#011337]"
+              className="bg-white rounded-2xl p-6 border border-[#D8E6F8] hover:border-[#16A5CE] transition-all duration-300 shadow-md hover:shadow-xl flex flex-col justify-between text-[#011337]"
             >
               <div className="space-y-4">
                 {}
                 <div className="flex items-center gap-1">
                   {[...Array(t.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-[#1BBCE0] text-[#1BBCE0]" />
+                    <Star key={i} className="w-4 h-4 fill-[#16A5CE] text-[#16A5CE]" />
                   ))}
                 </div>
 

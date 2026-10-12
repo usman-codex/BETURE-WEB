@@ -48,9 +48,9 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
           {}
           <div aria-hidden="true" className="pointer-events-none absolute -top-10 right-0 sm:right-10 w-72 h-72 sm:w-96 sm:h-96 opacity-60">
             <div className="relative w-full h-full">
-              <div className="absolute top-0 right-4 w-52 h-52 rotate-45 rounded-3xl border-2 border-[#1BBCE0]/40 bg-[#1BBCE0]/10 backdrop-blur-xs" />
+              <div className="absolute top-0 right-4 w-52 h-52 rotate-45 rounded-3xl border-2 border-[#16A5CE]/40 bg-[#16A5CE]/10 backdrop-blur-xs" />
               <div className="absolute top-8 right-12 w-40 h-40 rotate-45 rounded-2xl border-2 border-[#D8E6F8]/50 bg-[#D8E6F8]/15" />
-              <div className="absolute top-14 right-20 w-28 h-28 rotate-45 rounded-xl bg-gradient-to-br from-[#2E54AD] to-[#1BBCE0] shadow-2xl opacity-90" />
+              <div className="absolute top-14 right-20 w-28 h-28 rotate-45 rounded-xl bg-gradient-to-br from-[#2E54AD] to-[#16A5CE] shadow-2xl opacity-90" />
             </div>
           </div>
 
@@ -83,7 +83,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             <div className="flex flex-wrap items-center gap-4 pt-3">
               <button
                 onClick={onContactUs}
-                className="px-6 py-3 rounded-2xl bg-[#1BBCE0] hover:bg-[#2E54AD] text-[#011337] hover:text-white font-extrabold text-xs sm:text-sm shadow-xl hover:shadow-2xl transition-all cursor-pointer flex items-center gap-2 font-heading"
+                className="px-6 py-3 rounded-2xl bg-[#16A5CE] hover:bg-[#2E54AD] text-[#011337] hover:text-white font-extrabold text-xs sm:text-sm shadow-xl hover:shadow-2xl transition-all cursor-pointer flex items-center gap-2 font-heading"
               >
                 <span>Request a Quote / Consultation</span>
                 <ArrowRight className="w-4 h-4" />
@@ -111,7 +111,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                   name={currentService.iconName} 
                   size={52} 
                   color="#011337" 
-                  accentColor="#1BBCE0"
+                  accentColor="#16A5CE"
                 />
               </div>
               <div className="space-y-2">
@@ -131,7 +131,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                 {currentService.keyFeatures.map((feat, idx) => (
                   <div 
                     key={idx} 
-                    className="flex items-start gap-3 p-4 rounded-2xl bg-[#D8E6F8]/15 border border-[#D8E6F8]/60 hover:border-[#1BBCE0] transition-colors"
+                    className="flex items-start gap-3 p-4 rounded-2xl bg-[#D8E6F8]/15 border border-[#D8E6F8]/60 hover:border-[#16A5CE] transition-colors"
                   >
                     <CheckCircle2 className="w-5 h-5 text-[#2E54AD] shrink-0 mt-0.5" />
                     <span className="text-xs sm:text-sm font-medium text-[#011337] leading-relaxed font-sans">
@@ -157,7 +157,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                   >
                     <span 
                       className="w-2.5 h-2.5 rounded-full" 
-                      style={{ backgroundColor: t.color || '#1BBCE0' }} 
+                      style={{ backgroundColor: t.color || '#16A5CE' }} 
                     />
                     {t.name}
                   </span>
@@ -199,7 +199,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
           </div>
 
           {}
-          <div className="bg-gradient-to-r from-[#011337] via-[#162E66] to-[#2E54AD] rounded-3xl p-8 sm:p-12 text-white border border-[#1BBCE0]/40 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+          <div className="bg-gradient-to-r from-[#011337] via-[#162E66] to-[#2E54AD] rounded-3xl p-8 sm:p-12 text-white border border-[#16A5CE]/40 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
             <div className="space-y-3 max-w-xl text-center md:text-left relative z-10">
               <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white font-heading">
                 Ready to build with our {currentService.shortTitle} team?
@@ -212,7 +212,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             <div className="flex flex-wrap items-center justify-center md:justify-end gap-3.5 relative z-10">
               <button
                 onClick={onContactUs}
-                className="px-6 py-3.5 rounded-xl bg-[#1BBCE0] hover:bg-[#2E54AD] text-[#011337] hover:text-white font-extrabold text-sm transition-all shadow-lg cursor-pointer flex items-center gap-2 font-heading"
+                className="px-6 py-3.5 rounded-xl bg-[#16A5CE] hover:bg-[#2E54AD] text-[#011337] hover:text-white font-extrabold text-sm transition-all shadow-lg cursor-pointer flex items-center gap-2 font-heading"
               >
                 <Calendar className="w-4 h-4" />
                 <span>Schedule a Meeting</span>
@@ -260,7 +260,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                       name={other.iconName} 
                       size={40} 
                       color="#011337" 
-                      accentColor="#1BBCE0"
+                      accentColor="#16A5CE"
                     />
                   </div>
                   <span className="text-xs sm:text-sm font-bold text-[#011337] group-hover:text-[#2E54AD] transition-colors leading-snug font-heading text-center line-clamp-2">
@@ -287,9 +287,9 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
         {}
         <div aria-hidden="true" className="pointer-events-none absolute -top-12 right-0 sm:right-10 w-72 h-72 sm:w-96 sm:h-96 opacity-65">
           <div className="relative w-full h-full">
-            <div className="absolute top-0 right-4 w-52 h-52 rotate-45 rounded-3xl border-2 border-[#1BBCE0]/40 bg-[#1BBCE0]/10 backdrop-blur-xs" />
+            <div className="absolute top-0 right-4 w-52 h-52 rotate-45 rounded-3xl border-2 border-[#16A5CE]/40 bg-[#16A5CE]/10 backdrop-blur-xs" />
             <div className="absolute top-8 right-12 w-40 h-40 rotate-45 rounded-2xl border-2 border-[#D8E6F8]/50 bg-[#D8E6F8]/15" />
-            <div className="absolute top-14 right-20 w-28 h-28 rotate-45 rounded-xl bg-gradient-to-br from-[#2E54AD] to-[#1BBCE0] shadow-2xl opacity-90" />
+            <div className="absolute top-14 right-20 w-28 h-28 rotate-45 rounded-xl bg-gradient-to-br from-[#2E54AD] to-[#16A5CE] shadow-2xl opacity-90" />
           </div>
         </div>
 
@@ -305,7 +305,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
 
           <div className="flex items-center gap-3 pt-4 font-heading">
             <span className="text-lg sm:text-xl font-extrabold text-white">Our Services</span>
-            <span className="h-[2px] w-16 bg-gradient-to-r from-[#1BBCE0] to-transparent rounded-full" />
+            <span className="h-[2px] w-16 bg-gradient-to-r from-[#16A5CE] to-transparent rounded-full" />
           </div>
         </div>
       </div>
@@ -334,7 +334,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                     name={srv.iconName}
                     size={40}
                     color="#011337"
-                    accentColor="#1BBCE0"
+                    accentColor="#16A5CE"
                   />
                 </div>
                 <span className="text-xs sm:text-sm font-bold text-[#011337] group-hover:text-[#2E54AD] transition-colors leading-snug font-heading text-center line-clamp-2">
@@ -357,17 +357,17 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="bg-white rounded-3xl border border-[#D8E6F8] hover:border-[#1BBCE0] p-6 sm:p-8 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row items-start md:items-center gap-6 sm:gap-8 group"
+              className="bg-white rounded-3xl border border-[#D8E6F8] hover:border-[#16A5CE] p-6 sm:p-8 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row items-start md:items-center gap-6 sm:gap-8 group"
             >
               
               {}
-              <div className="w-full md:w-56 shrink-0 flex flex-col items-center justify-center text-center p-6 bg-[#F5F8FC] rounded-2xl border border-[#D8E6F8] group-hover:border-[#1BBCE0]/60 transition-colors">
+              <div className="w-full md:w-56 shrink-0 flex flex-col items-center justify-center text-center p-6 bg-[#F5F8FC] rounded-2xl border border-[#D8E6F8] group-hover:border-[#16A5CE]/60 transition-colors">
                 <div className="flex items-center justify-center mb-3 text-[#011337] group-hover:scale-110 transition-transform">
                   <ServiceIcon 
                     name={service.iconName} 
                     size={48} 
                     color="#011337" 
-                    accentColor="#1BBCE0"
+                    accentColor="#16A5CE"
                   />
                 </div>
                 <span className="text-sm font-extrabold text-[#011337] leading-snug font-heading">
@@ -391,7 +391,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                   >
                     <span>View Details</span>
                     <ArrowRight className="w-4 h-4 text-[#2E54AD] transform group-hover/btn:translate-x-1.5 transition-transform" />
-                    <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#2E54AD] to-[#1BBCE0] origin-left scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300 rounded-full" />
+                    <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#2E54AD] to-[#16A5CE] origin-left scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300 rounded-full" />
                   </button>
                 </div>
 
@@ -413,7 +413,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                       >
                         <span
                           className="w-2 h-2 rounded-full shrink-0"
-                          style={{ backgroundColor: tool.color || '#1BBCE0' }}
+                          style={{ backgroundColor: tool.color || '#16A5CE' }}
                         />
                         {tool.name}
                       </span>
@@ -443,7 +443,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
           <div className="flex flex-wrap items-center gap-3">
             <button
               onClick={onContactUs}
-              className="px-6 py-3.5 rounded-2xl bg-[#1BBCE0] hover:bg-[#2E54AD] text-[#011337] hover:text-white font-extrabold text-xs sm:text-sm transition-all shadow-lg cursor-pointer font-heading"
+              className="px-6 py-3.5 rounded-2xl bg-[#16A5CE] hover:bg-[#2E54AD] text-[#011337] hover:text-white font-extrabold text-xs sm:text-sm transition-all shadow-lg cursor-pointer font-heading"
             >
               Contact Our Engineers
             </button>

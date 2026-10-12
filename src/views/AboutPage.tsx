@@ -41,13 +41,13 @@ export const AboutPage: React.FC = () => {
         {}
         <div className="absolute right-[-40px] sm:right-10 top-1/2 -translate-y-1/2 pointer-events-none opacity-40 lg:opacity-60 overflow-hidden w-72 h-72 sm:w-96 sm:h-96">
           {}
-          <div className="absolute top-0 right-4 w-48 h-48 sm:w-60 sm:h-60 rotate-45 rounded-3xl border-2 border-[#1BBCE0]/40 bg-gradient-to-br from-[#D8E6F8]/30 to-[#1BBCE0]/20 backdrop-blur-xs" />
+          <div className="absolute top-0 right-4 w-48 h-48 sm:w-60 sm:h-60 rotate-45 rounded-3xl border-2 border-[#16A5CE]/40 bg-gradient-to-br from-[#D8E6F8]/30 to-[#16A5CE]/20 backdrop-blur-xs" />
           {}
           <div className="absolute top-6 right-10 w-38 h-38 sm:w-48 sm:h-48 rotate-45 rounded-2xl border-2 border-[#2E54AD]/50 bg-gradient-to-br from-[#2E54AD]/30 to-[#162E66]/30" />
           {}
-          <div className="absolute top-12 right-16 w-26 h-26 sm:w-32 sm:h-32 rotate-45 rounded-xl bg-gradient-to-br from-[#011337] to-[#1BBCE0] opacity-90 shadow-xl shadow-[#2E54AD]/30" />
+          <div className="absolute top-12 right-16 w-26 h-26 sm:w-32 sm:h-32 rotate-45 rounded-xl bg-gradient-to-br from-[#011337] to-[#16A5CE] opacity-90 shadow-xl shadow-[#2E54AD]/30" />
           {}
-          <div className="absolute top-4 right-36 w-3 h-3 rounded-full bg-[#1BBCE0] animate-pulse" />
+          <div className="absolute top-4 right-36 w-3 h-3 rounded-full bg-[#16A5CE] animate-pulse" />
           <div className="absolute top-44 right-8 w-2.5 h-2.5 rounded-full bg-[#D8E6F8]" />
         </div>
 
@@ -69,7 +69,7 @@ export const AboutPage: React.FC = () => {
               }}
               className="text-base sm:text-lg lg:text-xl text-white/95 leading-relaxed font-poppins font-normal max-w-3xl drop-shadow-xs"
             >
-              With a relentless focus on practical mastery, financial technology innovation, and decentralized architecture, <strong className="font-extrabold text-white underline decoration-[#1BBCE0] underline-offset-4">Beture Web</strong> empowers the next generation of fintech engineers, Web3 developers, and digital finance leaders. We bridge cutting-edge blockchain protocols, quantitative trading algorithms, and modern software engineering to prepare ambitious professionals for global fintech careers and high-impact digital ventures.
+              With a relentless focus on practical mastery, financial technology innovation, and decentralized architecture, <strong className="font-extrabold text-white underline decoration-[#16A5CE] underline-offset-4">Beture Web</strong> empowers the next generation of fintech engineers, Web3 developers, and digital finance leaders. We bridge cutting-edge blockchain protocols, quantitative trading algorithms, and modern software engineering to prepare ambitious professionals for global fintech careers and high-impact digital ventures.
             </motion.p>
           </div>
         </div>
@@ -97,19 +97,19 @@ export const AboutPage: React.FC = () => {
                 {}
                 <div className="absolute -top-12 -right-8 w-44 h-44 pointer-events-none z-0">
                   {}
-                  <div className="absolute top-0 right-0 w-36 h-36 rotate-45 rounded-2xl border-2 border-[#1BBCE0]/30 bg-gradient-to-br from-[#D8E6F8]/50 to-[#1BBCE0]/20 backdrop-blur-xs" />
+                  <div className="absolute top-0 right-0 w-36 h-36 rotate-45 rounded-2xl border-2 border-[#16A5CE]/30 bg-gradient-to-br from-[#D8E6F8]/50 to-[#16A5CE]/20 backdrop-blur-xs" />
                   {}
                   <div className="absolute top-4 right-4 w-28 h-28 rotate-45 rounded-xl border border-[#2E54AD]/40 bg-gradient-to-br from-[#2E54AD]/25 to-[#162E66]/20" />
                   {}
                   <div className="absolute top-8 right-8 w-20 h-20 rotate-45 rounded-lg bg-gradient-to-br from-[#011337] to-[#2E54AD] opacity-90 shadow-md shadow-[#2E54AD]/20" />
                   {}
-                  <div className="absolute top-2 right-28 w-2.5 h-2.5 rounded-full bg-[#1BBCE0]" />
+                  <div className="absolute top-2 right-28 w-2.5 h-2.5 rounded-full bg-[#16A5CE]" />
                 </div>
 
                 {}
                 <div className="absolute -bottom-10 -left-10 w-44 h-44 pointer-events-none z-0">
                   {}
-                  <div className="absolute bottom-0 left-0 w-36 h-36 rotate-45 rounded-2xl border-2 border-[#1BBCE0]/30 bg-gradient-to-br from-[#D8E6F8]/50 to-[#1BBCE0]/20 backdrop-blur-xs" />
+                  <div className="absolute bottom-0 left-0 w-36 h-36 rotate-45 rounded-2xl border-2 border-[#16A5CE]/30 bg-gradient-to-br from-[#D8E6F8]/50 to-[#16A5CE]/20 backdrop-blur-xs" />
                   {}
                   <div className="absolute bottom-4 left-4 w-28 h-28 rotate-45 rounded-xl border border-[#2E54AD]/40 bg-gradient-to-br from-[#2E54AD]/25 to-[#162E66]/20" />
                   {}
@@ -183,8 +183,8 @@ export const AboutPage: React.FC = () => {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#1BBCE0]/15 text-[#2E54AD] flex items-center justify-center font-bold">
-                    <Zap className="w-4.5 h-4.5 text-[#1BBCE0]" />
+                  <div className="w-8 h-8 rounded-full bg-[#16A5CE]/15 text-[#2E54AD] flex items-center justify-center font-bold">
+                    <Zap className="w-4.5 h-4.5 text-[#16A5CE]" />
                   </div>
                   <span className="text-xs sm:text-sm font-semibold text-[#011337]">
                     1-on-1 Industry Mentorship
@@ -219,7 +219,7 @@ export const AboutPage: React.FC = () => {
               <span className="text-base sm:text-lg font-bold text-[#2E54AD] font-poppins">
                 Beture Web
               </span>
-              <span className="text-[#1BBCE0] font-bold tracking-widest text-lg">——</span>
+              <span className="text-[#16A5CE] font-bold tracking-widest text-lg">——</span>
             </motion.div>
 
             {}
@@ -271,11 +271,11 @@ export const AboutPage: React.FC = () => {
               initial={{ x: '60vw', opacity: 0 }}
               animate={isTeamSkillsInView ? { x: 0, opacity: 1 } : { x: '60vw', opacity: 0 }}
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.25 }}
-              className="p-6 sm:p-8 rounded-3xl bg-[#F8FAFC] border border-[#E2E8F0] hover:border-[#1BBCE0] transition-all duration-300 shadow-xs space-y-3"
+              className="p-6 sm:p-8 rounded-3xl bg-[#F8FAFC] border border-[#E2E8F0] hover:border-[#16A5CE] transition-all duration-300 shadow-xs space-y-3"
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#1BBCE0]/15 text-[#2E54AD] flex items-center justify-center font-bold">
-                  <DollarSign className="w-5 h-5 text-[#1BBCE0]" />
+                <div className="w-10 h-10 rounded-xl bg-[#16A5CE]/15 text-[#2E54AD] flex items-center justify-center font-bold">
+                  <DollarSign className="w-5 h-5 text-[#16A5CE]" />
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-[#011337] font-poppins">
                   Budget Friendly
@@ -333,13 +333,13 @@ export const AboutPage: React.FC = () => {
         >
           <div className="relative w-full h-full">
             {}
-            <div className="absolute top-0 right-4 w-44 h-44 sm:w-56 sm:h-56 rotate-45 rounded-3xl border-2 border-[#1BBCE0]/30 bg-gradient-to-br from-[#D8E6F8]/40 to-[#1BBCE0]/10 backdrop-blur-[1px]" />
+            <div className="absolute top-0 right-4 w-44 h-44 sm:w-56 sm:h-56 rotate-45 rounded-3xl border-2 border-[#16A5CE]/30 bg-gradient-to-br from-[#D8E6F8]/40 to-[#16A5CE]/10 backdrop-blur-[1px]" />
             {}
             <div className="absolute top-5 right-9 w-36 h-36 sm:w-44 sm:h-44 rotate-45 rounded-2xl border-2 border-[#2E54AD]/40 bg-gradient-to-br from-[#2E54AD]/20 to-[#162E66]/20" />
             {}
             <div className="absolute top-10 right-14 w-24 h-24 sm:w-30 sm:h-30 rotate-45 rounded-xl bg-gradient-to-br from-[#011337] to-[#2E54AD] opacity-90 shadow-xl shadow-[#2E54AD]/20" />
             {}
-            <div className="absolute top-2 right-32 w-3 h-3 rounded-full bg-[#1BBCE0]" />
+            <div className="absolute top-2 right-32 w-3 h-3 rounded-full bg-[#16A5CE]" />
             <div className="absolute top-36 right-6 w-2.5 h-2.5 rounded-full bg-[#2E54AD]" />
           </div>
         </div>
@@ -361,7 +361,7 @@ export const AboutPage: React.FC = () => {
             {[
               {
                 icon: <Cpu className="w-6 h-6 text-[#2E54AD]" />,
-                iconBg: 'bg-[#EAF4FC] border-[#1BBCE0]/40 shadow-xs text-[#2E54AD]',
+                iconBg: 'bg-[#EAF4FC] border-[#16A5CE]/40 shadow-xs text-[#2E54AD]',
                 title: 'Applied FinTech Mastery',
                 desc: 'Immersive hands-on bootcamps with real-world smart contracts, algorithmic trading bots, and API integrations.',
               },
@@ -372,15 +372,15 @@ export const AboutPage: React.FC = () => {
                 desc: 'Industry-grade security frameworks, smart contract auditing methodologies, and quantitative risk management.',
               },
               {
-                icon: <Rocket className="w-6 h-6 text-[#1BBCE0]" />,
-                iconBg: 'bg-[#F0FAFC] border-[#1BBCE0]/40 shadow-xs text-[#1BBCE0]',
+                icon: <Rocket className="w-6 h-6 text-[#16A5CE]" />,
+                iconBg: 'bg-[#F0FAFC] border-[#16A5CE]/40 shadow-xs text-[#16A5CE]',
                 title: 'Career & Venture Incubation',
                 desc: 'Direct global job placement assistance, portfolio reviews, and decentralized venture capital networking.',
               },
             ].map((v, i) => (
               <div 
                 key={i}
-                className="bg-white rounded-3xl p-8 border border-[#E2E8F0] hover:border-[#1BBCE0] hover:shadow-lg transition-all duration-300 space-y-5 group hover:-translate-y-1"
+                className="bg-white rounded-3xl p-8 border border-[#E2E8F0] hover:border-[#16A5CE] hover:shadow-lg transition-all duration-300 space-y-5 group hover:-translate-y-1"
               >
                 <div className={`w-14 h-14 rounded-2xl border flex items-center justify-center transition-transform group-hover:scale-110 ${v.iconBg}`}>
                   {v.icon}

@@ -48,13 +48,13 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
         >
           <div className="relative w-full h-full">
             {}
-            <div className="absolute top-0 right-4 w-44 h-44 sm:w-56 sm:h-56 rotate-45 rounded-3xl border-2 border-[#1BBCE0]/30 bg-gradient-to-br from-[#D8E6F8]/40 to-[#1BBCE0]/10 backdrop-blur-[1px]" />
+            <div className="absolute top-0 right-4 w-44 h-44 sm:w-56 sm:h-56 rotate-45 rounded-3xl border-2 border-[#16A5CE]/30 bg-gradient-to-br from-[#D8E6F8]/40 to-[#16A5CE]/10 backdrop-blur-[1px]" />
             {}
             <div className="absolute top-5 right-9 w-36 h-36 sm:w-44 sm:h-44 rotate-45 rounded-2xl border-2 border-[#2E54AD]/40 bg-gradient-to-br from-[#2E54AD]/20 to-[#162E66]/20" />
             {}
             <div className="absolute top-10 right-14 w-24 h-24 sm:w-30 sm:h-30 rotate-45 rounded-xl bg-gradient-to-br from-[#011337] to-[#2E54AD] opacity-90 shadow-xl shadow-[#2E54AD]/20" />
             {}
-            <div className="absolute top-2 right-32 w-3 h-3 rounded-full bg-[#1BBCE0]" />
+            <div className="absolute top-2 right-32 w-3 h-3 rounded-full bg-[#16A5CE]" />
             <div className="absolute top-36 right-6 w-2.5 h-2.5 rounded-full bg-[#2E54AD]" />
           </div>
         </div>
@@ -98,7 +98,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
                   <div className="absolute inset-0 bg-black/55 backdrop-blur-[2.5px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center p-4">
                     <button
                       onClick={(e) => handleOpenLiveSite(e, project.liveUrl)}
-                      className="transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#2E54AD] hover:bg-[#1BBCE0] text-white font-extrabold text-sm sm:text-base shadow-xl hover:shadow-cyan-500/30 hover:scale-105 transition-transform duration-200 cursor-pointer font-heading"
+                      className="transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#2E54AD] hover:bg-[#16A5CE] text-white font-extrabold text-sm sm:text-base shadow-xl hover:shadow-cyan-500/30 hover:scale-105 transition-transform duration-200 cursor-pointer font-heading"
                     >
                       <span>View Live Project</span>
                       <ExternalLink className="w-4 h-4" />
@@ -150,13 +150,13 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
         >
           <div className="relative w-full h-full">
             {}
-            <div className="absolute top-0 right-4 w-40 h-40 sm:w-52 sm:h-52 rotate-45 rounded-3xl border-2 border-[#1BBCE0]/35 bg-gradient-to-br from-[#D8E6F8]/50 to-[#1BBCE0]/15 backdrop-blur-xs" />
+            <div className="absolute top-0 right-4 w-40 h-40 sm:w-52 sm:h-52 rotate-45 rounded-3xl border-2 border-[#16A5CE]/35 bg-gradient-to-br from-[#D8E6F8]/50 to-[#16A5CE]/15 backdrop-blur-xs" />
             {}
             <div className="absolute top-5 right-9 w-32 h-32 sm:w-40 sm:h-40 rotate-45 rounded-2xl border border-[#2E54AD]/40 bg-gradient-to-br from-[#2E54AD]/20 to-[#162E66]/15" />
             {}
             <div className="absolute top-10 right-14 w-20 h-20 sm:w-28 sm:h-28 rotate-45 rounded-xl bg-gradient-to-br from-[#011337] to-[#2E54AD] opacity-90 shadow-lg shadow-[#2E54AD]/20" />
             {}
-            <div className="absolute top-2 right-28 w-3 h-3 rounded-full bg-[#1BBCE0]" />
+            <div className="absolute top-2 right-28 w-3 h-3 rounded-full bg-[#16A5CE]" />
             <div className="absolute top-32 right-6 w-2.5 h-2.5 rounded-full bg-[#2E54AD]" />
           </div>
         </div>
@@ -168,13 +168,13 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
         >
           <div className="relative w-full h-full">
             {}
-            <div className="absolute bottom-0 left-4 w-36 h-36 sm:w-48 sm:h-48 rotate-45 rounded-3xl border-2 border-[#1BBCE0]/35 bg-gradient-to-br from-[#D8E6F8]/50 to-[#1BBCE0]/15 backdrop-blur-xs" />
+            <div className="absolute bottom-0 left-4 w-36 h-36 sm:w-48 sm:h-48 rotate-45 rounded-3xl border-2 border-[#16A5CE]/35 bg-gradient-to-br from-[#D8E6F8]/50 to-[#16A5CE]/15 backdrop-blur-xs" />
             {}
             <div className="absolute bottom-5 left-9 w-28 h-28 sm:w-36 sm:h-36 rotate-45 rounded-2xl border border-[#2E54AD]/40 bg-gradient-to-br from-[#2E54AD]/20 to-[#162E66]/15" />
             {}
             <div className="absolute bottom-10 left-14 w-18 h-18 sm:w-24 sm:h-24 rotate-45 rounded-xl bg-gradient-to-br from-[#011337] to-[#2E54AD] opacity-90 shadow-lg shadow-[#2E54AD]/20" />
             {}
-            <div className="absolute bottom-2 left-28 w-2.5 h-2.5 rounded-full bg-[#1BBCE0]" />
+            <div className="absolute bottom-2 left-28 w-2.5 h-2.5 rounded-full bg-[#16A5CE]" />
             <div className="absolute bottom-28 left-6 w-2 h-2 rounded-full bg-[#2E54AD]" />
           </div>
         </div>
@@ -338,7 +338,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={onNavigateToContact}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-[#2E54AD] hover:bg-[#1BBCE0] text-white font-extrabold text-base shadow-xl hover:shadow-cyan-500/25 transition-all duration-300 hover:scale-105 cursor-pointer font-heading"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-[#2E54AD] hover:bg-[#16A5CE] text-white font-extrabold text-base shadow-xl hover:shadow-cyan-500/25 transition-all duration-300 hover:scale-105 cursor-pointer font-heading"
             >
               <span>Start a Project Consultation</span>
               <ArrowRight className="w-5 h-5" />

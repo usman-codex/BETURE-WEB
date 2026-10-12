@@ -64,13 +64,13 @@ export const TopProjectsSection: React.FC<TopProjectsSectionProps> = ({
           <button
             id="more-projects-header-btn"
             onClick={onNavigateToProjects}
-            className="group relative inline-flex items-center gap-2 text-base sm:text-lg font-bold text-[#2E54AD] hover:text-[#1BBCE0] transition-colors duration-300 pb-1 cursor-pointer font-heading self-start sm:self-auto"
+            className="group relative inline-flex items-center gap-2 text-base sm:text-lg font-bold text-[#2E54AD] hover:text-[#16A5CE] transition-colors duration-300 pb-1 cursor-pointer font-heading self-start sm:self-auto"
           >
             <span>More Projects</span>
             <span className="inline-flex items-center justify-center transition-transform duration-300 transform group-hover:translate-x-1.5">
-              <ArrowRight className="w-5 h-5 text-[#2E54AD] group-hover:text-[#1BBCE0] transition-colors duration-300" />
+              <ArrowRight className="w-5 h-5 text-[#2E54AD] group-hover:text-[#16A5CE] transition-colors duration-300" />
             </span>
-            <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#2E54AD] group-hover:bg-[#1BBCE0] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
+            <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#2E54AD] group-hover:bg-[#16A5CE] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
           </button>
         </div>
 
@@ -106,7 +106,7 @@ export const TopProjectsSection: React.FC<TopProjectsSectionProps> = ({
                   <button
                     id={`view-project-btn-${project.id}`}
                     onClick={(e) => handleOpenLiveSite(e, project.liveUrl)}
-                    className="transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#2E54AD] hover:bg-[#1BBCE0] text-white font-extrabold text-sm sm:text-base shadow-xl hover:shadow-cyan-500/30 hover:scale-105 transition-transform duration-200 cursor-pointer font-heading"
+                    className="transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#2E54AD] hover:bg-[#16A5CE] text-white font-extrabold text-sm sm:text-base shadow-xl hover:shadow-cyan-500/30 hover:scale-105 transition-transform duration-200 cursor-pointer font-heading"
                   >
                     <span>View Project</span>
                     <ExternalLink className="w-4 h-4" />

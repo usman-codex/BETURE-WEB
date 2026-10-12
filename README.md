@@ -5,7 +5,7 @@ Official website for **Beture Web** - Modern Web & AI Development, Digital Engin
 ## Brand Identity & Colors
 - **Primary Dark Navy**: `#011337`
 - **Royal Electric Blue**: `#2E54AD`
-- **Vibrant Neon Cyan**: `#1BBCE0`
+- **Vibrant Electric Cyan**: `#16A5CE`
 
 ## Features
 - Complete responsive frontend with modern UI/UX

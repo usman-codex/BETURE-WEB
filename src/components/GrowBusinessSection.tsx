@@ -39,7 +39,7 @@ export const GrowBusinessSection: React.FC = () => {
           {}
           <circle cx="32" cy="32" r="7.5" stroke="#011337" strokeWidth="2.5" fill="#FFFFFF" />
           {}
-          <circle cx="32" cy="32" r="4" fill="#1BBCE0" />
+          <circle cx="32" cy="32" r="4" fill="#16A5CE" />
         </svg>
       ),
     },
@@ -71,7 +71,7 @@ export const GrowBusinessSection: React.FC = () => {
           <circle cx="22" cy="24" r="4.5" fill="#5074A8" stroke="#011337" strokeWidth="2" />
           
           {}
-          <circle cx="32" cy="38" r="4.5" fill="#1BBCE0" stroke="#011337" strokeWidth="2" />
+          <circle cx="32" cy="38" r="4.5" fill="#16A5CE" stroke="#011337" strokeWidth="2" />
           
           {}
           <circle cx="42" cy="28" r="4.5" fill="#2E54AD" stroke="#011337" strokeWidth="2" />
@@ -96,8 +96,8 @@ export const GrowBusinessSection: React.FC = () => {
 
           {}
           <circle cx="20" cy="20" r="5" fill="#5074A8" stroke="#011337" strokeWidth="2" />
-          <circle cx="44" cy="20" r="5" fill="#1BBCE0" stroke="#011337" strokeWidth="2" />
-          <circle cx="20" cy="44" r="5" fill="#1BBCE0" stroke="#011337" strokeWidth="2" />
+          <circle cx="44" cy="20" r="5" fill="#16A5CE" stroke="#011337" strokeWidth="2" />
+          <circle cx="20" cy="44" r="5" fill="#16A5CE" stroke="#011337" strokeWidth="2" />
           <circle cx="44" cy="44" r="5" fill="#5074A8" stroke="#011337" strokeWidth="2" />
         </svg>
       ),
@@ -171,7 +171,7 @@ export const GrowBusinessSection: React.FC = () => {
               </div>
 
               {/* Blue Category Title */}
-              <span className="text-base font-bold text-[#2E54AD] group-hover:text-[#1BBCE0] transition-colors duration-300 font-poppins mb-3">
+              <span className="text-base font-bold text-[#2E54AD] group-hover:text-[#16A5CE] transition-colors duration-300 font-poppins mb-3">
                 {feature.category}
               </span>
 

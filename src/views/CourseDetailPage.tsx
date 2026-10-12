@@ -46,12 +46,12 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
           className="pointer-events-none absolute -top-12 right-0 sm:right-6 md:right-16 w-64 h-64 sm:w-80 sm:h-80 z-0 opacity-80"
         >
           <div className="relative w-full h-full">
-            <div className="absolute top-0 right-4 w-48 h-48 sm:w-60 sm:h-60 rotate-45 rounded-3xl border-2 border-[#1BBCE0]/40 bg-gradient-to-br from-[#D8E6F8]/25 to-[#1BBCE0]/10 backdrop-blur-[2px]" />
+            <div className="absolute top-0 right-4 w-48 h-48 sm:w-60 sm:h-60 rotate-45 rounded-3xl border-2 border-[#16A5CE]/40 bg-gradient-to-br from-[#D8E6F8]/25 to-[#16A5CE]/10 backdrop-blur-[2px]" />
             <div className="absolute top-6 right-10 w-36 h-36 sm:w-48 sm:h-48 rotate-45 rounded-2xl border-2 border-[#2E54AD]/60 bg-gradient-to-br from-[#2E54AD]/40 to-[#162E66]/40" />
             <div className="absolute top-12 right-16 w-24 h-24 sm:w-32 sm:h-32 rotate-45 rounded-xl bg-gradient-to-br from-[#011337] to-[#2E54AD] opacity-95 shadow-2xl shadow-[#2E54AD]/40" />
-            <div className="absolute top-2 right-32 w-3 h-3 rounded-full bg-[#1BBCE0] shadow-sm shadow-[#1BBCE0]" />
+            <div className="absolute top-2 right-32 w-3 h-3 rounded-full bg-[#16A5CE] shadow-sm shadow-[#16A5CE]" />
             <div className="absolute top-36 right-4 w-2 h-2 rounded-full bg-[#D8E6F8]" />
-            <div className="absolute top-24 right-48 w-2 h-2 rounded-full bg-[#1BBCE0]/80" />
+            <div className="absolute top-24 right-48 w-2 h-2 rounded-full bg-[#16A5CE]/80" />
           </div>
         </div>
 
@@ -61,9 +61,9 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
           className="pointer-events-none absolute -bottom-16 -left-12 w-60 h-60 sm:w-72 sm:h-72 z-0 opacity-40 hidden sm:block"
         >
           <div className="relative w-full h-full">
-            <div className="absolute bottom-4 left-4 w-40 h-40 rotate-45 rounded-2xl border border-[#1BBCE0]/30 bg-gradient-to-tr from-[#162E66]/30 to-[#1BBCE0]/10" />
+            <div className="absolute bottom-4 left-4 w-40 h-40 rotate-45 rounded-2xl border border-[#16A5CE]/30 bg-gradient-to-tr from-[#162E66]/30 to-[#16A5CE]/10" />
             <div className="absolute bottom-10 left-10 w-28 h-28 rotate-45 rounded-xl border border-[#2E54AD]/40 bg-[#011337]/40" />
-            <div className="absolute bottom-14 left-14 w-16 h-16 rotate-45 rounded-lg bg-gradient-to-tr from-[#2E54AD] to-[#1BBCE0] opacity-70" />
+            <div className="absolute bottom-14 left-14 w-16 h-16 rotate-45 rounded-lg bg-gradient-to-tr from-[#2E54AD] to-[#16A5CE] opacity-70" />
           </div>
         </div>
 
@@ -82,7 +82,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
             <div className="flex items-center gap-2 text-xs text-[#D8E6F8] font-medium">
               <span className="cursor-pointer hover:underline" onClick={onBack}>Courses</span>
               <span>/</span>
-              <span className="bg-[#1BBCE0]/20 text-white px-2.5 py-0.5 rounded-md border border-[#1BBCE0]/30 font-semibold">
+              <span className="bg-[#16A5CE]/20 text-white px-2.5 py-0.5 rounded-md border border-[#16A5CE]/30 font-semibold">
                 {course.category}
               </span>
             </div>
@@ -94,7 +94,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
             <div className="lg:col-span-8 space-y-4 sm:space-y-6">
               
               {}
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black font-heading leading-tight tracking-tight bg-gradient-to-r from-white via-[#D8F0F5] to-[#1BBCE0] bg-clip-text text-transparent drop-shadow-sm">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black font-heading leading-tight tracking-tight bg-gradient-to-r from-white via-[#D8F0F5] to-[#16A5CE] bg-clip-text text-transparent drop-shadow-sm">
                 {course.title}
               </h1>
 
@@ -105,26 +105,26 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
 
               {}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
-                <div className="bg-white/10 backdrop-blur-xs border border-[#1BBCE0]/30 rounded-xl p-3 text-center">
-                  <Clock className="w-4 h-4 text-[#1BBCE0] mx-auto mb-1" />
+                <div className="bg-white/10 backdrop-blur-xs border border-[#16A5CE]/30 rounded-xl p-3 text-center">
+                  <Clock className="w-4 h-4 text-[#16A5CE] mx-auto mb-1" />
                   <p className="text-[11px] text-[#D8E6F8]">Duration</p>
                   <p className="text-sm font-bold text-white">{course.durationHours} Hours</p>
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-xs border border-[#1BBCE0]/30 rounded-xl p-3 text-center">
-                  <BookOpen className="w-4 h-4 text-[#1BBCE0] mx-auto mb-1" />
+                <div className="bg-white/10 backdrop-blur-xs border border-[#16A5CE]/30 rounded-xl p-3 text-center">
+                  <BookOpen className="w-4 h-4 text-[#16A5CE] mx-auto mb-1" />
                   <p className="text-[11px] text-[#D8E6F8]">Curriculum</p>
                   <p className="text-sm font-bold text-white">{course.lessonsCount} Lessons</p>
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-xs border border-[#1BBCE0]/30 rounded-xl p-3 text-center">
-                  <Users className="w-4 h-4 text-[#1BBCE0] mx-auto mb-1" />
+                <div className="bg-white/10 backdrop-blur-xs border border-[#16A5CE]/30 rounded-xl p-3 text-center">
+                  <Users className="w-4 h-4 text-[#16A5CE] mx-auto mb-1" />
                   <p className="text-[11px] text-[#D8E6F8]">Enrolled</p>
                   <p className="text-sm font-bold text-white">{course.studentCount.toLocaleString()}+</p>
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-xs border border-[#1BBCE0]/30 rounded-xl p-3 text-center">
-                  <GraduationCap className="w-4 h-4 text-[#1BBCE0] mx-auto mb-1" />
+                <div className="bg-white/10 backdrop-blur-xs border border-[#16A5CE]/30 rounded-xl p-3 text-center">
+                  <GraduationCap className="w-4 h-4 text-[#16A5CE] mx-auto mb-1" />
                   <p className="text-[11px] text-[#D8E6F8]">Certificate</p>
                   <p className="text-sm font-bold text-white">Verified</p>
                 </div>
@@ -134,7 +134,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
 
             {}
             <div className="lg:col-span-4">
-              <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-[#1BBCE0]/50 shadow-2xl bg-[#011337] group">
+              <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-[#16A5CE]/50 shadow-2xl bg-[#011337] group">
                 <img
                   src={course.image}
                   alt={course.title}
@@ -164,7 +164,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
         >
           <div className="relative w-full h-full">
             <div className="absolute top-0 right-0 w-36 h-36 rotate-45 rounded-2xl border-2 border-[#2E54AD] bg-[#D8E6F8]/30" />
-            <div className="absolute top-6 right-6 w-20 h-20 rotate-45 rounded-xl bg-[#1BBCE0]/40" />
+            <div className="absolute top-6 right-6 w-20 h-20 rotate-45 rounded-xl bg-[#16A5CE]/40" />
           </div>
         </div>
 
@@ -439,9 +439,9 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
           className="pointer-events-none absolute -bottom-10 right-0 sm:right-10 w-52 h-52 sm:w-64 sm:h-64 z-0 opacity-60"
         >
           <div className="relative w-full h-full">
-            <div className="absolute bottom-0 right-4 w-40 h-40 rotate-45 rounded-2xl border-2 border-[#1BBCE0]/40 bg-[#1BBCE0]/10" />
+            <div className="absolute bottom-0 right-4 w-40 h-40 rotate-45 rounded-2xl border-2 border-[#16A5CE]/40 bg-[#16A5CE]/10" />
             <div className="absolute bottom-6 right-10 w-28 h-28 rotate-45 rounded-xl border border-[#D8E6F8]/50 bg-[#2E54AD]/40" />
-            <div className="absolute bottom-10 right-14 w-16 h-16 rotate-45 rounded-lg bg-[#1BBCE0] opacity-80" />
+            <div className="absolute bottom-10 right-14 w-16 h-16 rotate-45 rounded-lg bg-[#16A5CE] opacity-80" />
           </div>
         </div>
 
@@ -450,7 +450,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
           aria-hidden="true" 
           className="pointer-events-none absolute -top-8 -left-8 w-40 h-40 z-0 opacity-40"
         >
-          <div className="w-32 h-32 rotate-45 rounded-2xl border border-[#1BBCE0]/40 bg-[#1BBCE0]/10" />
+          <div className="w-32 h-32 rotate-45 rounded-2xl border border-[#16A5CE]/40 bg-[#16A5CE]/10" />
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
@@ -463,7 +463,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
           <div className="pt-2">
             <button
               onClick={() => onEnroll(course)}
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#1BBCE0] hover:bg-[#2E54AD] text-[#011337] hover:text-white font-black text-sm transition-all shadow-xl hover:scale-105 cursor-pointer"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#16A5CE] hover:bg-[#2E54AD] text-[#011337] hover:text-white font-black text-sm transition-all shadow-xl hover:scale-105 cursor-pointer"
             >
               <span>Get Immediate Access</span>
               <ArrowRight className="w-4 h-4" />

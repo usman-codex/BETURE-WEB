@@ -57,17 +57,17 @@ export const DesignersDevelopersSection: React.FC<DesignersDevelopersSectionProp
               <button
                 id="explore-more-about-btn"
                 onClick={onNavigateToAbout}
-                className="group relative inline-flex items-center gap-2.5 text-base sm:text-lg font-bold text-[#2E54AD] hover:text-[#1BBCE0] transition-colors duration-300 pb-1.5 cursor-pointer font-heading"
+                className="group relative inline-flex items-center gap-2.5 text-base sm:text-lg font-bold text-[#2E54AD] hover:text-[#16A5CE] transition-colors duration-300 pb-1.5 cursor-pointer font-heading"
               >
                 <span className="tracking-wide">Explore More</span>
 
                 {}
                 <span className="inline-flex items-center justify-center transition-transform duration-300 ease-out transform group-hover:translate-x-2">
-                  <ArrowRight className="w-5 h-5 text-[#2E54AD] group-hover:text-[#1BBCE0] transition-colors duration-300" />
+                  <ArrowRight className="w-5 h-5 text-[#2E54AD] group-hover:text-[#16A5CE] transition-colors duration-300" />
                 </span>
 
                 {}
-                <span className="absolute bottom-0 left-0 w-full h-[2.5px] bg-[#2E54AD] group-hover:bg-[#1BBCE0] origin-left scale-x-0 group-hover:scale-x-100 transition-all duration-300 ease-out rounded-full" />
+                <span className="absolute bottom-0 left-0 w-full h-[2.5px] bg-[#2E54AD] group-hover:bg-[#16A5CE] origin-left scale-x-0 group-hover:scale-x-100 transition-all duration-300 ease-out rounded-full" />
               </button>
             </motion.div>
 

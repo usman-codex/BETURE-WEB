@@ -16,13 +16,13 @@ const LayeredDiamondArt: React.FC<{ size?: 'sm' | 'md' | 'lg'; className?: strin
   return (
     <div className={`relative flex items-center justify-center pointer-events-none select-none ${className}`}>
       {}
-      <div className="absolute inset-0 bg-[#1BBCE0]/15 blur-2xl rounded-full" />
+      <div className="absolute inset-0 bg-[#16A5CE]/15 blur-2xl rounded-full" />
 
       {}
       <motion.div
         animate={{ rotate: [45, 52, 45], scale: [1, 1.02, 1] }}
         transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
-        className={`absolute ${config.outer} rotate-45 ${config.outerRadius} border-2 border-[#1BBCE0]/35 bg-gradient-to-br from-[#D8E6F8]/40 via-[#1BBCE0]/10 to-transparent backdrop-blur-xs shadow-lg shadow-[#2E54AD]/10`}
+        className={`absolute ${config.outer} rotate-45 ${config.outerRadius} border-2 border-[#16A5CE]/35 bg-gradient-to-br from-[#D8E6F8]/40 via-[#16A5CE]/10 to-transparent backdrop-blur-xs shadow-lg shadow-[#2E54AD]/10`}
       />
 
       {}
@@ -38,11 +38,11 @@ const LayeredDiamondArt: React.FC<{ size?: 'sm' | 'md' | 'lg'; className?: strin
         transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
         className={`absolute ${config.inner} rotate-45 ${config.innerRadius} bg-gradient-to-br from-[#011337] via-[#162E66] to-[#2E54AD] border border-[#D8E6F8]/50 shadow-xl shadow-[#2E54AD]/30 flex items-center justify-center`}
       >
-        <div className="w-3 h-3 sm:w-5 sm:h-5 rounded-md bg-[#1BBCE0]/50 border border-[#D8E6F8]/70" />
+        <div className="w-3 h-3 sm:w-5 sm:h-5 rounded-md bg-[#16A5CE]/50 border border-[#D8E6F8]/70" />
       </motion.div>
 
       {}
-      <div className="absolute -top-2 right-4 w-3 h-3 rounded-full bg-[#1BBCE0] shadow-sm shadow-[#1BBCE0] animate-pulse" />
+      <div className="absolute -top-2 right-4 w-3 h-3 rounded-full bg-[#16A5CE] shadow-sm shadow-[#16A5CE] animate-pulse" />
       <div className="absolute -bottom-2 left-5 w-2.5 h-2.5 rounded-full bg-[#D8E6F8] border border-[#2E54AD]/40" />
     </div>
   );
@@ -157,7 +157,7 @@ export const ContactPage: React.FC = () => {
               <h3 className="text-xl font-bold text-[#011337]">Send Us A Message</h3>
 
               {submitted ? (
-                <div className="p-6 rounded-2xl bg-[#D8E6F8]/30 border border-[#1BBCE0] text-[#011337] text-center space-y-2">
+                <div className="p-6 rounded-2xl bg-[#D8E6F8]/30 border border-[#16A5CE] text-[#011337] text-center space-y-2">
                   <CheckCircle2 className="w-10 h-10 text-[#2E54AD] mx-auto" />
                   <h4 className="text-base font-bold text-[#011337]">Message Sent Successfully!</h4>
                   <p className="text-xs text-[#162E66]">

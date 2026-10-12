@@ -23,7 +23,7 @@ export const BundleSection: React.FC<BundleSectionProps> = ({
     <section className="py-20 bg-[#D8E6F8]/15 text-[#011337] relative overflow-hidden border-b border-[#D8E6F8]">
       
       {}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-r from-[#2E54AD]/15 via-[#1BBCE0]/15 to-transparent rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-r from-[#2E54AD]/15 via-[#16A5CE]/15 to-transparent rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         

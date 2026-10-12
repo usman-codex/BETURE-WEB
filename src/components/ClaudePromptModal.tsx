@@ -144,7 +144,7 @@ export const ClaudePromptModal: React.FC<ClaudePromptModalProps> = ({ isOpen, on
         {}
         <div className="p-6 overflow-y-auto flex-1 font-mono text-xs leading-relaxed bg-[#011337] text-white select-all">
           {activeTab === 'full' && (
-            <pre className="whitespace-pre-wrap font-mono text-xs text-[#D8E6F8] selection:bg-[#1BBCE0] selection:text-[#011337]">
+            <pre className="whitespace-pre-wrap font-mono text-xs text-[#D8E6F8] selection:bg-[#16A5CE] selection:text-[#011337]">
               {CLAUDE_PROMPT_TEXT}
             </pre>
           )}
@@ -161,7 +161,7 @@ export const ClaudePromptModal: React.FC<ClaudePromptModalProps> = ({ isOpen, on
                       <div className="text-[10px] text-[#D8E6F8]">Primary text & dark backgrounds</div>
                     </div>
                   </div>
-                  <code className="text-[#1BBCE0] font-mono">#011337</code>
+                  <code className="text-[#16A5CE] font-mono">#011337</code>
                 </div>
 
                 <div className="p-3 bg-[#162E66]/40 rounded-xl border border-[#2E54AD]/30 flex items-center justify-between">
@@ -172,18 +172,18 @@ export const ClaudePromptModal: React.FC<ClaudePromptModalProps> = ({ isOpen, on
                       <div className="text-[10px] text-[#D8E6F8]">Primary action buttons & accents</div>
                     </div>
                   </div>
-                  <code className="text-[#1BBCE0] font-mono">#2E54AD</code>
+                  <code className="text-[#16A5CE] font-mono">#2E54AD</code>
                 </div>
 
                 <div className="p-3 bg-[#162E66]/40 rounded-xl border border-[#2E54AD]/30 flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-md bg-[#1BBCE0]" />
+                    <div className="w-6 h-6 rounded-md bg-[#16A5CE]" />
                     <div>
                       <div className="font-bold text-white">Bright Teal/Cyan</div>
                       <div className="text-[10px] text-[#D8E6F8]">Highlights & vibrant badges</div>
                     </div>
                   </div>
-                  <code className="text-[#1BBCE0] font-mono">#1BBCE0</code>
+                  <code className="text-[#16A5CE] font-mono">#16A5CE</code>
                 </div>
 
                 <div className="p-3 bg-[#162E66]/40 rounded-xl border border-[#2E54AD]/30 flex items-center justify-between">
@@ -194,7 +194,7 @@ export const ClaudePromptModal: React.FC<ClaudePromptModalProps> = ({ isOpen, on
                       <div className="text-[10px] text-[#D8E6F8]">Borders, subtle cards & backgrounds</div>
                     </div>
                   </div>
-                  <code className="text-[#1BBCE0] font-mono">#D8E6F8</code>
+                  <code className="text-[#16A5CE] font-mono">#D8E6F8</code>
                 </div>
               </div>
             </div>
@@ -205,27 +205,27 @@ export const ClaudePromptModal: React.FC<ClaudePromptModalProps> = ({ isOpen, on
               <h3 className="text-sm font-bold text-white mb-2">Website Architecture & Pages</h3>
               <div className="space-y-2">
                 <div className="p-3 bg-[#162E66]/40 rounded-xl border border-[#2E54AD]/30">
-                  <div className="font-bold text-[#1BBCE0]">1. Home Page (/)</div>
+                  <div className="font-bold text-[#16A5CE]">1. Home Page (/)</div>
                   <p className="text-[#D8E6F8] mt-1">Header Navbar, Hero Banner, Key Pillars (Why Choose Us), Top Featured Courses with Category Filters, All-Access VIP Bundle Banner, Student Testimonials, Latest Insights Blog, FAQ Accordion, Final CTA, Footer.</p>
                 </div>
                 <div className="p-3 bg-[#162E66]/40 rounded-xl border border-[#2E54AD]/30">
-                  <div className="font-bold text-[#1BBCE0]">2. All Courses Catalog (/courses)</div>
+                  <div className="font-bold text-[#16A5CE]">2. All Courses Catalog (/courses)</div>
                   <p className="text-[#D8E6F8] mt-1">Search bar, category filters, skill level selector, dual USD/PKR prices, and course preview triggers.</p>
                 </div>
                 <div className="p-3 bg-[#162E66]/40 rounded-xl border border-[#2E54AD]/30">
-                  <div className="font-bold text-[#1BBCE0]">3. Course Detail View (/course/:slug)</div>
+                  <div className="font-bold text-[#16A5CE]">3. Course Detail View (/course/:slug)</div>
                   <p className="text-[#D8E6F8] mt-1">Hero video preview, curriculum drip modules breakdown, lesson checklists, instructor bio, ratings, and sticky checkout box.</p>
                 </div>
                 <div className="p-3 bg-[#162E66]/40 rounded-xl border border-[#2E54AD]/30">
-                  <div className="font-bold text-[#1BBCE0]">4. About Us (/about)</div>
+                  <div className="font-bold text-[#16A5CE]">4. About Us (/about)</div>
                   <p className="text-[#D8E6F8] mt-1">Mission, vision, learning philosophy, impact metrics, and mentorship team profiles.</p>
                 </div>
                 <div className="p-3 bg-[#162E66]/40 rounded-xl border border-[#2E54AD]/30">
-                  <div className="font-bold text-[#1BBCE0]">5. Blog & Community (/blog)</div>
+                  <div className="font-bold text-[#16A5CE]">5. Blog & Community (/blog)</div>
                   <p className="text-[#D8E6F8] mt-1">Airdrop guides, Web3 growth articles, AI models in FinTech, and full reader view.</p>
                 </div>
                 <div className="p-3 bg-[#162E66]/40 rounded-xl border border-[#2E54AD]/30">
-                  <div className="font-bold text-[#1BBCE0]">6. Contact Us (/contact)</div>
+                  <div className="font-bold text-[#16A5CE]">6. Contact Us (/contact)</div>
                   <p className="text-[#D8E6F8] mt-1">Validated contact form, direct email (info@betureweb.com), phone (+923111222595), and Lahore address.</p>
                 </div>
               </div>
@@ -237,13 +237,13 @@ export const ClaudePromptModal: React.FC<ClaudePromptModalProps> = ({ isOpen, on
               <h3 className="text-sm font-bold text-white mb-2">Hover Effects & Motion Guidelines</h3>
               <div className="space-y-2 text-[#D8E6F8]">
                 <div className="p-3 bg-[#162E66]/40 rounded-xl border border-[#2E54AD]/30">
-                  <span className="font-bold text-[#1BBCE0]">Card Hover Effect:</span> Slight lift (-4px translate-y), scale(1.02), subtle teal glow shadow.
+                  <span className="font-bold text-[#16A5CE]">Card Hover Effect:</span> Slight lift (-4px translate-y), scale(1.02), subtle teal glow shadow.
                 </div>
                 <div className="p-3 bg-[#162E66]/40 rounded-xl border border-[#2E54AD]/30">
-                  <span className="font-bold text-[#1BBCE0]">CTA Buttons:</span> Background color #2E54AD, hover: bg-[#162E66], icon shift right on hover.
+                  <span className="font-bold text-[#16A5CE]">CTA Buttons:</span> Background color #2E54AD, hover: bg-[#162E66], icon shift right on hover.
                 </div>
                 <div className="p-3 bg-[#162E66]/40 rounded-xl border border-[#2E54AD]/30">
-                  <span className="font-bold text-[#1BBCE0]">Accordion Expansion:</span> Smooth height transition with 180deg icon rotation.
+                  <span className="font-bold text-[#16A5CE]">Accordion Expansion:</span> Smooth height transition with 180deg icon rotation.
                 </div>
               </div>
             </div>

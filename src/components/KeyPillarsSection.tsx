@@ -63,10 +63,10 @@ export const KeyPillarsSection: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="group relative bg-white rounded-2xl p-6 border border-[#D8E6F8] hover:border-[#1BBCE0] transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 text-[#011337]"
+                className="group relative bg-white rounded-2xl p-6 border border-[#D8E6F8] hover:border-[#16A5CE] transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 text-[#011337]"
               >
                 {}
-                <span className="absolute top-4 right-6 text-4xl font-extrabold text-[#D8E6F8] group-hover:text-[#1BBCE0]/30 transition-colors pointer-events-none">
+                <span className="absolute top-4 right-6 text-4xl font-extrabold text-[#D8E6F8] group-hover:text-[#16A5CE]/30 transition-colors pointer-events-none">
                   0{idx + 1}
                 </span>
 

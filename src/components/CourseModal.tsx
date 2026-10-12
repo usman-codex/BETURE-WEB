@@ -66,8 +66,8 @@ export const CourseModal: React.FC<CourseModalProps> = ({ course, onClose, onEnr
               </p>
 
               <div className="flex flex-wrap items-center gap-4 text-xs text-[#162E66] pt-2">
-                <div className="flex items-center gap-1 bg-[#1BBCE0]/15 text-[#162E66] px-2.5 py-1 rounded-md border border-[#1BBCE0]/30 font-bold">
-                  <Star className="w-3.5 h-3.5 fill-[#1BBCE0] text-[#1BBCE0]" />
+                <div className="flex items-center gap-1 bg-[#16A5CE]/15 text-[#162E66] px-2.5 py-1 rounded-md border border-[#16A5CE]/30 font-bold">
+                  <Star className="w-3.5 h-3.5 fill-[#16A5CE] text-[#16A5CE]" />
                   <span>{course.rating} ({course.reviewCount} reviews)</span>
                 </div>
                 <div className="flex items-center gap-1">
@@ -210,7 +210,7 @@ export const CourseModal: React.FC<CourseModalProps> = ({ course, onClose, onEnr
                               </div>
                               <div className="flex items-center gap-2 text-[10px] text-[#5074A8]">
                                 {lesson.isPreview && (
-                                  <span className="bg-[#1BBCE0]/20 text-[#162E66] px-1.5 py-0.5 rounded font-bold">
+                                  <span className="bg-[#16A5CE]/20 text-[#162E66] px-1.5 py-0.5 rounded font-bold">
                                     Free Preview
                                   </span>
                                 )}

@@ -30,11 +30,11 @@ export const CareerPage: React.FC<CareerPageProps> = ({
       
       {}
       <div className="absolute -top-12 -left-12 sm:-top-8 sm:-left-8 pointer-events-none z-0">
-        <div className="relative w-40 h-40 sm:w-56 sm:h-56 rounded-3xl bg-gradient-to-br from-[#2E54AD]/20 via-[#1BBCE0]/10 to-transparent border-2 border-[#1BBCE0]/30 shadow-xl backdrop-blur-xs -rotate-12">
+        <div className="relative w-40 h-40 sm:w-56 sm:h-56 rounded-3xl bg-gradient-to-br from-[#2E54AD]/20 via-[#16A5CE]/10 to-transparent border-2 border-[#16A5CE]/30 shadow-xl backdrop-blur-xs -rotate-12">
           {}
           <div className="absolute -bottom-4 -right-4 w-24 h-24 sm:w-32 sm:h-32 rounded-2xl bg-gradient-to-tr from-[#162E66]/25 to-[#D8E6F8]/50 border border-[#2E54AD]/40 shadow-md rotate-24" />
           {}
-          <div className="absolute top-4 left-4 w-8 h-8 rounded-lg bg-white/60 border border-[#1BBCE0]/40 rotate-45 shadow-xs" />
+          <div className="absolute top-4 left-4 w-8 h-8 rounded-lg bg-white/60 border border-[#16A5CE]/40 rotate-45 shadow-xs" />
         </div>
       </div>
 
@@ -55,7 +55,7 @@ export const CareerPage: React.FC<CareerPageProps> = ({
             initial={{ opacity: 0, y: 20, filter: 'blur(4px)' }}
             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight bg-gradient-to-r from-[#162E66] via-[#2E54AD] to-[#1BBCE0] bg-clip-text text-transparent pb-1"
+            className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight bg-gradient-to-r from-[#162E66] via-[#2E54AD] to-[#16A5CE] bg-clip-text text-transparent pb-1"
           >
             Careers & Graduate Placements
           </motion.h1>
@@ -74,9 +74,9 @@ export const CareerPage: React.FC<CareerPageProps> = ({
           <motion.div 
             whileHover={{ y: -4 }}
             transition={{ duration: 0.2 }}
-            className="bg-white rounded-3xl p-6 border border-[#D8E6F8] shadow-sm hover:border-[#1BBCE0] hover:shadow-md transition-all space-y-3 relative overflow-hidden group"
+            className="bg-white rounded-3xl p-6 border border-[#D8E6F8] shadow-sm hover:border-[#16A5CE] hover:shadow-md transition-all space-y-3 relative overflow-hidden group"
           >
-            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#2E54AD] to-[#1BBCE0] text-white flex items-center justify-center font-bold shadow-md shadow-[#2E54AD]/25 group-hover:scale-105 transition-transform">
+            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#2E54AD] to-[#16A5CE] text-white flex items-center justify-center font-bold shadow-md shadow-[#2E54AD]/25 group-hover:scale-105 transition-transform">
               <Rocket className="w-6 h-6" />
             </div>
             <h3 className="text-lg font-bold text-[#011337]">High-Impact Work</h3>
@@ -88,7 +88,7 @@ export const CareerPage: React.FC<CareerPageProps> = ({
           <motion.div 
             whileHover={{ y: -4 }}
             transition={{ duration: 0.2 }}
-            className="bg-white rounded-3xl p-6 border border-[#D8E6F8] shadow-sm hover:border-[#1BBCE0] hover:shadow-md transition-all space-y-3 relative overflow-hidden group"
+            className="bg-white rounded-3xl p-6 border border-[#D8E6F8] shadow-sm hover:border-[#16A5CE] hover:shadow-md transition-all space-y-3 relative overflow-hidden group"
           >
             <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#162E66] to-[#2E54AD] text-white flex items-center justify-center font-bold shadow-md shadow-[#162E66]/25 group-hover:scale-105 transition-transform">
               <Network className="w-6 h-6" />
@@ -102,9 +102,9 @@ export const CareerPage: React.FC<CareerPageProps> = ({
           <motion.div 
             whileHover={{ y: -4 }}
             transition={{ duration: 0.2 }}
-            className="bg-white rounded-3xl p-6 border border-[#D8E6F8] shadow-sm hover:border-[#1BBCE0] hover:shadow-md transition-all space-y-3 relative overflow-hidden group"
+            className="bg-white rounded-3xl p-6 border border-[#D8E6F8] shadow-sm hover:border-[#16A5CE] hover:shadow-md transition-all space-y-3 relative overflow-hidden group"
           >
-            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#1BBCE0] to-[#2E54AD] text-white flex items-center justify-center font-bold shadow-md shadow-[#1BBCE0]/25 group-hover:scale-105 transition-transform">
+            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#16A5CE] to-[#2E54AD] text-white flex items-center justify-center font-bold shadow-md shadow-[#16A5CE]/25 group-hover:scale-105 transition-transform">
               <Coins className="w-6 h-6" />
             </div>
             <h3 className="text-lg font-bold text-[#011337]">Competitive Compensation</h3>

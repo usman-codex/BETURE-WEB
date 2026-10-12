@@ -69,7 +69,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
 
   return (
     <footer className="relative w-full bg-gradient-to-r from-[#011337] via-[#081B45] to-[#12285E] text-[#D8E6F8] border-t border-[#2E54AD]/40 py-8 sm:py-10 overflow-hidden shadow-2xl">
-      <div className="absolute top-0 right-10 w-72 h-72 bg-[#1BBCE0]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-10 w-72 h-72 bg-[#16A5CE]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-10 w-72 h-72 bg-[#2E54AD]/20 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -90,11 +90,11 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
 
             <div className="flex items-center justify-center md:justify-start gap-2.5 pt-1">
               <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-[#011337]/70 text-[#D8E6F8] border border-[#2E54AD]/50 shadow-xs">
-                <Globe className="w-3 h-3 text-[#1BBCE0]" />
+                <Globe className="w-3 h-3 text-[#16A5CE]" />
                 Global Platform
               </span>
               <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-[#011337]/70 text-[#D8E6F8] border border-[#2E54AD]/50 shadow-xs">
-                <Shield className="w-3 h-3 text-[#1BBCE0]" />
+                <Shield className="w-3 h-3 text-[#16A5CE]" />
                 Verified Solutions
               </span>
             </div>
@@ -102,33 +102,33 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
 
           <div className="space-y-3 text-center md:text-left">
             <h4 className="text-xs font-black uppercase tracking-wider text-white flex items-center justify-center md:justify-start gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#1BBCE0]" />
+              <span className="w-2 h-2 rounded-full bg-[#16A5CE]" />
               <span>Campus & Head Office</span>
             </h4>
             
             <div className="space-y-2 text-xs sm:text-sm">
               <div className="flex items-start justify-center md:justify-start gap-2.5 text-[#D8E6F8]">
-                <MapPin className="w-4 h-4 text-[#1BBCE0] shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#16A5CE] shrink-0 mt-0.5" />
                 <span className="leading-snug">
                   Plot #40, Sector B1, Block 1, Abubakar Rd, Township, Lahore.
                 </span>
               </div>
 
               <div className="flex items-center justify-center md:justify-start gap-2.5 text-[#D8E6F8]">
-                <Mail className="w-4 h-4 text-[#1BBCE0] shrink-0" />
+                <Mail className="w-4 h-4 text-[#16A5CE] shrink-0" />
                 <a 
                   href="mailto:info@betureweb.com" 
-                  className="hover:text-[#1BBCE0] text-white/90 hover:underline transition-colors"
+                  className="hover:text-[#16A5CE] text-white/90 hover:underline transition-colors"
                 >
                   info@betureweb.com
                 </a>
               </div>
 
               <div className="flex items-center justify-center md:justify-start gap-2.5 text-[#D8E6F8] pt-0.5">
-                <Phone className="w-4 h-4 text-[#1BBCE0] shrink-0" />
+                <Phone className="w-4 h-4 text-[#16A5CE] shrink-0" />
                 <a 
                   href="tel:+923111222595" 
-                  className="hover:text-[#1BBCE0] font-bold text-white transition-colors tracking-wide"
+                  className="hover:text-[#16A5CE] font-bold text-white transition-colors tracking-wide"
                 >
                   +92 311 1222 595
                 </a>
@@ -154,7 +154,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.name}
-                    className={`w-9 h-9 rounded-xl bg-[#011337]/60 border border-[#2E54AD]/40 flex items-center justify-center text-[#D8E6F8] hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-[#1BBCE0]/20 cursor-pointer ${social.color}`}
+                    className={`w-9 h-9 rounded-xl bg-[#011337]/60 border border-[#2E54AD]/40 flex items-center justify-center text-[#D8E6F8] hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-[#16A5CE]/20 cursor-pointer ${social.color}`}
                   >
                     <Icon className="w-4 h-4" />
                   </a>
@@ -171,21 +171,21 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
           <div className="flex items-center gap-5 sm:gap-6 font-semibold">
             <button 
               onClick={() => setActiveModal('privacy')} 
-              className="text-[#D8E6F8] hover:text-[#1BBCE0] transition-colors cursor-pointer hover:underline"
+              className="text-[#D8E6F8] hover:text-[#16A5CE] transition-colors cursor-pointer hover:underline"
             >
               Privacy Policy
             </button>
             <span className="text-[#2E54AD]/60">•</span>
             <button 
               onClick={() => setActiveModal('terms')} 
-              className="text-[#D8E6F8] hover:text-[#1BBCE0] transition-colors cursor-pointer hover:underline"
+              className="text-[#D8E6F8] hover:text-[#16A5CE] transition-colors cursor-pointer hover:underline"
             >
               Terms of Service
             </button>
             <span className="text-[#2E54AD]/60">•</span>
             <button 
               onClick={() => setActiveModal('help')} 
-              className="text-[#D8E6F8] hover:text-[#1BBCE0] transition-colors cursor-pointer hover:underline"
+              className="text-[#D8E6F8] hover:text-[#16A5CE] transition-colors cursor-pointer hover:underline"
             >
               Help & Support
             </button>
@@ -193,7 +193,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
 
           <div className="flex items-center gap-1.5 text-xs text-[#D8E6F8]/70">
             <span>Powered by</span>
-            <span className="font-extrabold text-[#1BBCE0]">Beture Web</span>
+            <span className="font-extrabold text-[#16A5CE]">Beture Web</span>
           </div>
         </div>
 
@@ -218,7 +218,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
               </button>
 
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-[#2E54AD] text-[#1BBCE0] flex items-center justify-center shadow-md">
+                <div className="w-10 h-10 rounded-xl bg-[#2E54AD] text-[#16A5CE] flex items-center justify-center shadow-md">
                   {activeModal === 'privacy' && <Lock className="w-5 h-5 text-white" />}
                   {activeModal === 'terms' && <FileText className="w-5 h-5 text-white" />}
                   {activeModal === 'help' && <HelpCircle className="w-5 h-5 text-white" />}
@@ -229,7 +229,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
                     {activeModal === 'terms' && 'Terms of Service'}
                     {activeModal === 'help' && 'Help & Client Support'}
                   </h3>
-                  <span className="text-xs text-[#1BBCE0] font-bold">
+                  <span className="text-xs text-[#16A5CE] font-bold">
                     Beture Web Official Documentation
                   </span>
                 </div>
@@ -243,7 +243,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
                     </p>
                     <div className="p-3 rounded-xl bg-black/30 space-y-1.5 border border-white/5">
                       <h5 className="font-bold text-white flex items-center gap-1.5">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#1BBCE0]" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#16A5CE]" />
                         Data Encryption & Security
                       </h5>
                       <p className="text-xs text-[#D8E6F8]/80">
@@ -252,7 +252,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
                     </div>
                     <div className="p-3 rounded-xl bg-black/30 space-y-1.5 border border-white/5">
                       <h5 className="font-bold text-white flex items-center gap-1.5">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#1BBCE0]" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#16A5CE]" />
                         No Third-Party Data Selling
                       </h5>
                       <p className="text-xs text-[#D8E6F8]/80">
@@ -269,7 +269,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
                     </p>
                     <div className="p-3 rounded-xl bg-black/30 space-y-1.5 border border-white/5">
                       <h5 className="font-bold text-white flex items-center gap-1.5">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#1BBCE0]" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#16A5CE]" />
                         Professional Deliverables & Assurance
                       </h5>
                       <p className="text-xs text-[#D8E6F8]/80">
@@ -278,7 +278,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
                     </div>
                     <div className="p-3 rounded-xl bg-black/30 space-y-1.5 border border-white/5">
                       <h5 className="font-bold text-white flex items-center gap-1.5">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#1BBCE0]" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#16A5CE]" />
                         Intellectual Property & Code Rights
                       </h5>
                       <p className="text-xs text-[#D8E6F8]/80">
@@ -295,12 +295,12 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
                     </p>
                     <div className="p-3.5 rounded-xl bg-gradient-to-r from-[#2E54AD]/40 to-[#011337] border border-[#2E54AD]/50 space-y-2">
                       <div className="flex items-center gap-2 text-white font-bold">
-                        <Phone className="w-4 h-4 text-[#1BBCE0]" />
+                        <Phone className="w-4 h-4 text-[#16A5CE]" />
                         <span>Direct Help Hotline:</span>
-                        <a href="tel:+923111222595" className="text-[#1BBCE0] underline">+92 311 1222 595</a>
+                        <a href="tel:+923111222595" className="text-[#16A5CE] underline">+92 311 1222 595</a>
                       </div>
                       <div className="flex items-start gap-2 text-xs text-[#D8E6F8]">
-                        <MapPin className="w-4 h-4 text-[#1BBCE0] shrink-0 mt-0.5" />
+                        <MapPin className="w-4 h-4 text-[#16A5CE] shrink-0 mt-0.5" />
                         <span>Head Office: Plot #40, Sector B1, Block 1, Abubakar Rd, Township, Lahore.</span>
                       </div>
                     </div>
@@ -314,7 +314,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
               <div className="mt-6 pt-4 border-t border-white/10 flex justify-end">
                 <button
                   onClick={() => setActiveModal(null)}
-                  className="px-5 py-2 rounded-xl bg-[#2E54AD] hover:bg-[#1BBCE0] text-white hover:text-[#011337] text-xs font-bold font-heading transition-colors cursor-pointer"
+                  className="px-5 py-2 rounded-xl bg-[#2E54AD] hover:bg-[#16A5CE] text-white hover:text-[#011337] text-xs font-bold font-heading transition-colors cursor-pointer"
                 >
                   Close Window
                 </button>

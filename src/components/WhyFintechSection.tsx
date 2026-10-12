@@ -83,7 +83,7 @@ export const WhyFintechSection: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#011337] tracking-tight font-poppins">
             Why <span className="text-[#2E54AD] font-bold">Beture Web</span>
           </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-[#FF9700] via-[#1BBCE0] to-[#2E54AD] rounded-full mt-2.5"></div>
+          <div className="w-16 h-1 bg-gradient-to-r from-[#FF9700] via-[#16A5CE] to-[#2E54AD] rounded-full mt-2.5"></div>
         </motion.div>
 
         {}
@@ -116,7 +116,7 @@ export const WhyFintechSection: React.FC = () => {
               {}
               <linearGradient id="rainbow-timeline-grad" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#FF9700" />
-                <stop offset="25%" stopColor="#1BBCE0" />
+                <stop offset="25%" stopColor="#16A5CE" />
                 <stop offset="50%" stopColor="#0284C7" />
                 <stop offset="75%" stopColor="#EC4899" />
                 <stop offset="100%" stopColor="#8B5CF6" />
@@ -257,7 +257,7 @@ export const WhyFintechSection: React.FC = () => {
                   cx="0" 
                   cy="0" 
                   r="13" 
-                  stroke={hoveredCard === 2 ? "#1BBCE0" : "#1E293B"} 
+                  stroke={hoveredCard === 2 ? "#16A5CE" : "#1E293B"} 
                   strokeWidth="4.5" 
                   fill="none" 
                   className="transition-colors duration-300"
@@ -267,7 +267,7 @@ export const WhyFintechSection: React.FC = () => {
                   y1="9" 
                   x2="21" 
                   y2="21" 
-                  stroke={hoveredCard === 2 ? "#1BBCE0" : "#1E293B"} 
+                  stroke={hoveredCard === 2 ? "#16A5CE" : "#1E293B"} 
                   strokeWidth="5.5" 
                   strokeLinecap="round" 
                   className="transition-colors duration-300"
@@ -420,7 +420,7 @@ export const WhyFintechSection: React.FC = () => {
               <circle cx="425" cy="145" r="2" fill="white" />
 
               {}
-              <circle cx="450" cy="191" r="4.5" fill="#1BBCE0" />
+              <circle cx="450" cy="191" r="4.5" fill="#16A5CE" />
               <circle cx="450" cy="191" r="2" fill="white" />
 
               {}
@@ -571,7 +571,7 @@ export const WhyFintechSection: React.FC = () => {
 
             {}
             <div className="group bg-white p-4 rounded-2xl shadow-md border border-[#E2E8F0] flex flex-col items-center text-center cursor-pointer transition-transform hover:scale-105">
-              <svg className="w-7 h-7 text-[#1E293B] group-hover:text-[#1BBCE0] transition-colors duration-300 mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
+              <svg className="w-7 h-7 text-[#1E293B] group-hover:text-[#16A5CE] transition-colors duration-300 mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="11" cy="11" r="7" />
                 <line x1="21" y1="21" x2="16.65" y2="16.65" />
               </svg>

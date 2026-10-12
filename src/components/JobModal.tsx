@@ -252,7 +252,7 @@ export const JobModal: React.FC<JobModalProps> = ({ job, onClose }) => {
                   <div className="space-y-2">
                     {job.preferredSkills.map((pref, idx) => (
                       <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#011337]/80">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#1BBCE0] shrink-0 mt-1.5" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#16A5CE] shrink-0 mt-1.5" />
                         <span>{pref}</span>
                       </div>
                     ))}

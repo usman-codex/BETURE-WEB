@@ -13,7 +13,7 @@ export const ServiceIcon: React.FC<ServiceIconProps> = ({
   className = '',
   size = 64,
   color = '#011337',
-  accentColor = '#1BBCE0'
+  accentColor = '#16A5CE'
 }) => {
   switch (name) {
     case 'graphic-design':

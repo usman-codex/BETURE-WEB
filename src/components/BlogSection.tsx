@@ -43,7 +43,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
             <div
               key={post.id}
               onClick={() => onSelectBlog(post)}
-              className="group bg-white rounded-2xl border border-[#D8E6F8] hover:border-[#1BBCE0] overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer text-[#011337]"
+              className="group bg-white rounded-2xl border border-[#D8E6F8] hover:border-[#16A5CE] overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer text-[#011337]"
             >
               <div>
                 <div className="relative h-48 overflow-hidden">

@@ -6,8 +6,8 @@
   --color-primary-blue: #2E54AD;
   --color-electric-blue: #2E54AD;
   --color-teal-blue: #2E54AD;
-  --color-bright-cyan: #1BBCE0;
-  --color-bright-teal: #1BBCE0;
+  --color-bright-cyan: #16A5CE;
+  --color-bright-teal: #16A5CE;
   --color-light-cyan: #D8E6F8;
   --color-muted-teal: #5074A8;
   --color-white: #FFFFFF;
@@ -104,7 +104,7 @@
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #1BBCE0;
+    background: #16A5CE;
     border: 2px solid #EBF3FC;
   }
 

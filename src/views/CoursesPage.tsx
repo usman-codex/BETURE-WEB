@@ -32,12 +32,12 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
           className="pointer-events-none absolute -top-10 right-0 sm:right-6 md:right-14 w-60 h-60 sm:w-80 sm:h-80 z-0 opacity-80"
         >
           <div className="relative w-full h-full">
-            <div className="absolute top-0 right-4 w-44 h-44 sm:w-60 sm:w-60 rotate-45 rounded-3xl border-2 border-[#1BBCE0]/40 bg-gradient-to-br from-[#D8E6F8]/25 to-[#1BBCE0]/10 backdrop-blur-[2px]" />
+            <div className="absolute top-0 right-4 w-44 h-44 sm:w-60 sm:w-60 rotate-45 rounded-3xl border-2 border-[#16A5CE]/40 bg-gradient-to-br from-[#D8E6F8]/25 to-[#16A5CE]/10 backdrop-blur-[2px]" />
             <div className="absolute top-5 right-9 w-36 h-36 sm:w-48 sm:h-48 rotate-45 rounded-2xl border-2 border-[#2E54AD]/60 bg-gradient-to-br from-[#2E54AD]/40 to-[#162E66]/40" />
             <div className="absolute top-10 right-14 w-24 h-24 sm:w-32 sm:h-32 rotate-45 rounded-xl bg-gradient-to-br from-[#011337] to-[#2E54AD] opacity-95 shadow-2xl shadow-[#2E54AD]/40" />
-            <div className="absolute top-2 right-28 w-2.5 h-2.5 rounded-full bg-[#1BBCE0] shadow-sm shadow-[#1BBCE0]" />
+            <div className="absolute top-2 right-28 w-2.5 h-2.5 rounded-full bg-[#16A5CE] shadow-sm shadow-[#16A5CE]" />
             <div className="absolute top-32 right-4 w-2 h-2 rounded-full bg-[#D8E6F8]" />
-            <div className="absolute top-20 right-40 w-2 h-2 rounded-full bg-[#1BBCE0]/80" />
+            <div className="absolute top-20 right-40 w-2 h-2 rounded-full bg-[#16A5CE]/80" />
           </div>
         </div>
 
@@ -47,20 +47,20 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
           className="pointer-events-none absolute -bottom-12 -left-10 w-52 h-52 sm:w-64 sm:h-64 z-0 opacity-40 hidden sm:block"
         >
           <div className="relative w-full h-full">
-            <div className="absolute bottom-4 left-4 w-36 h-36 rotate-45 rounded-2xl border border-[#1BBCE0]/30 bg-gradient-to-tr from-[#162E66]/20 to-[#1BBCE0]/10" />
+            <div className="absolute bottom-4 left-4 w-36 h-36 rotate-45 rounded-2xl border border-[#16A5CE]/30 bg-gradient-to-tr from-[#162E66]/20 to-[#16A5CE]/10" />
             <div className="absolute bottom-8 left-8 w-28 h-28 rotate-45 rounded-xl border border-[#2E54AD]/40 bg-[#011337]/40" />
-            <div className="absolute bottom-10 left-10 w-16 h-16 rotate-45 rounded-lg bg-gradient-to-tr from-[#2E54AD] to-[#1BBCE0] opacity-70" />
+            <div className="absolute bottom-10 left-10 w-16 h-16 rotate-45 rounded-lg bg-gradient-to-tr from-[#2E54AD] to-[#16A5CE] opacity-70" />
           </div>
         </div>
 
         {}
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 sm:space-y-5">
-          <div className="inline-flex items-center gap-2 bg-white/10 border border-[#1BBCE0]/30 backdrop-blur-xs px-4 py-1.5 rounded-full text-xs text-[#D8E6F8] font-semibold">
-            <GraduationCap className="w-4 h-4 text-[#1BBCE0]" />
+          <div className="inline-flex items-center gap-2 bg-white/10 border border-[#16A5CE]/30 backdrop-blur-xs px-4 py-1.5 rounded-full text-xs text-[#D8E6F8] font-semibold">
+            <GraduationCap className="w-4 h-4 text-[#16A5CE]" />
             <span>Beture Web Learning Tracks</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight font-heading bg-gradient-to-r from-white via-[#D8F0F5] to-[#1BBCE0] bg-clip-text text-transparent drop-shadow-sm">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight font-heading bg-gradient-to-r from-white via-[#D8F0F5] to-[#16A5CE] bg-clip-text text-transparent drop-shadow-sm">
             Explore All Courses
           </h1>
 
@@ -79,10 +79,10 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
           className="pointer-events-none absolute -top-10 -right-12 sm:-right-6 md:right-4 lg:right-8 w-48 h-48 sm:w-64 sm:h-64 z-0 opacity-40 lg:opacity-60"
         >
           <div className="relative w-full h-full">
-            <div className="absolute top-2 right-4 w-36 h-36 sm:w-48 sm:h-48 rotate-45 rounded-3xl border-2 border-[#1BBCE0]/40 bg-gradient-to-br from-[#D8E6F8]/30 to-[#1BBCE0]/10 backdrop-blur-[2px]" />
+            <div className="absolute top-2 right-4 w-36 h-36 sm:w-48 sm:h-48 rotate-45 rounded-3xl border-2 border-[#16A5CE]/40 bg-gradient-to-br from-[#D8E6F8]/30 to-[#16A5CE]/10 backdrop-blur-[2px]" />
             <div className="absolute top-6 right-8 w-28 h-28 sm:w-36 sm:h-36 rotate-45 rounded-2xl border-2 border-[#2E54AD]/50 bg-gradient-to-br from-[#2E54AD]/30 to-[#162E66]/20" />
             <div className="absolute top-10 right-12 w-16 h-16 sm:w-24 sm:h-24 rotate-45 rounded-xl bg-gradient-to-br from-[#2E54AD] to-[#162E66] opacity-90 shadow-xl shadow-[#2E54AD]/30" />
-            <div className="absolute top-3 right-20 w-2 h-2 rounded-full bg-[#1BBCE0] shadow-sm shadow-[#1BBCE0]" />
+            <div className="absolute top-3 right-20 w-2 h-2 rounded-full bg-[#16A5CE] shadow-sm shadow-[#16A5CE]" />
             <div className="absolute bottom-6 right-8 w-1.5 h-1.5 rounded-full bg-[#2E54AD]" />
           </div>
         </div>
@@ -94,7 +94,7 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
         >
           <div className="relative w-full h-full">
             <div className="absolute bottom-4 left-4 w-38 h-38 sm:w-50 sm:h-50 rotate-45 rounded-3xl border-2 border-[#2E54AD]/35 bg-gradient-to-tr from-[#D8E6F8]/30 to-[#2E54AD]/10" />
-            <div className="absolute bottom-8 left-8 w-30 h-30 sm:w-40 sm:h-40 rotate-45 rounded-2xl border-2 border-[#1BBCE0]/50 bg-gradient-to-tr from-[#1BBCE0]/25 to-[#2E54AD]/30" />
+            <div className="absolute bottom-8 left-8 w-30 h-30 sm:w-40 sm:h-40 rotate-45 rounded-2xl border-2 border-[#16A5CE]/50 bg-gradient-to-tr from-[#16A5CE]/25 to-[#2E54AD]/30" />
             <div className="absolute bottom-12 left-12 w-20 h-20 sm:w-28 sm:h-28 rotate-45 rounded-xl bg-gradient-to-tr from-[#162E66] to-[#2E54AD] opacity-85 shadow-xl shadow-[#2E54AD]/25" />
             <div className="absolute bottom-2 left-24 w-2 h-2 rounded-full bg-[#2E54AD]" />
           </div>
@@ -107,7 +107,7 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
         >
           <div className="relative w-full h-full flex items-center justify-center">
             <div className="w-64 h-64 sm:w-80 sm:h-80 rotate-45 rounded-3xl border-2 border-dashed border-[#2E54AD]/40 bg-[#D8E6F8]/10 animate-pulse" style={{ animationDuration: '8s' }} />
-            <div className="absolute w-44 h-44 sm:w-56 sm:h-56 rotate-45 rounded-2xl border-2 border-[#1BBCE0]/50 bg-gradient-to-br from-[#1BBCE0]/15 to-[#2E54AD]/15" />
+            <div className="absolute w-44 h-44 sm:w-56 sm:h-56 rotate-45 rounded-2xl border-2 border-[#16A5CE]/50 bg-gradient-to-br from-[#16A5CE]/15 to-[#2E54AD]/15" />
             <div className="absolute w-24 h-24 sm:w-32 sm:h-32 rotate-45 rounded-xl border border-[#2E54AD]/60 bg-[#162E66]/20" />
           </div>
         </div>
@@ -117,7 +117,7 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
           aria-hidden="true" 
           className="pointer-events-none absolute top-1/3 -right-10 w-36 h-36 z-0 opacity-30 hidden md:block"
         >
-          <div className="w-28 h-28 rotate-45 rounded-2xl border-2 border-[#1BBCE0]/60 bg-gradient-to-bl from-[#D8E6F8]/40 to-[#1BBCE0]/20" />
+          <div className="w-28 h-28 rotate-45 rounded-2xl border-2 border-[#16A5CE]/60 bg-gradient-to-bl from-[#D8E6F8]/40 to-[#16A5CE]/20" />
           <div className="absolute top-4 left-4 w-16 h-16 rotate-45 rounded-xl bg-[#2E54AD]/40" />
         </div>
 
@@ -127,14 +127,14 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
           className="pointer-events-none absolute top-2/3 -left-10 w-40 h-40 z-0 opacity-25 hidden lg:block"
         >
           <div className="w-32 h-32 rotate-45 rounded-2xl border-2 border-[#2E54AD]/50 bg-gradient-to-tr from-[#EBF3FC] to-[#2E54AD]/20" />
-          <div className="absolute top-6 left-6 w-16 h-16 rotate-45 rounded-lg bg-gradient-to-tr from-[#2E54AD] to-[#1BBCE0] opacity-60" />
+          <div className="absolute top-6 left-6 w-16 h-16 rotate-45 rounded-lg bg-gradient-to-tr from-[#2E54AD] to-[#16A5CE] opacity-60" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {}
           <div className="text-center max-w-4xl mx-auto mb-14 sm:mb-16 space-y-4 px-2">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-black font-heading tracking-tight leading-[1.25] pb-1 bg-gradient-to-r from-[#162E66] via-[#2E54AD] to-[#1BBCE0] bg-clip-text text-transparent">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-black font-heading tracking-tight leading-[1.25] pb-1 bg-gradient-to-r from-[#162E66] via-[#2E54AD] to-[#16A5CE] bg-clip-text text-transparent">
               Our Professional Training Programs
             </h2>
             <p className="text-sm sm:text-base md:text-lg text-[#011337]/80 leading-relaxed font-sans max-w-2xl mx-auto font-normal">

@@ -109,11 +109,11 @@ export const OurFoundersSection: React.FC = () => {
                 ease: [0.16, 1, 0.3, 1],
               }}
               whileHover={{ y: -7 }}
-              className="group relative bg-white hover:bg-[#F0F6FD] rounded-3xl p-8 sm:p-10 border border-[#D8E6F8] hover:border-[#1BBCE0] shadow-sm hover:shadow-[0_20px_35px_-10px_rgba(16,124,142,0.16)] transition-all duration-300 flex flex-col items-center text-center cursor-pointer"
+              className="group relative bg-white hover:bg-[#F0F6FD] rounded-3xl p-8 sm:p-10 border border-[#D8E6F8] hover:border-[#16A5CE] shadow-sm hover:shadow-[0_20px_35px_-10px_rgba(16,124,142,0.16)] transition-all duration-300 flex flex-col items-center text-center cursor-pointer"
             >
               {}
               <div className="relative mb-6">
-                <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2 border-[#D8E6F8] group-hover:border-[#1BBCE0] shadow-md bg-gradient-to-br from-[#2E54AD]/10 to-[#1BBCE0]/20 flex items-center justify-center transition-colors duration-300">
+                <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2 border-[#D8E6F8] group-hover:border-[#16A5CE] shadow-md bg-gradient-to-br from-[#2E54AD]/10 to-[#16A5CE]/20 flex items-center justify-center transition-colors duration-300">
                   <img
                     src={founder.image}
                     alt={founder.name}

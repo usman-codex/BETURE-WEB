@@ -153,7 +153,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
                   target.onerror = null;
                   target.src = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80';
                 }}
-                className="w-11 h-11 rounded-full object-cover border-2 border-[#1BBCE0]/40 shadow-xs"
+                className="w-11 h-11 rounded-full object-cover border-2 border-[#16A5CE]/40 shadow-xs"
               />
               <div>
                 <div className="text-sm font-bold text-[#011337]">
@@ -299,7 +299,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
                 <div
                   key={post.id}
                   onClick={() => handleOpenPost(post)}
-                  className="group bg-white rounded-2xl border border-[#D8E6F8] hover:border-[#1BBCE0] overflow-hidden shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer text-[#011337]"
+                  className="group bg-white rounded-2xl border border-[#D8E6F8] hover:border-[#16A5CE] overflow-hidden shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer text-[#011337]"
                 >
                   <div>
                     {}
@@ -334,7 +334,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
                     </div>
                   </div>
 
-                  <div className="px-4 pb-3 pt-1 border-t border-[#D8E6F8]/50 flex items-center justify-between text-[11px] font-bold text-[#2E54AD] group-hover:text-[#1BBCE0]">
+                  <div className="px-4 pb-3 pt-1 border-t border-[#D8E6F8]/50 flex items-center justify-between text-[11px] font-bold text-[#2E54AD] group-hover:text-[#16A5CE]">
                     <span>Read Article</span>
                     <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
                   </div>
@@ -361,19 +361,19 @@ export const BlogPage: React.FC<BlogPageProps> = ({
         {}
         <div className="absolute right-[-30px] sm:right-2 lg:right-8 top-[-30px] sm:top-[-20px] lg:top-[-10px] pointer-events-none opacity-40 lg:opacity-60 overflow-hidden w-72 h-72 sm:w-96 sm:h-96">
           {}
-          <div className="absolute top-4 right-4 w-48 h-48 sm:w-60 sm:h-60 rotate-45 rounded-3xl border-2 border-[#1BBCE0]/40 bg-gradient-to-br from-[#D8E6F8]/30 to-[#1BBCE0]/20 backdrop-blur-xs" />
+          <div className="absolute top-4 right-4 w-48 h-48 sm:w-60 sm:h-60 rotate-45 rounded-3xl border-2 border-[#16A5CE]/40 bg-gradient-to-br from-[#D8E6F8]/30 to-[#16A5CE]/20 backdrop-blur-xs" />
           {}
           <div className="absolute top-10 right-10 w-38 h-38 sm:w-48 sm:h-48 rotate-45 rounded-2xl border-2 border-[#2E54AD]/50 bg-gradient-to-br from-[#2E54AD]/30 to-[#162E66]/30" />
           {}
-          <div className="absolute top-16 right-16 w-26 h-26 sm:w-32 sm:h-32 rotate-45 rounded-xl bg-gradient-to-br from-[#011337] to-[#1BBCE0] opacity-90 shadow-xl shadow-[#2E54AD]/30" />
+          <div className="absolute top-16 right-16 w-26 h-26 sm:w-32 sm:h-32 rotate-45 rounded-xl bg-gradient-to-br from-[#011337] to-[#16A5CE] opacity-90 shadow-xl shadow-[#2E54AD]/30" />
           {}
-          <div className="absolute top-6 right-36 w-3 h-3 rounded-full bg-[#1BBCE0] animate-pulse" />
+          <div className="absolute top-6 right-36 w-3 h-3 rounded-full bg-[#16A5CE] animate-pulse" />
           <div className="absolute top-48 right-8 w-2.5 h-2.5 rounded-full bg-[#D8E6F8]" />
         </div>
 
         {}
         <div className="absolute left-[-40px] sm:left-[-15px] top-1/2 -translate-y-1/2 pointer-events-none opacity-20 lg:opacity-30 overflow-hidden w-56 h-56">
-          <div className="w-40 h-40 rotate-45 rounded-3xl border border-[#1BBCE0]/35 bg-[#1BBCE0]/10" />
+          <div className="w-40 h-40 rotate-45 rounded-3xl border border-[#16A5CE]/35 bg-[#16A5CE]/10" />
         </div>
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 z-10">
@@ -404,7 +404,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
             className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.15] drop-shadow-sm font-poppins"
           >
             Web3, FinTech & AI <br className="hidden sm:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D8E6F8] via-[#1BBCE0] to-[#1BBCE0]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D8E6F8] via-[#16A5CE] to-[#16A5CE]">
               Engineering Insights
             </span>
           </motion.h1>
@@ -435,15 +435,15 @@ export const BlogPage: React.FC<BlogPageProps> = ({
             className="pt-2 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-[#D8E6F8] font-medium"
           >
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-xs px-3.5 py-1.5 rounded-xl border border-white/10">
-              <BookOpen className="w-4 h-4 text-[#1BBCE0]" />
+              <BookOpen className="w-4 h-4 text-[#16A5CE]" />
               <span>{blogs.length} Deep-Dive Articles</span>
             </div>
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-xs px-3.5 py-1.5 rounded-xl border border-white/10">
-              <TrendingUp className="w-4 h-4 text-[#1BBCE0]" />
+              <TrendingUp className="w-4 h-4 text-[#16A5CE]" />
               <span>Updated Weekly</span>
             </div>
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-xs px-3.5 py-1.5 rounded-xl border border-white/10">
-              <User className="w-4 h-4 text-[#1BBCE0]" />
+              <User className="w-4 h-4 text-[#16A5CE]" />
               <span>Verified On-Chain Analysts</span>
             </div>
           </motion.div>
@@ -496,7 +496,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
                 <div
                   key={post.id}
                   onClick={() => handleOpenPost(post)}
-                  className="group bg-white rounded-3xl border border-[#D8E6F8] hover:border-[#1BBCE0] overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between cursor-pointer text-[#011337]"
+                  className="group bg-white rounded-3xl border border-[#D8E6F8] hover:border-[#16A5CE] overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between cursor-pointer text-[#011337]"
                 >
                   <div>
                     {}
@@ -533,7 +533,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
                   </div>
 
                   {}
-                  <div className="px-6 py-4 bg-[#D8E6F8]/10 border-t border-[#D8E6F8] flex items-center justify-between text-xs font-bold text-[#2E54AD] group-hover:text-[#1BBCE0]">
+                  <div className="px-6 py-4 bg-[#D8E6F8]/10 border-t border-[#D8E6F8] flex items-center justify-between text-xs font-bold text-[#2E54AD] group-hover:text-[#16A5CE]">
                     <span>Read Full Article</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>

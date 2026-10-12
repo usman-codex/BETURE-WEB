@@ -133,7 +133,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.12] text-white"
           >
-            Empowering <span className="bg-gradient-to-r from-[#D8E6F8] via-[#1BBCE0] to-[#2E54AD] bg-clip-text text-transparent">FinTech</span>, Blockchain & <span className="text-[#1BBCE0]">AI Leaders</span>
+            Empowering <span className="bg-gradient-to-r from-[#D8E6F8] via-[#16A5CE] to-[#2E54AD] bg-clip-text text-transparent">FinTech</span>, Blockchain & <span className="text-[#16A5CE]">AI Leaders</span>
           </motion.h1>
 
           {}
@@ -173,15 +173,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             className="pt-5 border-t border-white/15 flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs text-[#D8E6F8] font-semibold"
           >
             <div className="flex items-center gap-2 bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 backdrop-blur-sm">
-              <CheckCircle className="w-4 h-4 text-[#1BBCE0]" />
+              <CheckCircle className="w-4 h-4 text-[#16A5CE]" />
               <span>100% Practical Labs</span>
             </div>
             <div className="flex items-center gap-2 bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 backdrop-blur-sm">
-              <CheckCircle className="w-4 h-4 text-[#1BBCE0]" />
+              <CheckCircle className="w-4 h-4 text-[#16A5CE]" />
               <span>Institutional Mentorship</span>
             </div>
             <div className="flex items-center gap-2 bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 backdrop-blur-sm">
-              <CheckCircle className="w-4 h-4 text-[#1BBCE0]" />
+              <CheckCircle className="w-4 h-4 text-[#16A5CE]" />
               <span>Verified Web3 Credentials</span>
             </div>
           </motion.div>
@@ -196,28 +196,28 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="mt-16 pt-8 border-t border-white/15 grid grid-cols-2 md:grid-cols-4 gap-6 text-center"
         >
-          <div className="p-5 rounded-2xl bg-black/30 backdrop-blur-md border border-white/15 shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-[#1BBCE0] hover:bg-black/40 transition-all duration-300 group">
-            <div className="text-3xl sm:text-4xl font-extrabold text-[#1BBCE0] group-hover:scale-105 transition-transform duration-300">
+          <div className="p-5 rounded-2xl bg-black/30 backdrop-blur-md border border-white/15 shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-[#16A5CE] hover:bg-black/40 transition-all duration-300 group">
+            <div className="text-3xl sm:text-4xl font-extrabold text-[#16A5CE] group-hover:scale-105 transition-transform duration-300">
               <CounterStat end={5000} suffix="+" duration={1200} />
             </div>
             <div className="text-xs text-[#D8E6F8]/80 mt-1.5 font-bold group-hover:text-white transition-colors">Enrolled Students</div>
           </div>
 
-          <div className="p-5 rounded-2xl bg-black/30 backdrop-blur-md border border-white/15 shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-[#1BBCE0] hover:bg-black/40 transition-all duration-300 group">
+          <div className="p-5 rounded-2xl bg-black/30 backdrop-blur-md border border-white/15 shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-[#16A5CE] hover:bg-black/40 transition-all duration-300 group">
             <div className="text-3xl sm:text-4xl font-extrabold text-[#D8E6F8] group-hover:scale-105 transition-transform duration-300">
               <CounterStat end={98} suffix="%" duration={1000} />
             </div>
             <div className="text-xs text-[#D8E6F8]/80 mt-1.5 font-bold group-hover:text-white transition-colors">Satisfaction Rate</div>
           </div>
 
-          <div className="p-5 rounded-2xl bg-black/30 backdrop-blur-md border border-white/15 shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-[#1BBCE0] hover:bg-black/40 transition-all duration-300 group">
-            <div className="text-3xl sm:text-4xl font-extrabold text-[#1BBCE0] group-hover:scale-105 transition-transform duration-300">
+          <div className="p-5 rounded-2xl bg-black/30 backdrop-blur-md border border-white/15 shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-[#16A5CE] hover:bg-black/40 transition-all duration-300 group">
+            <div className="text-3xl sm:text-4xl font-extrabold text-[#16A5CE] group-hover:scale-105 transition-transform duration-300">
               <CounterStat end={20} suffix="+" duration={900} />
             </div>
             <div className="text-xs text-[#D8E6F8]/80 mt-1.5 font-bold group-hover:text-white transition-colors">Practical Modules</div>
           </div>
 
-          <div className="p-5 rounded-2xl bg-black/30 backdrop-blur-md border border-white/15 shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-[#1BBCE0] hover:bg-black/40 transition-all duration-300 group">
+          <div className="p-5 rounded-2xl bg-black/30 backdrop-blur-md border border-white/15 shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-[#16A5CE] hover:bg-black/40 transition-all duration-300 group">
             <div className="text-3xl sm:text-4xl font-extrabold text-[#D8E6F8] group-hover:scale-105 transition-transform duration-300">
               <CounterStat end={100} suffix="%" duration={1000} />
             </div>
