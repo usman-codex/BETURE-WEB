@@ -14,18 +14,18 @@ export const BetureLogo: React.FC<BetureLogoProps> = ({
   size = 'md',
 }) => {
   const sizeMap = {
-    sm: { icon: 'w-7 h-7', textTitle: 'text-sm' },
-    md: { icon: 'w-9 h-9 sm:w-10 sm:h-10', textTitle: 'text-base sm:text-lg' },
-    lg: { icon: 'w-12 h-12 sm:w-14 sm:h-14', textTitle: 'text-xl sm:text-2xl' },
-    xl: { icon: 'w-16 h-16 sm:w-20 sm:h-20', textTitle: 'text-2xl sm:text-3xl' },
+    sm: { img: 'h-7 w-auto', textTitle: 'text-sm' },
+    md: { img: 'h-9 sm:h-10 w-auto', textTitle: 'text-base sm:text-lg' },
+    lg: { img: 'h-12 sm:h-14 w-auto', textTitle: 'text-xl sm:text-2xl' },
+    xl: { img: 'h-16 sm:h-20 w-auto', textTitle: 'text-2xl sm:text-3xl' },
   };
 
   const currentSize = sizeMap[size] || sizeMap.md;
 
   return (
     <div className={`inline-flex items-center gap-3 select-none ${className}`}>
-      {/* Real Logo Image */}
-      <div className={`relative shrink-0 flex items-center justify-center ${currentSize.icon}`}>
+      {/* Real User-Uploaded Logo Image */}
+      <div className="relative shrink-0 flex items-center justify-center">
         <img
           src={logoImg}
           onError={(e) => {
@@ -35,7 +35,7 @@ export const BetureLogo: React.FC<BetureLogoProps> = ({
             }
           }}
           alt="Beture Web Logo"
-          className="w-full h-full object-contain rounded-md drop-shadow-[0_2px_10px_rgba(22,165,206,0.35)] transition-transform duration-300 group-hover:scale-105"
+          className={`${currentSize.img} object-contain drop-shadow-[0_2px_12px_rgba(22,165,206,0.35)] transition-transform duration-300 group-hover:scale-105`}
         />
       </div>
 
