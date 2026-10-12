@@ -33,7 +33,7 @@ export const BusinessNeedsSection: React.FC<BusinessNeedsSectionProps> = ({
   return (
     <section 
       id="business-needs-section" 
-      className="relative w-full py-16 sm:py-24 bg-[#F5F8FC] overflow-hidden border-b border-[#D8E6F8]/50"
+      className="relative w-full py-16 sm:py-20 bg-[#F5F8FC] overflow-hidden border-b border-[#D8E6F8]/50"
     >
       {/* Decorative Brand Shapes */}
       <div 
@@ -52,7 +52,7 @@ export const BusinessNeedsSection: React.FC<BusinessNeedsSectionProps> = ({
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-14">
           <motion.div
             initial={{ x: -120, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -83,98 +83,73 @@ export const BusinessNeedsSection: React.FC<BusinessNeedsSectionProps> = ({
           </div>
         </div>
 
-        {/* Services Cards Grid with Slide-Up Overlay (No Flip) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {/* Compact Services Cards Grid with Transparent Blurred Overlay */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
           {featuredServices.map((service, index) => {
             return (
               <motion.div
                 key={service.id}
                 id={`business-card-${service.id}`}
-                initial={{ y: 40, opacity: 0 }}
+                initial={{ y: 35, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{
-                  duration: 0.6,
-                  delay: index * 0.08,
+                  duration: 0.55,
+                  delay: index * 0.07,
                   ease: [0.22, 1, 0.36, 1],
                 }}
                 onClick={() => onSelectService(service)}
-                className="relative h-84 sm:h-88 w-full rounded-3xl bg-white border border-[#D8E6F8] hover:border-[#16A5CE] shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden group cursor-pointer select-none"
+                className="relative h-72 sm:h-76 w-full rounded-2xl bg-white border border-[#D8E6F8] hover:border-[#16A5CE] shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer select-none"
               >
-                {/* 1. Base Front View (Always Visible by default) */}
-                <div className="absolute inset-0 w-full h-full p-7 flex flex-col items-center justify-center text-center">
+                {/* 1. Base Front View (Clean & Compact, No "Hover for details" text) */}
+                <div className="absolute inset-0 w-full h-full p-6 flex flex-col items-center justify-center text-center">
                   
                   {/* Clean Icon Container */}
-                  <div className="w-24 h-24 rounded-2xl bg-[#F5F8FC] border border-[#D8E6F8]/70 flex items-center justify-center text-[#011337] transition-all duration-300 group-hover:scale-105 group-hover:shadow-md">
+                  <div className="w-20 h-20 rounded-2xl bg-[#F5F8FC] border border-[#D8E6F8]/70 flex items-center justify-center text-[#011337] transition-all duration-300 group-hover:scale-105 group-hover:shadow-md">
                     <ServiceIcon 
                       name={service.iconName} 
-                      size={64} 
-                      className="w-16 h-16"
+                      size={54} 
+                      className="w-14 h-14"
                       color="#011337" 
                       accentColor="#16A5CE"
                     />
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-lg sm:text-xl font-extrabold text-[#011337] mt-5 leading-snug tracking-tight font-heading group-hover:text-[#2E54AD] transition-colors">
+                  <h3 className="text-base sm:text-lg font-extrabold text-[#011337] mt-4 leading-snug tracking-tight font-heading group-hover:text-[#2E54AD] transition-colors px-2">
                     {service.shortTitle}
                   </h3>
-
-                  {/* Hover cue */}
-                  <span className="mt-4 text-xs font-bold text-[#16A5CE] inline-flex items-center gap-1 opacity-70 group-hover:opacity-0 transition-opacity">
-                    Hover for details <ChevronRight className="w-3.5 h-3.5" />
-                  </span>
                 </div>
 
-                {/* 2. Slide-Up Overlay Layer (Slides smoothly from bottom to top on hover) */}
+                {/* 2. Slide-Up Overlay Layer with Frosted Glass Blur (Transparent blur background) */}
                 <div 
-                  className="absolute inset-0 w-full h-full rounded-3xl bg-gradient-to-b from-[#011337] via-[#06183F] to-[#011337] p-6 text-white flex flex-col justify-between translate-y-full group-hover:translate-y-0 transition-transform duration-400 ease-out border-2 border-[#16A5CE] shadow-2xl z-20"
+                  className="absolute inset-0 w-full h-full rounded-2xl bg-[#011337]/85 backdrop-blur-xl p-5 text-white flex flex-col justify-between translate-y-full group-hover:translate-y-0 transition-transform duration-400 ease-out border border-[#16A5CE]/50 shadow-2xl z-20"
                 >
-                  {/* Top Bar: Icon + Title */}
-                  <div className="flex items-center justify-between border-b border-[#2E54AD]/40 pb-3">
-                    <div className="flex items-center gap-2.5">
-                      <div className="w-8 h-8 rounded-lg bg-[#2E54AD]/40 border border-[#16A5CE]/40 flex items-center justify-center text-[#16A5CE]">
-                        <ServiceIcon 
-                          name={service.iconName} 
-                          size={20} 
-                          color="#FFFFFF" 
-                          accentColor="#16A5CE" 
-                        />
-                      </div>
-                      <h4 className="text-base font-extrabold text-white tracking-tight leading-tight font-heading">
-                        {service.shortTitle}
-                      </h4>
-                    </div>
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#16A5CE] shadow-[0_0_8px_#16A5CE] animate-pulse" />
+                  {/* Clean Top Title (Mini icon and dot removed) */}
+                  <div className="border-b border-white/15 pb-2.5">
+                    <h4 className="text-base sm:text-lg font-black text-white tracking-tight leading-tight font-heading">
+                      {service.shortTitle}
+                    </h4>
                   </div>
 
-                  {/* Middle Description */}
-                  <div className="my-auto space-y-3">
+                  {/* Middle Description Only (Tool pills removed) */}
+                  <div className="my-auto py-1">
                     <p className="text-xs sm:text-sm text-[#D8E6F8] leading-relaxed font-normal line-clamp-4">
                       {service.shortDescription}
                     </p>
-
-                    {/* Tools / Features pills */}
-                    {service.tools && service.tools.length > 0 && (
-                      <div className="flex flex-wrap gap-1.5 pt-1">
-                        {service.tools.slice(0, 3).map((tool) => (
-                          <span 
-                            key={tool.name} 
-                            className="px-2 py-0.5 rounded-md bg-white/10 text-[10px] font-semibold text-[#D8E6F8] border border-white/10"
-                          >
-                            {tool.name}
-                          </span>
-                        ))}
-                      </div>
-                    )}
                   </div>
 
-                  {/* Bottom Action Bar */}
-                  <div className="pt-3 border-t border-[#2E54AD]/40 flex items-center justify-between text-xs sm:text-sm font-bold text-[#16A5CE] group-hover:text-white transition-colors">
-                    <span className="font-heading">
-                      Click to View Details
-                    </span>
-                    <span className="w-7 h-7 rounded-full bg-[#16A5CE] text-[#011337] flex items-center justify-center transform group-hover:translate-x-1 transition-transform">
+                  {/* Bottom Action Bar: "View Details" with left-to-right animated underline on hover */}
+                  <div className="pt-3 border-t border-white/15 flex items-center justify-between">
+                    <div className="relative inline-flex flex-col py-1">
+                      <span className="text-xs sm:text-sm font-extrabold tracking-wide text-[#16A5CE] group-hover:text-white transition-colors duration-300 font-heading">
+                        View Details
+                      </span>
+                      {/* Left-to-right underline animation on hover */}
+                      <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#16A5CE] to-white origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out rounded-full shadow-[0_0_8px_#16A5CE]" />
+                    </div>
+
+                    <span className="w-7 h-7 rounded-full bg-[#16A5CE] text-[#011337] flex items-center justify-center transform group-hover:translate-x-1 transition-transform shadow-md">
                       <ArrowRight className="w-3.5 h-3.5" />
                     </span>
                   </div>
