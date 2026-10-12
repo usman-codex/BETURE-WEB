@@ -3,8 +3,7 @@ import {
   PhoneCall, 
   Code2, 
   Sparkles, 
-  Headphones, 
-  ArrowUpRight 
+  Headphones 
 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Course } from '../types';
@@ -19,9 +18,7 @@ interface HeroSectionProps {
   onNavigateToContact?: () => void;
 }
 
-export const HeroSection: React.FC<HeroSectionProps> = ({
-  onNavigateToContact,
-}) => {
+export const HeroSection: React.FC<HeroSectionProps> = () => {
   return (
     <section className="relative bg-[#011337] text-white pt-12 pb-16 lg:pt-20 lg:pb-24 border-b border-[#2E54AD]/25 overflow-hidden">
       {/* Background Image & Ambient Overlay */}
@@ -51,7 +48,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-4xl mx-auto text-center space-y-6 bg-black/40 backdrop-blur-md p-6 sm:p-10 md:p-12 rounded-3xl border border-white/20 shadow-2xl relative overflow-hidden"
+          className="max-w-4xl mx-auto text-center space-y-6 bg-black/40 backdrop-blur-md p-8 sm:p-12 md:p-14 rounded-3xl border border-white/20 shadow-2xl relative overflow-hidden"
         >
           {/* Main Headline */}
           <motion.h1 
@@ -61,7 +58,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.12] text-white"
           >
-            Empowering Modern <span className="bg-gradient-to-r from-[#D8E6F8] via-[#16A5CE] to-[#2E54AD] bg-clip-text text-transparent">Software</span>, Web & <span className="text-[#16A5CE]">AI Innovation</span>
+            Architecting Next-Gen <span className="bg-gradient-to-r from-[#D8E6F8] via-[#16A5CE] to-[#2E54AD] bg-clip-text text-transparent">Digital Solutions</span> & High-Impact <span className="text-[#16A5CE]">Web Software</span>
           </motion.h1>
 
           {/* Description */}
@@ -70,37 +67,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[#D8E6F8]/95 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl mx-auto font-normal tracking-wide"
+            className="text-[#D8E6F8]/95 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto font-normal tracking-wide"
           >
-            Beture Web is a full-service software house engineering custom web platforms, scalable SaaS products, and intelligent AI automation for businesses across the globe.
+            At Beture Web, we build cutting-edge custom software, enterprise web applications, and intelligent automated systems designed to scale modern businesses seamlessly.
           </motion.p>
-
-          {/* Direct Calling & Free Consultation Call Action */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.7, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2"
-          >
-            <a
-              href="tel:+923111222595"
-              className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-gradient-to-r from-[#2E54AD] to-[#16A5CE] hover:brightness-110 text-white font-extrabold text-sm shadow-xl shadow-[#16A5CE]/25 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2.5 cursor-pointer"
-            >
-              <PhoneCall className="w-4 h-4 text-white" />
-              <span>Call Us for Free Consultation: +92 311 1222 595</span>
-            </a>
-
-            {onNavigateToContact && (
-              <button
-                onClick={onNavigateToContact}
-                className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-[#D8E6F8] hover:text-white font-bold text-sm border border-white/20 transition-all flex items-center justify-center gap-2 cursor-pointer"
-              >
-                <span>Send Project Scope</span>
-                <ArrowUpRight className="w-4 h-4 text-[#16A5CE]" />
-              </button>
-            )}
-          </motion.div>
         </motion.div>
 
         {/* Bottom Feature Boxes with React Lucide Icons and Clean Content */}
