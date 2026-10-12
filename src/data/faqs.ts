@@ -45,6 +45,12 @@ export const FAQS_DATA: FaqItem[] = [
   },
   {
     id: 'f8',
+    question: 'What graphic design and branding services do you provide?',
+    answer: 'We craft complete visual brand identities, bespoke logos, Figma UI/UX prototypes, social media ad creatives, corporate stationery, and marketing pitch decks tailored to make your brand instantly recognizable.',
+    category: 'Graphic Design'
+  },
+  {
+    id: 'f9',
     question: 'How do we start a project and get a cost estimation?',
     answer: 'You can reach out through our Contact page or call our senior tech team directly at +92 311 1222 595 for a free discovery consultation. We analyze your requirements, provide a transparent project roadmap with milestone deliverables, and execute through agile sprints.',
     category: 'Consultation'

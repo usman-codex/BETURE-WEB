@@ -24,6 +24,7 @@ export const BusinessNeedsSection: React.FC<BusinessNeedsSectionProps> = ({
     'glm-ai-development',
     'facebook-monetization',
     'ecommerce-development',
+    'graphic-design',
   ];
 
   const featuredServices = requestedServiceIds
