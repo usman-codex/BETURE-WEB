@@ -3,8 +3,6 @@ import { HeroSection } from '../components/HeroSection';
 import { BusinessNeedsSection } from '../components/BusinessNeedsSection';
 import { DesignersDevelopersSection } from '../components/DesignersDevelopersSection';
 import { TopProjectsSection } from '../components/TopProjectsSection';
-import { AchievementsSection } from '../components/AchievementsSection';
-import { WhyFintechSection } from '../components/WhyFintechSection';
 import { GrowBusinessSection } from '../components/GrowBusinessSection';
 import { OurFoundersSection } from '../components/OurFoundersSection';
 import { BundleSection } from '../components/BundleSection';
@@ -33,77 +31,66 @@ interface HomePageProps {
 
 export const HomePage: React.FC<HomePageProps> = ({
   courses,
-  blogs,
+  blogs: _blogs,
   testimonials,
   faqs,
   onSelectCourse,
-  onSelectBlog,
+  onSelectBlog: _onSelectBlog,
   onExploreCourses,
-  onViewAllBlogs,
-  onOpenPromptModal,
+  onViewAllBlogs: _onViewAllBlogs,
+  onOpenPromptModal: _onOpenPromptModal,
   onNavigateToServices,
   onSelectService,
   onNavigateToAbout,
   onNavigateToProjects,
   onNavigateToContact,
 }) => {
-  const featuredCourse = courses.find((c) => c.id === 'airdrop-mastery-course') || courses[0];
   const bundleCourse = courses.find((c) => c.id === 'all-access-bundle-coaching') || courses[courses.length - 1];
 
   return (
     <div className="space-y-0">
-      {}
+      {/* Hero Section */}
       <HeroSection
         onExploreCourses={onExploreCourses}
         onSelectCourse={onSelectCourse}
-        featuredCourse={featuredCourse}
         onNavigateToContact={onNavigateToContact}
       />
 
-      {}
+      {/* Business Needs / Services Grid */}
       <BusinessNeedsSection
         onNavigateToServices={onNavigateToServices}
         onSelectService={onSelectService}
       />
 
-      {}
+      {/* Designers & Developers Section */}
       <DesignersDevelopersSection
         onNavigateToAbout={onNavigateToAbout}
       />
 
-      {}
+      {/* Top Projects Section */}
       <TopProjectsSection
         onNavigateToProjects={onNavigateToProjects}
       />
 
-      {}
-      <AchievementsSection
-        onNavigateToAbout={onNavigateToAbout}
-        onNavigateToContact={onNavigateToContact}
-      />
-
-      {}
-      <WhyFintechSection />
-
-      {}
+      {/* Grow Business Section */}
       <GrowBusinessSection />
 
-      {}
+      {/* Our Founders Section */}
       <OurFoundersSection />
 
-      {}
+      {/* Bundle Coaching Section */}
       <BundleSection
         bundleCourse={bundleCourse}
         onSelectCourse={onSelectCourse}
       />
 
-      {}
+      {/* Testimonials */}
       <TestimonialsSection testimonials={testimonials} />
 
-      {}
+      {/* FAQs */}
       <FaqSection faqs={faqs} />
 
-      {}
+      {/* CTA Section */}
       <CtaSection
         onExploreCourses={onExploreCourses}
         onContactUs={onNavigateToContact}
