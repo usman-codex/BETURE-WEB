@@ -1,106 +1,34 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import { 
-  ArrowRight, 
-  CheckCircle
+  PhoneCall, 
+  Code2, 
+  Sparkles, 
+  Headphones, 
+  ArrowUpRight 
 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Course } from '../types';
 import aiHeroBgImage from '../assets/images/home-hero.jpg';
 
-
 export const HERO_BG_IMAGE_URL = aiHeroBgImage; 
 
-interface CounterStatProps {
-  end: number;
-  suffix?: string;
-  prefix?: string;
-  duration?: number;
-  className?: string;
-}
-
-const CounterStat: React.FC<CounterStatProps> = ({ 
-  end, 
-  suffix = '', 
-  prefix = '', 
-  duration = 1000, 
-  className 
-}) => {
-  const [count, setCount] = useState(0);
-  const [inView, setInView] = useState(false);
-  const statRef = useRef<HTMLSpanElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(false);
-          requestAnimationFrame(() => {
-            setInView(true);
-          });
-        }
-      },
-      { threshold: 0.25 }
-    );
-
-    if (statRef.current) {
-      observer.observe(statRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!inView) {
-      setCount(0);
-      return;
-    }
-
-    setCount(0);
-    let startTimestamp: number | null = null;
-    let animationFrameId: number;
-
-    const step = (timestamp: number) => {
-      if (!startTimestamp) startTimestamp = timestamp;
-      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-      
-      const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
-      const currentVal = Math.floor(easeOutCubic(progress) * end);
-      setCount(currentVal);
-
-      if (progress < 1) {
-        animationFrameId = window.requestAnimationFrame(step);
-      } else {
-        setCount(end);
-      }
-    };
-
-    animationFrameId = window.requestAnimationFrame(step);
-    return () => window.cancelAnimationFrame(animationFrameId);
-  }, [inView, end, duration]);
-
-  return (
-    <span ref={statRef} className={className}>
-      {prefix}{count.toLocaleString()}{suffix}
-    </span>
-  );
-};
-
 interface HeroSectionProps {
-  onExploreCourses: () => void;
-  onSelectCourse: (course: Course) => void;
-  featuredCourse: Course;
+  onExploreCourses?: () => void;
+  onSelectCourse?: (course: Course) => void;
+  featuredCourse?: Course;
+  onNavigateToContact?: () => void;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
-  onExploreCourses,
+  onNavigateToContact,
 }) => {
   return (
-    <section className="relative bg-[#011337] text-white pt-12 pb-20 lg:pt-20 lg:pb-28 border-b border-[#D8E6F8]/20 overflow-hidden">
-      {}
+    <section className="relative bg-[#011337] text-white pt-12 pb-16 lg:pt-20 lg:pb-24 border-b border-[#2E54AD]/25 overflow-hidden">
+      {/* Background Image & Ambient Overlay */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <img
           src={HERO_BG_IMAGE_URL}
-          alt="AI & FinTech Hero Background"
+          alt="Beture Web Software House Hero Background"
           referrerPolicy="no-referrer"
           onError={(e) => {
             const target = e.currentTarget;
@@ -112,116 +40,151 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           }}
           className="w-full h-full object-cover opacity-90 transition-opacity duration-300"
         />
-        {}
-        <div className="absolute inset-0 bg-[#011337]/45" />
+        <div className="absolute inset-0 bg-[#011337]/55" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {}
+        
+        {/* Main Hero Card */}
         <motion.div 
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 35 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-4xl mx-auto text-center space-y-6 bg-black/35 backdrop-blur-md p-6 sm:p-10 md:p-12 rounded-3xl border border-white/20 shadow-xl relative overflow-hidden"
+          className="max-w-4xl mx-auto text-center space-y-6 bg-black/40 backdrop-blur-md p-6 sm:p-10 md:p-12 rounded-3xl border border-white/20 shadow-2xl relative overflow-hidden"
         >
-          {}
+          {/* Main Headline */}
           <motion.h1 
-            initial={{ opacity: 0, y: 25 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.12] text-white"
           >
-            Empowering <span className="bg-gradient-to-r from-[#D8E6F8] via-[#16A5CE] to-[#2E54AD] bg-clip-text text-transparent">FinTech</span>, Blockchain & <span className="text-[#16A5CE]">AI Leaders</span>
+            Empowering Modern <span className="bg-gradient-to-r from-[#D8E6F8] via-[#16A5CE] to-[#2E54AD] bg-clip-text text-transparent">Software</span>, Web & <span className="text-[#16A5CE]">AI Innovation</span>
           </motion.h1>
 
-          {}
+          {/* Description */}
           <motion.p 
-            initial={{ opacity: 0, y: 25 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="text-[#D8E6F8]/95 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl mx-auto font-normal tracking-wide"
           >
-            Bridge institutional finance with cutting-edge decentralized protocols. Master smart contract engineering, quantitative DeFi trading, airdrop strategies, and autonomous AI systems through immersive hands-on mentorship.
+            Beture Web is a full-service software house engineering custom web platforms, scalable SaaS products, and intelligent AI automation for businesses across the globe.
           </motion.p>
 
-          {}
-          <motion.div 
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.7, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2"
-          >
-            <button
-              onClick={onExploreCourses}
-              className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-[#2E54AD] hover:bg-[#162E66] text-white font-extrabold text-sm shadow-lg shadow-black/20 transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-3 cursor-pointer group border border-white/20"
-            >
-              <span>Explore All Programs</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#D8E6F8]" />
-            </button>
-          </motion.div>
-
-          {}
+          {/* Direct Calling & Free Consultation Call Action */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.7, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="pt-5 border-t border-white/15 flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs text-[#D8E6F8] font-semibold"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2"
           >
-            <div className="flex items-center gap-2 bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 backdrop-blur-sm">
-              <CheckCircle className="w-4 h-4 text-[#16A5CE]" />
-              <span>100% Practical Labs</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 backdrop-blur-sm">
-              <CheckCircle className="w-4 h-4 text-[#16A5CE]" />
-              <span>Institutional Mentorship</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 backdrop-blur-sm">
-              <CheckCircle className="w-4 h-4 text-[#16A5CE]" />
-              <span>Verified Web3 Credentials</span>
-            </div>
-          </motion.div>
+            <a
+              href="tel:+923111222595"
+              className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-gradient-to-r from-[#2E54AD] to-[#16A5CE] hover:brightness-110 text-white font-extrabold text-sm shadow-xl shadow-[#16A5CE]/25 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2.5 cursor-pointer"
+            >
+              <PhoneCall className="w-4 h-4 text-white" />
+              <span>Call Us for Free Consultation: +92 311 1222 595</span>
+            </a>
 
+            {onNavigateToContact && (
+              <button
+                onClick={onNavigateToContact}
+                className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-[#D8E6F8] hover:text-white font-bold text-sm border border-white/20 transition-all flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <span>Send Project Scope</span>
+                <ArrowUpRight className="w-4 h-4 text-[#16A5CE]" />
+              </button>
+            )}
+          </motion.div>
         </motion.div>
 
-        {}
+        {/* Bottom Feature Boxes: Software House & Calling Highlights */}
         <motion.div 
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 35 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-16 pt-8 border-t border-white/15 grid grid-cols-2 md:grid-cols-4 gap-6 text-center"
+          className="mt-12 pt-8 border-t border-white/15 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
         >
-          <div className="p-5 rounded-2xl bg-black/30 backdrop-blur-md border border-white/15 shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-[#16A5CE] hover:bg-black/40 transition-all duration-300 group">
-            <div className="text-3xl sm:text-4xl font-extrabold text-[#16A5CE] group-hover:scale-105 transition-transform duration-300">
-              <CounterStat end={5000} suffix="+" duration={1200} />
+          {/* Box 1: Calling & Consultation */}
+          <div className="p-5 rounded-2xl bg-black/40 backdrop-blur-md border border-white/15 shadow-md hover:border-[#16A5CE] hover:bg-black/55 transition-all duration-300 group flex flex-col justify-between">
+            <div className="space-y-3">
+              <div className="w-11 h-11 rounded-xl bg-[#2E54AD]/40 border border-[#16A5CE]/40 flex items-center justify-center text-[#16A5CE] group-hover:scale-110 transition-transform">
+                <PhoneCall className="w-5 h-5 text-[#16A5CE]" />
+              </div>
+              <h3 className="text-base font-extrabold text-white group-hover:text-[#16A5CE] transition-colors">
+                Direct Calling & Support
+              </h3>
+              <p className="text-xs text-[#D8E6F8]/80 leading-relaxed">
+                Connect directly with our tech team. Instant assistance, project queries, and technical consultation.
+              </p>
             </div>
-            <div className="text-xs text-[#D8E6F8]/80 mt-1.5 font-bold group-hover:text-white transition-colors">Enrolled Students</div>
+            <a 
+              href="tel:+923111222595"
+              className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-black text-[#16A5CE] hover:underline"
+            >
+              <span>+92 311 1222 595</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </a>
           </div>
 
-          <div className="p-5 rounded-2xl bg-black/30 backdrop-blur-md border border-white/15 shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-[#16A5CE] hover:bg-black/40 transition-all duration-300 group">
-            <div className="text-3xl sm:text-4xl font-extrabold text-[#D8E6F8] group-hover:scale-105 transition-transform duration-300">
-              <CounterStat end={98} suffix="%" duration={1000} />
+          {/* Box 2: Full-Stack Software House */}
+          <div className="p-5 rounded-2xl bg-black/40 backdrop-blur-md border border-white/15 shadow-md hover:border-[#16A5CE] hover:bg-black/55 transition-all duration-300 group flex flex-col justify-between">
+            <div className="space-y-3">
+              <div className="w-11 h-11 rounded-xl bg-[#2E54AD]/40 border border-[#16A5CE]/40 flex items-center justify-center text-[#16A5CE] group-hover:scale-110 transition-transform">
+                <Code2 className="w-5 h-5 text-[#16A5CE]" />
+              </div>
+              <h3 className="text-base font-extrabold text-white group-hover:text-[#16A5CE] transition-colors">
+                Full-Stack Software House
+              </h3>
+              <p className="text-xs text-[#D8E6F8]/80 leading-relaxed">
+                Custom web applications, responsive enterprise portals, and SaaS architecture built using modern tech stacks.
+              </p>
             </div>
-            <div className="text-xs text-[#D8E6F8]/80 mt-1.5 font-bold group-hover:text-white transition-colors">Satisfaction Rate</div>
+            <div className="mt-4 pt-3 border-t border-white/10 text-xs font-bold text-[#D8E6F8]/80">
+              Custom Web & Software Development
+            </div>
           </div>
 
-          <div className="p-5 rounded-2xl bg-black/30 backdrop-blur-md border border-white/15 shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-[#16A5CE] hover:bg-black/40 transition-all duration-300 group">
-            <div className="text-3xl sm:text-4xl font-extrabold text-[#16A5CE] group-hover:scale-105 transition-transform duration-300">
-              <CounterStat end={20} suffix="+" duration={900} />
+          {/* Box 3: AI & Automation Solutions */}
+          <div className="p-5 rounded-2xl bg-black/40 backdrop-blur-md border border-white/15 shadow-md hover:border-[#16A5CE] hover:bg-black/55 transition-all duration-300 group flex flex-col justify-between">
+            <div className="space-y-3">
+              <div className="w-11 h-11 rounded-xl bg-[#2E54AD]/40 border border-[#16A5CE]/40 flex items-center justify-center text-[#16A5CE] group-hover:scale-110 transition-transform">
+                <Sparkles className="w-5 h-5 text-[#16A5CE]" />
+              </div>
+              <h3 className="text-base font-extrabold text-white group-hover:text-[#16A5CE] transition-colors">
+                AI & Automation Labs
+              </h3>
+              <p className="text-xs text-[#D8E6F8]/80 leading-relaxed">
+                Integrate custom AI agents, automated backend pipelines, and intelligent workflows to accelerate business performance.
+              </p>
             </div>
-            <div className="text-xs text-[#D8E6F8]/80 mt-1.5 font-bold group-hover:text-white transition-colors">Practical Modules</div>
+            <div className="mt-4 pt-3 border-t border-white/10 text-xs font-bold text-[#D8E6F8]/80">
+              AI Automations & Integrations
+            </div>
           </div>
 
-          <div className="p-5 rounded-2xl bg-black/30 backdrop-blur-md border border-white/15 shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-[#16A5CE] hover:bg-black/40 transition-all duration-300 group">
-            <div className="text-3xl sm:text-4xl font-extrabold text-[#D8E6F8] group-hover:scale-105 transition-transform duration-300">
-              <CounterStat end={100} suffix="%" duration={1000} />
+          {/* Box 4: Dedicated Software Support */}
+          <div className="p-5 rounded-2xl bg-black/40 backdrop-blur-md border border-white/15 shadow-md hover:border-[#16A5CE] hover:bg-black/55 transition-all duration-300 group flex flex-col justify-between">
+            <div className="space-y-3">
+              <div className="w-11 h-11 rounded-xl bg-[#2E54AD]/40 border border-[#16A5CE]/40 flex items-center justify-center text-[#16A5CE] group-hover:scale-110 transition-transform">
+                <Headphones className="w-5 h-5 text-[#16A5CE]" />
+              </div>
+              <h3 className="text-base font-extrabold text-white group-hover:text-[#16A5CE] transition-colors">
+                Agile Delivery & QA
+              </h3>
+              <p className="text-xs text-[#D8E6F8]/80 leading-relaxed">
+                Strict quality assurance, transparent sprint progress, and dedicated post-launch maintenance for your projects.
+              </p>
             </div>
-            <div className="text-xs text-[#D8E6F8]/80 mt-1.5 font-bold group-hover:text-white transition-colors">Industry Mentorship</div>
+            <div className="mt-4 pt-3 border-t border-white/10 text-xs font-bold text-[#D8E6F8]/80">
+              End-to-End Client Commitment
+            </div>
           </div>
         </motion.div>
 
@@ -229,5 +192,3 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     </section>
   );
 };
-
-

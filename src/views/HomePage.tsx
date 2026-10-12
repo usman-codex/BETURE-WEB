@@ -57,6 +57,7 @@ export const HomePage: React.FC<HomePageProps> = ({
         onExploreCourses={onExploreCourses}
         onSelectCourse={onSelectCourse}
         featuredCourse={featuredCourse}
+        onNavigateToContact={onNavigateToContact}
       />
 
       {}
