@@ -103,7 +103,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </motion.div>
         </motion.div>
 
-        {/* Bottom Feature Boxes: Software House & Calling Highlights */}
+        {/* Bottom Feature Boxes with React Lucide Icons and Clean Content */}
         <motion.div 
           initial={{ opacity: 0, y: 35 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -112,79 +112,55 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           className="mt-12 pt-8 border-t border-white/15 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
         >
           {/* Box 1: Calling & Consultation */}
-          <div className="p-5 rounded-2xl bg-black/40 backdrop-blur-md border border-white/15 shadow-md hover:border-[#16A5CE] hover:bg-black/55 transition-all duration-300 group flex flex-col justify-between">
-            <div className="space-y-3">
-              <div className="w-11 h-11 rounded-xl bg-[#2E54AD]/40 border border-[#16A5CE]/40 flex items-center justify-center text-[#16A5CE] group-hover:scale-110 transition-transform">
-                <PhoneCall className="w-5 h-5 text-[#16A5CE]" />
-              </div>
-              <h3 className="text-base font-extrabold text-white group-hover:text-[#16A5CE] transition-colors">
-                Direct Calling & Support
-              </h3>
-              <p className="text-xs text-[#D8E6F8]/80 leading-relaxed">
-                Connect directly with our tech team. Instant assistance, project queries, and technical consultation.
-              </p>
+          <div className="p-6 rounded-2xl bg-black/40 backdrop-blur-md border border-white/15 shadow-md hover:border-[#16A5CE] hover:bg-black/55 transition-all duration-300 group flex flex-col justify-start space-y-3.5">
+            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#16A5CE]/20 to-[#2E54AD]/30 border border-[#16A5CE]/40 flex items-center justify-center text-[#16A5CE] shadow-lg shadow-[#16A5CE]/15 group-hover:scale-110 group-hover:bg-[#16A5CE] group-hover:text-[#011337] transition-all duration-300">
+              <PhoneCall className="w-6 h-6" />
             </div>
-            <a 
-              href="tel:+923111222595"
-              className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-black text-[#16A5CE] hover:underline"
-            >
-              <span>+92 311 1222 595</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
-            </a>
+            <h3 className="text-base font-extrabold text-white group-hover:text-[#16A5CE] transition-colors">
+              Direct Calling & Support
+            </h3>
+            <p className="text-xs text-[#D8E6F8]/80 leading-relaxed">
+              Connect directly with our tech team. Instant assistance, project queries, and technical consultation.
+            </p>
           </div>
 
           {/* Box 2: Full-Stack Software House */}
-          <div className="p-5 rounded-2xl bg-black/40 backdrop-blur-md border border-white/15 shadow-md hover:border-[#16A5CE] hover:bg-black/55 transition-all duration-300 group flex flex-col justify-between">
-            <div className="space-y-3">
-              <div className="w-11 h-11 rounded-xl bg-[#2E54AD]/40 border border-[#16A5CE]/40 flex items-center justify-center text-[#16A5CE] group-hover:scale-110 transition-transform">
-                <Code2 className="w-5 h-5 text-[#16A5CE]" />
-              </div>
-              <h3 className="text-base font-extrabold text-white group-hover:text-[#16A5CE] transition-colors">
-                Full-Stack Software House
-              </h3>
-              <p className="text-xs text-[#D8E6F8]/80 leading-relaxed">
-                Custom web applications, responsive enterprise portals, and SaaS architecture built using modern tech stacks.
-              </p>
+          <div className="p-6 rounded-2xl bg-black/40 backdrop-blur-md border border-white/15 shadow-md hover:border-[#16A5CE] hover:bg-black/55 transition-all duration-300 group flex flex-col justify-start space-y-3.5">
+            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#16A5CE]/20 to-[#2E54AD]/30 border border-[#16A5CE]/40 flex items-center justify-center text-[#16A5CE] shadow-lg shadow-[#16A5CE]/15 group-hover:scale-110 group-hover:bg-[#16A5CE] group-hover:text-[#011337] transition-all duration-300">
+              <Code2 className="w-6 h-6" />
             </div>
-            <div className="mt-4 pt-3 border-t border-white/10 text-xs font-bold text-[#D8E6F8]/80">
-              Custom Web & Software Development
-            </div>
+            <h3 className="text-base font-extrabold text-white group-hover:text-[#16A5CE] transition-colors">
+              Full-Stack Software House
+            </h3>
+            <p className="text-xs text-[#D8E6F8]/80 leading-relaxed">
+              Custom web applications, responsive enterprise portals, and SaaS architecture built using modern tech stacks.
+            </p>
           </div>
 
           {/* Box 3: AI & Automation Solutions */}
-          <div className="p-5 rounded-2xl bg-black/40 backdrop-blur-md border border-white/15 shadow-md hover:border-[#16A5CE] hover:bg-black/55 transition-all duration-300 group flex flex-col justify-between">
-            <div className="space-y-3">
-              <div className="w-11 h-11 rounded-xl bg-[#2E54AD]/40 border border-[#16A5CE]/40 flex items-center justify-center text-[#16A5CE] group-hover:scale-110 transition-transform">
-                <Sparkles className="w-5 h-5 text-[#16A5CE]" />
-              </div>
-              <h3 className="text-base font-extrabold text-white group-hover:text-[#16A5CE] transition-colors">
-                AI & Automation Labs
-              </h3>
-              <p className="text-xs text-[#D8E6F8]/80 leading-relaxed">
-                Integrate custom AI agents, automated backend pipelines, and intelligent workflows to accelerate business performance.
-              </p>
+          <div className="p-6 rounded-2xl bg-black/40 backdrop-blur-md border border-white/15 shadow-md hover:border-[#16A5CE] hover:bg-black/55 transition-all duration-300 group flex flex-col justify-start space-y-3.5">
+            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#16A5CE]/20 to-[#2E54AD]/30 border border-[#16A5CE]/40 flex items-center justify-center text-[#16A5CE] shadow-lg shadow-[#16A5CE]/15 group-hover:scale-110 group-hover:bg-[#16A5CE] group-hover:text-[#011337] transition-all duration-300">
+              <Sparkles className="w-6 h-6" />
             </div>
-            <div className="mt-4 pt-3 border-t border-white/10 text-xs font-bold text-[#D8E6F8]/80">
-              AI Automations & Integrations
-            </div>
+            <h3 className="text-base font-extrabold text-white group-hover:text-[#16A5CE] transition-colors">
+              AI & Automation Labs
+            </h3>
+            <p className="text-xs text-[#D8E6F8]/80 leading-relaxed">
+              Integrate custom AI agents, automated backend pipelines, and intelligent workflows to accelerate business performance.
+            </p>
           </div>
 
           {/* Box 4: Dedicated Software Support */}
-          <div className="p-5 rounded-2xl bg-black/40 backdrop-blur-md border border-white/15 shadow-md hover:border-[#16A5CE] hover:bg-black/55 transition-all duration-300 group flex flex-col justify-between">
-            <div className="space-y-3">
-              <div className="w-11 h-11 rounded-xl bg-[#2E54AD]/40 border border-[#16A5CE]/40 flex items-center justify-center text-[#16A5CE] group-hover:scale-110 transition-transform">
-                <Headphones className="w-5 h-5 text-[#16A5CE]" />
-              </div>
-              <h3 className="text-base font-extrabold text-white group-hover:text-[#16A5CE] transition-colors">
-                Agile Delivery & QA
-              </h3>
-              <p className="text-xs text-[#D8E6F8]/80 leading-relaxed">
-                Strict quality assurance, transparent sprint progress, and dedicated post-launch maintenance for your projects.
-              </p>
+          <div className="p-6 rounded-2xl bg-black/40 backdrop-blur-md border border-white/15 shadow-md hover:border-[#16A5CE] hover:bg-black/55 transition-all duration-300 group flex flex-col justify-start space-y-3.5">
+            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#16A5CE]/20 to-[#2E54AD]/30 border border-[#16A5CE]/40 flex items-center justify-center text-[#16A5CE] shadow-lg shadow-[#16A5CE]/15 group-hover:scale-110 group-hover:bg-[#16A5CE] group-hover:text-[#011337] transition-all duration-300">
+              <Headphones className="w-6 h-6" />
             </div>
-            <div className="mt-4 pt-3 border-t border-white/10 text-xs font-bold text-[#D8E6F8]/80">
-              End-to-End Client Commitment
-            </div>
+            <h3 className="text-base font-extrabold text-white group-hover:text-[#16A5CE] transition-colors">
+              Agile Delivery & QA
+            </h3>
+            <p className="text-xs text-[#D8E6F8]/80 leading-relaxed">
+              Strict quality assurance, transparent sprint progress, and dedicated post-launch maintenance for your projects.
+            </p>
           </div>
         </motion.div>
 
