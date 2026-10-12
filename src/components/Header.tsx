@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { BetureLogo } from './BetureLogo';
-import { motion } from 'motion/react';
 import { 
   PhoneCall, 
   BookOpen, 
@@ -32,7 +31,6 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [hoveredTab, setHoveredTab] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,19 +56,17 @@ export const Header: React.FC<HeaderProps> = ({
     { id: 'blog', label: 'Blog', icon: BookOpen },
   ];
 
-  const currentPillTarget = hoveredTab || activeTab;
-
   return (
     <header 
       className={`sticky top-0 z-50 transition-all duration-500 ease-out text-white ${
         isScrolled
-          ? 'bg-[#011337]/65 backdrop-blur-xl backdrop-saturate-150 border-b border-[#16A5CE]/30 shadow-[0_10px_35px_-5px_rgba(1,19,55,0.45)] py-2.5'
-          : 'bg-[#011337] border-b border-[#2E54AD]/25 shadow-md py-4'
+          ? 'bg-[#011337]/75 backdrop-blur-xl backdrop-saturate-150 border-b border-[#16A5CE]/20 shadow-[0_10px_35px_-5px_rgba(1,19,55,0.45)] py-2.5'
+          : 'bg-[#011337] py-4'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-6">
         
-        {/* Brand Logo & Name (BETURE white + WEB #16A5CE) */}
+        {/* Brand Logo & Name */}
         <div 
           onClick={() => setActiveTab('home')} 
           className="flex items-center cursor-pointer group shrink-0 select-none"
@@ -78,44 +74,31 @@ export const Header: React.FC<HeaderProps> = ({
           <BetureLogo size="md" showText={true} />
         </div>
 
-        {/* Desktop Navigation */}
-        <nav 
-          onMouseLeave={() => setHoveredTab(null)}
-          className={`hidden lg:flex items-center p-1 rounded-full border transition-all duration-500 relative ${
-            isScrolled
-              ? 'border-[#16A5CE]/30 bg-[#011337]/50 backdrop-blur-lg shadow-lg shadow-black/25'
-              : 'border-[#2E54AD]/40 bg-[#06183F]/85 backdrop-blur-md shadow-inner'
-          }`}
-        >
+        {/* Desktop Navigation without capsule border, with smooth left-to-right underline hover animation */}
+        <nav className="hidden lg:flex items-center gap-7">
           {navItems.map((item) => {
-            const isHighlighted = currentPillTarget === item.id;
+            const isActive = activeTab === item.id;
 
             return (
               <button
                 key={item.id}
-                onClick={() => {
-                  setActiveTab(item.id);
-                  setHoveredTab(null);
-                }}
-                onMouseEnter={() => setHoveredTab(item.id)}
-                className={`relative px-4 py-2 rounded-full text-xs font-bold transition-colors duration-200 cursor-pointer z-10 whitespace-nowrap ${
-                  isHighlighted
-                    ? 'text-white'
-                    : 'text-[#D8E6F8]/80 hover:text-[#16A5CE]'
+                onClick={() => setActiveTab(item.id)}
+                className={`group relative py-2 text-sm font-semibold tracking-wide transition-colors duration-200 cursor-pointer whitespace-nowrap ${
+                  isActive
+                    ? 'text-white font-bold'
+                    : 'text-[#D8E6F8]/80 hover:text-white'
                 }`}
               >
-                {isHighlighted && (
-                  <motion.div
-                    layoutId="navAnimatedPill"
-                    transition={{
-                      type: 'spring',
-                      stiffness: 420,
-                      damping: 32,
-                    }}
-                    className="absolute inset-0 rounded-full -z-10 bg-gradient-to-r from-[#2E54AD] to-[#16A5CE] shadow-md shadow-[#16A5CE]/30"
-                  />
-                )}
                 <span>{item.label}</span>
+
+                {/* Left-to-right animated underline */}
+                <span
+                  className={`absolute bottom-0 left-0 w-full h-[2.5px] rounded-full bg-gradient-to-r from-[#16A5CE] to-[#2E54AD] transition-transform duration-300 ease-out origin-left shadow-[0_0_8px_rgba(22,165,206,0.6)] ${
+                    isActive
+                      ? 'scale-x-100'
+                      : 'scale-x-0 group-hover:scale-x-100'
+                  }`}
+                />
               </button>
             );
           })}
@@ -150,7 +133,7 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-b border-[#2E54AD]/40 bg-[#011337]/90 backdrop-blur-xl px-4 pt-3 pb-6 space-y-3 mt-2 shadow-2xl">
+        <div className="lg:hidden border-b border-[#2E54AD]/40 bg-[#011337]/95 backdrop-blur-xl px-4 pt-3 pb-6 space-y-3 mt-2 shadow-2xl">
           <div className="space-y-1">
             {navItems.map((item) => (
               <button
