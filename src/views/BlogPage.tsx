@@ -1,0 +1,550 @@
+import React, { useState, useEffect } from 'react';
+import { BlogPost } from '../types';
+import { 
+  Search, 
+  X, 
+  ArrowLeft, 
+  ArrowRight, 
+  Calendar, 
+  Copy, 
+  Check, 
+  BookOpen, 
+  ChevronRight,
+  TrendingUp,
+  User
+} from 'lucide-react';
+import { motion } from 'motion/react';
+import Markdown from 'react-markdown';
+
+interface BlogPageProps {
+  blogs: BlogPost[];
+  selectedBlogSlug?: string | null;
+  onSelectBlogSlug?: (slug: string | null) => void;
+  onSelectBlog?: (blog: BlogPost) => void;
+}
+
+export const BlogPage: React.FC<BlogPageProps> = ({ 
+  blogs, 
+  selectedBlogSlug = null,
+  onSelectBlogSlug,
+  onSelectBlog
+}) => {
+  
+  const [activeSlug, setActiveSlug] = useState<string | null>(selectedBlogSlug);
+  const [search, setSearch] = useState('');
+  const [copied, setCopied] = useState(false);
+
+  
+  useEffect(() => {
+    setActiveSlug(selectedBlogSlug);
+  }, [selectedBlogSlug]);
+
+  const handleOpenPost = (post: BlogPost) => {
+    setActiveSlug(post.slug || post.id);
+    if (onSelectBlogSlug) {
+      onSelectBlogSlug(post.slug || post.id);
+    }
+    if (onSelectBlog) {
+      onSelectBlog(post);
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleBackToList = () => {
+    setActiveSlug(null);
+    if (onSelectBlogSlug) {
+      onSelectBlogSlug(null);
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleCopyLink = () => {
+    try {
+      navigator.clipboard.writeText(window.location.href);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    } catch {
+      
+    }
+  };
+
+  
+  const currentPost = activeSlug 
+    ? blogs.find((b) => b.slug === activeSlug || b.id === activeSlug) || null 
+    : null;
+
+  
+  const filtered = blogs.filter((b) => {
+    if (!search.trim()) return true;
+    const q = search.toLowerCase();
+    return (
+      b.title.toLowerCase().includes(q) ||
+      b.excerpt.toLowerCase().includes(q) ||
+      b.category.toLowerCase().includes(q) ||
+      b.tags.some((t) => t.toLowerCase().includes(q)) ||
+      b.author.toLowerCase().includes(q)
+    );
+  });
+
+  
+  const otherPosts = currentPost 
+    ? blogs.filter((b) => b.id !== currentPost.id).slice(0, 4)
+    : [];
+
+  
+  
+  
+  if (currentPost) {
+    return (
+      <div className="py-10 sm:py-16 bg-[#F5F8FC] min-h-screen text-[#011337]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          
+          {}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-[#D8E6F8]">
+            <button
+              onClick={handleBackToList}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white hover:bg-[#D8E6F8]/30 text-[#2E54AD] hover:text-[#011337] text-xs font-bold border border-[#D8E6F8] shadow-xs transition-all cursor-pointer group"
+            >
+              <ArrowLeft className="w-4 h-4 text-[#2E54AD] group-hover:-translate-x-1 transition-transform" />
+              <span>Back to All Articles</span>
+            </button>
+
+            {}
+            <div className="flex items-center gap-2">
+              <button
+                onClick={handleCopyLink}
+                title="Copy Article Link"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-[#D8E6F8] text-xs text-[#162E66] hover:text-[#011337] hover:bg-[#D8E6F8]/30 shadow-xs transition-all cursor-pointer font-medium"
+              >
+                {copied ? (
+                  <>
+                    <Check className="w-3.5 h-3.5 text-emerald-600" />
+                    <span className="text-emerald-600 font-bold">Copied!</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-3.5 h-3.5 text-[#5074A8]" />
+                    <span>Copy Link</span>
+                  </>
+                )}
+              </button>
+            </div>
+          </div>
+
+          {}
+          <div className="space-y-4">
+            <div className="flex items-center gap-2 text-xs text-[#5074A8]">
+              <Calendar className="w-3.5 h-3.5 text-[#2E54AD]" />
+              <span>{currentPost.date}</span>
+            </div>
+
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#011337] tracking-tight leading-[1.15]">
+              {currentPost.title}
+            </h1>
+
+            {}
+            <div className="flex items-center gap-3 pt-2">
+              <img
+                src={currentPost.authorAvatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80'}
+                alt={currentPost.author}
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  target.onerror = null;
+                  target.src = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80';
+                }}
+                className="w-11 h-11 rounded-full object-cover border-2 border-[#1BBCE0]/40 shadow-xs"
+              />
+              <div>
+                <div className="text-sm font-bold text-[#011337]">
+                  {currentPost.author}
+                </div>
+                <div className="text-xs text-[#162E66] font-medium">
+                  {currentPost.authorRole}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {}
+          <div className="rounded-3xl overflow-hidden border border-[#D8E6F8] shadow-xl relative group">
+            <img
+              src={currentPost.image}
+              alt={currentPost.title}
+              referrerPolicy="no-referrer"
+              onError={(e) => {
+                const target = e.currentTarget;
+                target.onerror = null;
+                target.src = 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1200&q=80';
+              }}
+              className="w-full max-h-[460px] object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#011337]/40 via-transparent to-transparent opacity-60 pointer-events-none" />
+          </div>
+
+          {}
+          <div className="p-6 rounded-2xl bg-gradient-to-r from-[#D8E6F8]/35 via-[#D8E6F8]/15 to-transparent border-l-4 border-[#2E54AD] text-[#011337] shadow-xs space-y-2">
+            <div className="text-xs font-bold uppercase tracking-wider text-[#2E54AD]">
+              Key Article Brief
+            </div>
+            <p className="text-sm sm:text-base font-medium leading-relaxed text-[#011337]">
+              {currentPost.excerpt}
+            </p>
+          </div>
+
+          {}
+          <div className="prose prose-slate max-w-none text-[#011337] leading-relaxed text-sm sm:text-base">
+            <Markdown
+              components={{
+                h1: ({ children }) => (
+                  <h1 className="text-2xl sm:text-3xl font-black text-[#011337] pt-8 pb-3 border-b-2 border-[#D8E6F8]">
+                    {children}
+                  </h1>
+                ),
+                h2: ({ children }) => (
+                  <h2 className="text-xl sm:text-2xl font-black text-[#011337] pt-7 pb-2.5 border-b border-[#D8E6F8]/80">
+                    {children}
+                  </h2>
+                ),
+                h3: ({ children }) => (
+                  <h3 className="text-lg sm:text-xl font-bold text-[#011337] pt-6 pb-2 border-b border-[#D8E6F8]/60 flex items-center gap-2.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#2E54AD] shrink-0" />
+                    <span>{children}</span>
+                  </h3>
+                ),
+                p: ({ children }) => (
+                  <p className="text-sm sm:text-base leading-relaxed text-[#011337]/90 font-normal my-4">
+                    {children}
+                  </p>
+                ),
+                strong: ({ children }) => (
+                  <strong className="font-bold text-[#2E54AD] bg-[#D8E6F8]/40 px-1.5 py-0.5 rounded-md">
+                    {children}
+                  </strong>
+                ),
+                ul: ({ children }) => (
+                  <ul className="space-y-3 my-4 list-none pl-0">
+                    {children}
+                  </ul>
+                ),
+                ol: ({ children }) => (
+                  <ol className="space-y-3 my-4 list-decimal pl-5 marker:text-[#2E54AD] marker:font-bold">
+                    {children}
+                  </ol>
+                ),
+                li: ({ children }) => (
+                  <li className="flex items-start gap-3 p-3.5 rounded-xl bg-white border border-[#D8E6F8]/70 shadow-2xs text-sm sm:text-base text-[#011337] leading-relaxed">
+                    <span className="mt-2 w-2 h-2 rounded-full bg-[#2E54AD] shrink-0" />
+                    <div className="flex-1">{children}</div>
+                  </li>
+                ),
+                blockquote: ({ children }) => (
+                  <blockquote className="border-l-4 border-[#2E54AD] pl-4 py-2 italic text-[#162E66] my-4 bg-[#D8E6F8]/15 rounded-r-xl">
+                    {children}
+                  </blockquote>
+                )
+              }}
+            >
+              {currentPost.content}
+            </Markdown>
+          </div>
+
+          {}
+          <div className="p-6 rounded-2xl bg-white border border-[#D8E6F8] shadow-sm flex flex-col sm:flex-row items-center sm:items-start gap-5">
+            <img
+              src={currentPost.authorAvatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80'}
+              alt={currentPost.author}
+              referrerPolicy="no-referrer"
+              className="w-16 h-16 rounded-2xl object-cover border border-[#2E54AD]/30 shrink-0"
+            />
+            <div className="space-y-1.5 text-center sm:text-left">
+              <div className="text-xs font-bold text-[#2E54AD] uppercase tracking-wider">
+                Written by
+              </div>
+              <h4 className="text-base font-bold text-[#011337]">
+                {currentPost.author}
+              </h4>
+              <p className="text-xs text-[#162E66]">
+                {currentPost.authorRole} at Beture Web. Passionate about empowering the next generation of Web3 engineers and fintech founders.
+              </p>
+            </div>
+          </div>
+
+          {}
+          {}
+          {}
+          <div className="pt-12 border-t-2 border-[#D8E6F8] space-y-6">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+              <div>
+                <h3 className="text-xl sm:text-2xl font-black text-[#011337] tracking-tight">
+                  Other Articles You Might Like
+                </h3>
+                <p className="text-xs sm:text-sm text-[#162E66]">
+                  Discover more expert guides, tokenomics deep-dives, and Web3 insights
+                </p>
+              </div>
+
+              <button
+                onClick={handleBackToList}
+                className="flex items-center gap-1.5 text-xs font-bold text-[#2E54AD] hover:text-[#011337] transition-colors cursor-pointer"
+              >
+                <span>View All Articles</span>
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
+
+            {}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {otherPosts.map((post) => (
+                <div
+                  key={post.id}
+                  onClick={() => handleOpenPost(post)}
+                  className="group bg-white rounded-2xl border border-[#D8E6F8] hover:border-[#1BBCE0] overflow-hidden shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer text-[#011337]"
+                >
+                  <div>
+                    {}
+                    <div className="relative h-36 overflow-hidden">
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        referrerPolicy="no-referrer"
+                        onError={(e) => {
+                          const target = e.currentTarget;
+                          target.onerror = null;
+                          target.src = 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=600&q=80';
+                        }}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+
+                    {}
+                    <div className="p-4 space-y-2">
+                      <div className="flex items-center gap-1.5 text-[10px] text-[#5074A8]">
+                        <Calendar className="w-3 h-3 text-[#2E54AD]" />
+                        <span>{post.date}</span>
+                      </div>
+
+                      <h4 className="text-xs font-bold text-[#011337] group-hover:text-[#2E54AD] transition-colors line-clamp-2 leading-snug">
+                        {post.title}
+                      </h4>
+
+                      <p className="text-[11px] text-[#011337]/70 line-clamp-2 leading-relaxed">
+                        {post.excerpt}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="px-4 pb-3 pt-1 border-t border-[#D8E6F8]/50 flex items-center justify-between text-[11px] font-bold text-[#2E54AD] group-hover:text-[#1BBCE0]">
+                    <span>Read Article</span>
+                    <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                  </div>
+                </div>
+              ))}
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    );
+  }
+
+  
+  
+  
+  return (
+    <div className="min-h-screen bg-[#F5F8FC] text-[#011337]">
+      
+      {}
+      <section className="relative w-full bg-gradient-to-r from-[#011337] via-[#162E66] to-[#2E54AD] py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden shadow-lg">
+        
+        {}
+        <div className="absolute right-[-30px] sm:right-2 lg:right-8 top-[-30px] sm:top-[-20px] lg:top-[-10px] pointer-events-none opacity-40 lg:opacity-60 overflow-hidden w-72 h-72 sm:w-96 sm:h-96">
+          {}
+          <div className="absolute top-4 right-4 w-48 h-48 sm:w-60 sm:h-60 rotate-45 rounded-3xl border-2 border-[#1BBCE0]/40 bg-gradient-to-br from-[#D8E6F8]/30 to-[#1BBCE0]/20 backdrop-blur-xs" />
+          {}
+          <div className="absolute top-10 right-10 w-38 h-38 sm:w-48 sm:h-48 rotate-45 rounded-2xl border-2 border-[#2E54AD]/50 bg-gradient-to-br from-[#2E54AD]/30 to-[#162E66]/30" />
+          {}
+          <div className="absolute top-16 right-16 w-26 h-26 sm:w-32 sm:h-32 rotate-45 rounded-xl bg-gradient-to-br from-[#011337] to-[#1BBCE0] opacity-90 shadow-xl shadow-[#2E54AD]/30" />
+          {}
+          <div className="absolute top-6 right-36 w-3 h-3 rounded-full bg-[#1BBCE0] animate-pulse" />
+          <div className="absolute top-48 right-8 w-2.5 h-2.5 rounded-full bg-[#D8E6F8]" />
+        </div>
+
+        {}
+        <div className="absolute left-[-40px] sm:left-[-15px] top-1/2 -translate-y-1/2 pointer-events-none opacity-20 lg:opacity-30 overflow-hidden w-56 h-56">
+          <div className="w-40 h-40 rotate-45 rounded-3xl border border-[#1BBCE0]/35 bg-[#1BBCE0]/10" />
+        </div>
+
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 z-10">
+          
+          {}
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 0.7,
+              ease: [0.16, 1, 0.3, 1],
+              delay: 0.05,
+            }}
+            className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-[#D8E6F8]/25 shadow-xs text-xs font-semibold text-[#D8E6F8]"
+          >
+            <span>Beture Web Insights & Research</span>
+          </motion.div>
+
+          {}
+          <motion.h1
+            initial={{ y: 40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 0.8,
+              ease: [0.16, 1, 0.3, 1],
+              delay: 0.15,
+            }}
+            className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.15] drop-shadow-sm font-poppins"
+          >
+            Web3, FinTech & AI <br className="hidden sm:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D8E6F8] via-[#1BBCE0] to-[#1BBCE0]">
+              Engineering Insights
+            </span>
+          </motion.h1>
+
+          {}
+          <motion.p
+            initial={{ y: 40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 0.8,
+              ease: [0.16, 1, 0.3, 1],
+              delay: 0.25,
+            }}
+            className="text-base sm:text-lg lg:text-xl text-white/95 max-w-2xl mx-auto leading-relaxed font-normal drop-shadow-xs font-poppins"
+          >
+            Explore curated analyses, airdrop strategies, smart contract engineering guides, and AI quantitative models written by industry practitioners and Beture Web mentors.
+          </motion.p>
+
+          {}
+          <motion.div
+            initial={{ y: 35, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 0.8,
+              ease: [0.16, 1, 0.3, 1],
+              delay: 0.35,
+            }}
+            className="pt-2 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-[#D8E6F8] font-medium"
+          >
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-xs px-3.5 py-1.5 rounded-xl border border-white/10">
+              <BookOpen className="w-4 h-4 text-[#1BBCE0]" />
+              <span>{blogs.length} Deep-Dive Articles</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-xs px-3.5 py-1.5 rounded-xl border border-white/10">
+              <TrendingUp className="w-4 h-4 text-[#1BBCE0]" />
+              <span>Updated Weekly</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-xs px-3.5 py-1.5 rounded-xl border border-white/10">
+              <User className="w-4 h-4 text-[#1BBCE0]" />
+              <span>Verified On-Chain Analysts</span>
+            </div>
+          </motion.div>
+
+        </div>
+      </section>
+
+      {}
+      <section className="py-12 sm:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          
+          {}
+          <div className="bg-white p-3 sm:p-4 rounded-2xl border border-[#D8E6F8] shadow-sm">
+            <div className="relative w-full">
+              <Search className="w-5 h-5 text-[#5074A8] absolute left-4 top-1/2 -translate-y-1/2" />
+              <input
+                type="text"
+                placeholder="Search articles by title, tags, author, or topic..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="w-full bg-[#D8E6F8]/15 border border-[#D8E6F8]/80 rounded-xl pl-12 pr-10 py-3 text-sm text-[#011337] placeholder-[#5074A8] focus:outline-none focus:border-[#2E54AD] focus:bg-white transition-all font-medium"
+              />
+              {search && (
+                <button
+                  onClick={() => setSearch('')}
+                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#5074A8] hover:text-[#011337] p-1 rounded-md transition-colors"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              )}
+            </div>
+          </div>
+
+          {}
+          {filtered.length === 0 ? (
+            <div className="text-center py-16 bg-white rounded-3xl border border-[#D8E6F8] p-8 space-y-3 shadow-xs">
+              <BookOpen className="w-10 h-10 text-[#5074A8] mx-auto opacity-50" />
+              <h3 className="text-lg font-bold text-[#011337]">No articles found</h3>
+              <p className="text-xs text-[#162E66]">Try searching for other keywords, topics, or tags.</p>
+              <button
+                onClick={() => setSearch('')}
+                className="mt-2 px-4 py-2 rounded-xl bg-[#2E54AD] text-white text-xs font-bold cursor-pointer"
+              >
+                Clear Search
+              </button>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filtered.map((post) => (
+                <div
+                  key={post.id}
+                  onClick={() => handleOpenPost(post)}
+                  className="group bg-white rounded-3xl border border-[#D8E6F8] hover:border-[#1BBCE0] overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between cursor-pointer text-[#011337]"
+                >
+                  <div>
+                    {}
+                    <div className="relative h-52 overflow-hidden bg-slate-100">
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        referrerPolicy="no-referrer"
+                        onError={(e) => {
+                          const target = e.currentTarget;
+                          target.onerror = null;
+                          target.src = 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&q=80';
+                        }}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+
+                    {}
+                    <div className="p-6 space-y-3">
+                      <div className="flex items-center gap-2 text-xs text-[#5074A8]">
+                        <span>{post.date}</span>
+                        <span>•</span>
+                        <span className="font-semibold text-[#162E66]">{post.author}</span>
+                      </div>
+
+                      <h3 className="text-lg font-bold text-[#011337] group-hover:text-[#2E54AD] transition-colors line-clamp-2 leading-snug">
+                        {post.title}
+                      </h3>
+
+                      <p className="text-xs text-[#011337]/75 line-clamp-3 leading-relaxed">
+                        {post.excerpt}
+                      </p>
+                    </div>
+                  </div>
+
+                  {}
+                  <div className="px-6 py-4 bg-[#D8E6F8]/10 border-t border-[#D8E6F8] flex items-center justify-between text-xs font-bold text-[#2E54AD] group-hover:text-[#1BBCE0]">
+                    <span>Read Full Article</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+        </div>
+      </section>
+
+    </div>
+  );
+};

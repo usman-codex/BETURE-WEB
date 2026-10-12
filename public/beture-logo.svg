@@ -1,0 +1,36 @@
+<svg viewBox="0 0 300 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cyanGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1BBCE0" />
+      <stop offset="100%" stop-color="#2E54AD" />
+    </linearGradient>
+    <linearGradient id="blueDepth" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2E54AD" />
+      <stop offset="100%" stop-color="#011337" />
+    </linearGradient>
+    <linearGradient id="brightCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#55D8F7" />
+      <stop offset="100%" stop-color="#1BBCE0" />
+    </linearGradient>
+    <linearGradient id="navyShadow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B2356" />
+      <stop offset="100%" stop-color="#011337" />
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(10, 5) scale(0.7)">
+    <polygon points="12,32 48,11 48,60 12,81" fill="url(#blueDepth)" />
+    <polygon points="48,11 50,4 20,21 12,32" fill="url(#brightCyan)" />
+    <polygon points="24,38 42,28 42,56 24,67" fill="#011337" />
+    <polygon points="52,4 90,26 90,52 64,67 52,60 52,11" fill="url(#cyanGlow)" />
+    <polygon points="52,4 66,12 88,25 90,26 78,20 52,11" fill="url(#brightCyan)" />
+    <polygon points="56,22 76,33 76,46 56,58" fill="url(#navyShadow)" />
+    <polygon points="48,60 64,67 52,74 38,66" fill="#2E54AD" />
+    <polygon points="52,60 88,48 90,74 52,96 12,81 38,66" fill="url(#cyanGlow)" />
+    <polygon points="12,81 52,104 90,82 90,74 52,96" fill="url(#brightCyan)" />
+    <polygon points="52,96 52,108 38,100 12,81" fill="#2E54AD" />
+  </g>
+
+  <text x="95" y="55" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="28" letter-spacing="3" fill="#FFFFFF">BETURE</text>
+  <text x="215" y="55" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="28" letter-spacing="3" fill="#1BBCE0">WEB</text>
+</svg>

@@ -1,0 +1,83 @@
+import React from 'react';
+import { Testimonial } from '../types';
+import { Star, Quote, MapPin, CheckCircle } from 'lucide-react';
+
+interface TestimonialsSectionProps {
+  testimonials: Testimonial[];
+}
+
+export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ testimonials }) => {
+  return (
+    <section className="py-20 bg-[#D8E6F8]/15 text-[#011337] relative border-b border-[#D8E6F8]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {}
+        <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#011337]">
+            Hear From Our Grads
+          </h2>
+          <p className="text-[#162E66] text-sm">
+            Discover how students, traders, and engineers transformed their career paths through Beture Web.
+          </p>
+        </div>
+
+        {}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {testimonials.map((t) => (
+            <div
+              key={t.id}
+              className="bg-white rounded-2xl p-6 border border-[#D8E6F8] hover:border-[#1BBCE0] transition-all duration-300 shadow-md hover:shadow-xl flex flex-col justify-between text-[#011337]"
+            >
+              <div className="space-y-4">
+                {}
+                <div className="flex items-center gap-1">
+                  {[...Array(t.rating)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-[#1BBCE0] text-[#1BBCE0]" />
+                  ))}
+                </div>
+
+                {}
+                <p className="text-xs sm:text-sm text-[#011337]/80 italic leading-relaxed">
+                  "{t.content}"
+                </p>
+              </div>
+
+              {}
+              <div className="pt-6 mt-6 border-t border-[#D8E6F8] flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <img
+                    src={t.avatar}
+                    alt={t.name}
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      target.onerror = null;
+                      target.src = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80';
+                    }}
+                    className="w-10 h-10 rounded-full object-cover border-2 border-[#2E54AD]"
+                  />
+                  <div>
+                    <h4 className="text-sm font-bold text-[#011337] flex items-center gap-1">
+                      {t.name}
+                      <CheckCircle className="w-3.5 h-3.5 text-[#2E54AD]" />
+                    </h4>
+                    <p className="text-[11px] text-[#5074A8]">
+                      {t.role} • <span className="text-[#2E54AD] font-semibold">{t.company}</span>
+                    </p>
+                  </div>
+                </div>
+
+                <div className="text-[10px] text-[#5074A8] flex items-center gap-1">
+                  <MapPin className="w-3 h-3 text-[#5074A8]" />
+                  <span>{t.location}</span>
+                </div>
+              </div>
+
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+};

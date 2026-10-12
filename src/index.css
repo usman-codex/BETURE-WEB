@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-navy: #011337;
+  --color-deep-blue: #162E66;
+  --color-primary-blue: #2E54AD;
+  --color-electric-blue: #2E54AD;
+  --color-teal-blue: #2E54AD;
+  --color-bright-cyan: #1BBCE0;
+  --color-bright-teal: #1BBCE0;
+  --color-light-cyan: #D8E6F8;
+  --color-muted-teal: #5074A8;
+  --color-white: #FFFFFF;
+}
+
+@layer base {
+  :root {
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    --font-poppins: 'Poppins', sans-serif;
+  }
+
+  .font-poppins {
+    font-family: var(--font-poppins);
+  }
+
+  html, body {
+    overflow-x: clip;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  body {
+    font-family: var(--font-body);
+    font-size: 1rem; 
+    line-height: 1.6;
+    letter-spacing: -0.011em;
+    color: #011337;
+    background-color: #f5f8fc;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.025em;
+    line-height: 1.25;
+    font-weight: 700;
+  }
+
+  h1 {
+    font-size: clamp(2.25rem, 4vw, 3.25rem); 
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 3vw, 2.375rem); 
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+
+  h3 {
+    font-size: clamp(1.25rem, 2vw, 1.625rem); 
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+  }
+
+  h4 {
+    font-size: 1.125rem; 
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  button, .btn {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: 0.01em;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #2E54AD #E8F1FC;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #EBF3FC;
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2E54AD;
+    border-radius: 9999px;
+    border: 2px solid #EBF3FC;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #1BBCE0;
+    border: 2px solid #EBF3FC;
+  }
+
+  ::-webkit-scrollbar-thumb:active {
+    background: #011337;
+  }
+}

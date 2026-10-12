@@ -1,0 +1,6 @@
+{
+  "name": "Beture Web",
+  "description": "Official Beture Web platform - Modern Web & AI Development, FinTech & Blockchain Innovations, Cutting-Edge Digital Solutions and Academy.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
