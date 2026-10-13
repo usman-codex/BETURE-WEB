@@ -5,7 +5,8 @@ interface BetureLogoProps {
   className?: string;
   showText?: boolean;
   isDark?: boolean;
-  size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+  size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl';
+  layout?: 'row' | 'col';
 }
 
 export const BetureLogo: React.FC<BetureLogoProps> = ({
@@ -13,6 +14,7 @@ export const BetureLogo: React.FC<BetureLogoProps> = ({
   showText = true,
   isDark = true,
   size = 'md',
+  layout = 'row',
 }) => {
   const sizeMap = {
     sm: { img: 'h-7 w-auto', textTitle: 'text-sm' },
@@ -20,12 +22,17 @@ export const BetureLogo: React.FC<BetureLogoProps> = ({
     lg: { img: 'h-12 sm:h-14 w-auto', textTitle: 'text-xl sm:text-2xl' },
     xl: { img: 'h-16 sm:h-20 w-auto', textTitle: 'text-2xl sm:text-3xl' },
     '2xl': { img: 'h-20 sm:h-24 w-auto', textTitle: 'text-3xl sm:text-4xl' },
+    '3xl': { img: 'h-24 sm:h-28 md:h-32 w-auto', textTitle: 'text-3xl sm:text-4xl md:text-5xl' },
   };
 
   const currentSize = sizeMap[size] || sizeMap.md;
 
   return (
-    <div className={`inline-flex items-center gap-3 select-none ${className}`}>
+    <div
+      className={`inline-flex ${
+        layout === 'col' ? 'flex-col items-center justify-center text-center' : 'items-center'
+      } gap-3 sm:gap-4 select-none ${className}`}
+    >
       {/* Real User-Uploaded Logo Image */}
       <div className="relative shrink-0 flex items-center justify-center">
         <img

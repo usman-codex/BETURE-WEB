@@ -13,6 +13,7 @@ import {
 import { ServiceIcon } from '../components/ServiceIcon';
 import { SERVICES_DATA } from '../data/services';
 import { ServiceItem } from '../types';
+import { BetureLogo } from '../components/BetureLogo';
 import betureLogoImg from '../assets/beture-logo.png';
 import betureLogoTransparent from '../assets/beture-logo-transparent.png';
 
@@ -323,54 +324,14 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               </div>
             </div>
 
-            {/* Right Column: Prominent Company Logo Card */}
+            {/* Right Column: Company Logo (Same logo as in Navbar) */}
             <motion.div 
-              initial={{ opacity: 0, scale: 0.92, y: 20 }}
+              initial={{ opacity: 0, scale: 0.92, y: 15 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="w-full max-w-sm sm:max-w-md lg:max-w-sm shrink-0"
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              className="shrink-0 flex items-center justify-center py-6 lg:py-0"
             >
-              <div className="relative rounded-3xl p-8 sm:p-10 bg-white/[0.08] backdrop-blur-xl border border-white/20 shadow-2xl overflow-hidden group hover:border-[#16A5CE]/60 transition-all duration-300 flex flex-col items-center text-center">
-                
-                {/* Ambient Radial glow */}
-                <div className="absolute inset-0 bg-radial from-[#16A5CE]/20 via-transparent to-transparent pointer-events-none" />
-                
-                {/* Floating logo card */}
-                <div className="relative mb-4 flex items-center justify-center">
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-[#16A5CE]/30 to-[#2E54AD]/30 blur-lg group-hover:blur-xl transition-all" />
-                  <div className="relative p-3.5 rounded-2xl bg-[#011337]/70 border border-white/20 shadow-inner">
-                    <img
-                      src={betureLogoTransparent}
-                      onError={(e) => {
-                        const target = e.currentTarget;
-                        if (target.src !== betureLogoImg) {
-                          target.src = betureLogoImg;
-                        }
-                      }}
-                      alt="Beture Web Official Logo"
-                      className="w-28 h-28 sm:w-32 sm:h-32 object-contain drop-shadow-[0_8px_24px_rgba(22,165,206,0.5)] group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                </div>
-
-                {/* Company Name */}
-                <div className="space-y-1 relative z-10">
-                  <div className="text-2xl sm:text-3xl font-black tracking-[0.16em] uppercase leading-tight font-heading">
-                    <span className="text-white">BETURE </span>
-                    <span className="text-[#16A5CE]">WEB</span>
-                  </div>
-                  <p className="text-xs sm:text-sm text-[#D8E6F8]/85 font-medium tracking-wide font-sans">
-                    Business Process Outsourcing & Tech Solutions
-                  </p>
-                </div>
-
-                {/* Trust indicator */}
-                <div className="mt-5 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#16A5CE]/20 border border-[#16A5CE]/40 text-[#D8E6F8] text-[11px] font-bold tracking-wide">
-                  <span className="w-2 h-2 rounded-full bg-[#16A5CE] animate-pulse" />
-                  <span>Verified Technology Partner</span>
-                </div>
-
-              </div>
+              <BetureLogo size="3xl" showText={true} isDark={true} />
             </motion.div>
 
           </div>
