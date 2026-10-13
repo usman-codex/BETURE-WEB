@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
-import { Instagram, Facebook, Linkedin, Mail, Phone, ShieldCheck, Sparkles } from 'lucide-react';
+import { Instagram, Facebook, Linkedin } from 'lucide-react';
 
 interface Founder {
   id: string;
@@ -10,8 +10,8 @@ interface Founder {
   bio: string;
   image: string;
   initials: string;
-  phone: string;
-  email: string;
+  phone?: string;
+  email?: string;
   socials: {
     instagram?: string;
     facebook?: string;
@@ -56,16 +56,6 @@ export const OurFoundersSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -10 }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#2E54AD]/10 text-[#2E54AD] text-xs sm:text-sm font-bold tracking-wide uppercase font-poppins mb-3"
-          >
-            <Sparkles className="w-3.5 h-3.5 text-[#16A5CE]" />
-            <span>Executive Leadership</span>
-          </motion.div>
-
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
@@ -99,12 +89,6 @@ export const OurFoundersSection: React.FC = () => {
             whileHover={{ y: -6 }}
             className="group relative bg-white hover:bg-[#F8FAFC] rounded-3xl p-8 sm:p-11 border border-[#D8E6F8] hover:border-[#16A5CE] shadow-lg hover:shadow-[0_24px_45px_-12px_rgba(16,124,142,0.2)] transition-all duration-300 flex flex-col items-center text-center"
           >
-            {/* Top Badge */}
-            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-gradient-to-r from-[#2E54AD] to-[#16A5CE] text-white text-xs font-bold uppercase tracking-wider shadow-sm mb-6">
-              <ShieldCheck className="w-3.5 h-3.5 text-white" />
-              <span>{founder.role}</span>
-            </div>
-
             {/* Profile Photo */}
             <div className="relative mb-6">
               <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden border-4 border-white shadow-xl ring-4 ring-[#2E54AD]/20 group-hover:ring-[#16A5CE]/40 bg-gradient-to-br from-[#2E54AD]/10 to-[#16A5CE]/20 flex items-center justify-center transition-all duration-300">
@@ -139,29 +123,8 @@ export const OurFoundersSection: React.FC = () => {
               {founder.bio}
             </p>
 
-            {/* Contact Pills */}
-            <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-3 pt-2 pb-6 border-y border-[#E2E8F0]">
-              <a
-                href={`tel:${founder.phone.replace(/[^+\d]/g, '')}`}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-[#F0F6FD] hover:bg-[#2E54AD] text-[#011337] hover:text-white font-bold text-xs sm:text-sm border border-[#D8E6F8] hover:border-[#2E54AD] transition-all duration-200"
-                aria-label={`Call ${founder.phone}`}
-              >
-                <Phone className="w-4 h-4 text-[#16A5CE] group-hover:text-white" />
-                <span>{founder.phone}</span>
-              </a>
-
-              <a
-                href={`mailto:${founder.email}`}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-[#F0F6FD] hover:bg-[#16A5CE] text-[#011337] hover:text-white font-bold text-xs sm:text-sm border border-[#D8E6F8] hover:border-[#16A5CE] transition-all duration-200"
-                aria-label={`Email ${founder.email}`}
-              >
-                <Mail className="w-4 h-4 text-[#2E54AD] group-hover:text-white" />
-                <span>{founder.email}</span>
-              </a>
-            </div>
-
             {/* Social Links */}
-            <div className="flex items-center justify-center gap-3.5 mt-6">
+            <div className="flex items-center justify-center gap-3.5 mt-2">
               {founder.socials.instagram && (
                 <a
                   href={founder.socials.instagram}
