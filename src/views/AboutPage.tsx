@@ -66,46 +66,28 @@ export const AboutPage: React.FC = () => {
               </motion.p>
             </div>
 
-            {/* Right Logo Showcase: Official Company Image Logo & Brand Typography */}
+            {/* Right Column: Only Company Logo Image (Matching Navbar) */}
             <motion.div
-              initial={{ scale: 0.88, opacity: 0 }}
+              initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{
-                duration: 0.8,
+                duration: 0.7,
                 ease: [0.16, 1, 0.3, 1],
                 delay: 0.2,
               }}
-              className="lg:col-span-5 flex items-center justify-center lg:justify-end"
+              className="lg:col-span-5 flex items-center justify-center lg:justify-end relative"
             >
-              <div className="w-full max-w-md p-8 sm:p-10 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/15 shadow-[0_8px_35px_rgba(1,19,55,0.45)] flex flex-col items-center justify-center gap-5 group hover:border-[#16A5CE]/50 transition-all duration-300 relative overflow-hidden select-none">
-                {/* Decorative inner light */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#16A5CE]/10 via-transparent to-[#2E54AD]/20 rounded-3xl pointer-events-none" />
-
-                {/* Real User Company Logo Image (Matching Navbar) */}
-                <div className="relative p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/10 shadow-[0_4px_24px_rgba(22,165,206,0.3)] flex items-center justify-center">
-                  <img
-                    src={logoImg}
-                    onError={(e) => {
-                      const target = e.currentTarget;
-                      if (target.src !== '/beture-logo.png') {
-                        target.src = '/beture-logo.png';
-                      }
-                    }}
-                    alt="Beture Web Official Logo"
-                    className="h-20 sm:h-24 md:h-28 w-auto object-contain drop-shadow-[0_4px_20px_rgba(22,165,206,0.5)] transform transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-
-                {/* Brand Typography: BETURE (White) + WEB (#16A5CE) */}
-                <div className="flex items-center gap-2.5 sm:gap-3 leading-none">
-                  <span className="font-black text-2xl sm:text-3xl lg:text-4xl uppercase tracking-[0.14em] text-white font-poppins">
-                    BETURE
-                  </span>
-                  <span className="font-black text-2xl sm:text-3xl lg:text-4xl uppercase tracking-[0.14em] text-[#16A5CE] font-poppins">
-                    WEB
-                  </span>
-                </div>
-              </div>
+              <img
+                src={logoImg}
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (target.src !== '/beture-logo.png') {
+                    target.src = '/beture-logo.png';
+                  }
+                }}
+                alt="Beture Logo"
+                className="max-h-48 sm:max-h-60 lg:max-h-72 w-auto object-contain drop-shadow-[0_12px_45px_rgba(22,165,206,0.45)] hover:scale-105 transition-transform duration-300 select-none"
+              />
             </motion.div>
 
           </div>
