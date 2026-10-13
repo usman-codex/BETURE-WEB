@@ -1,21 +1,25 @@
-import React from 'react';
-import { motion } from 'motion/react';
+import React, { useState, useMemo } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { 
   ExternalLink, 
   ArrowRight,
-  Sparkles,
-  ChevronRight,
   Code2,
   TrendingUp,
   Cpu,
   Layers,
-  ShoppingBag,
   Smartphone,
-  Palette,
   Layout,
-  Globe
+  Globe,
+  Phone,
+  Mail,
+  MapPin,
+  CheckCircle2,
+  Search,
+  Building2,
+  Headphones
 } from 'lucide-react';
 import { projects } from '../data/projects';
+import { BetureLogo } from '../components/BetureLogo';
 
 interface ProjectsPageProps {
   onNavigateToContact: () => void;
@@ -24,8 +28,34 @@ interface ProjectsPageProps {
 
 export const ProjectsPage: React.FC<ProjectsPageProps> = ({
   onNavigateToContact,
-  onSelectService
 }) => {
+  const [activeCategory, setActiveCategory] = useState<string>('All');
+  const [searchQuery, setSearchQuery] = useState<string>('');
+
+  const categories = [
+    'All',
+    'Web & Software',
+    'BPO & Operations',
+    'FinTech & Web3',
+    'Mobile Apps',
+    'Local SEO & GMB'
+  ];
+
+  const filteredProjects = useMemo(() => {
+    return projects.filter((project) => {
+      const matchesCategory = 
+        activeCategory === 'All' || project.category.toLowerCase() === activeCategory.toLowerCase();
+      
+      const matchesSearch = 
+        !searchQuery.trim() ||
+        project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        project.tags.some((t) => t.toLowerCase().includes(searchQuery.toLowerCase()));
+
+      return matchesCategory && matchesSearch;
+    });
+  }, [activeCategory, searchQuery]);
+
   const handleOpenLiveSite = (e: React.MouseEvent, url?: string) => {
     e.stopPropagation();
     if (url) {
@@ -36,314 +66,377 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
   return (
     <div className="w-full bg-[#F8FAFB] min-h-screen">
       
-      {}
-      <section className="relative w-full py-16 sm:py-24 bg-gradient-to-br from-[#162E66] via-[#2E54AD] to-[#011337] text-white overflow-hidden">
-        {}
-        <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#D8E6F8_1px,transparent_1px)] [background-size:20px_20px]" />
+      {/* 1. Hero Section - Clean, Modern & Professional (No geometric diamond distractions) */}
+      <section className="relative w-full py-16 sm:py-20 lg:py-24 bg-gradient-to-r from-[#011337] via-[#162E66] to-[#2E54AD] text-white overflow-hidden border-b border-[#2E54AD]/30">
         
-        {}
-        <div 
-          aria-hidden="true" 
-          className="pointer-events-none absolute -top-10 right-0 sm:right-6 md:right-12 w-64 h-64 sm:w-80 sm:h-80 z-0 opacity-70"
-        >
-          <div className="relative w-full h-full">
-            {}
-            <div className="absolute top-0 right-4 w-44 h-44 sm:w-56 sm:h-56 rotate-45 rounded-3xl border-2 border-[#16A5CE]/30 bg-gradient-to-br from-[#D8E6F8]/40 to-[#16A5CE]/10 backdrop-blur-[1px]" />
-            {}
-            <div className="absolute top-5 right-9 w-36 h-36 sm:w-44 sm:h-44 rotate-45 rounded-2xl border-2 border-[#2E54AD]/40 bg-gradient-to-br from-[#2E54AD]/20 to-[#162E66]/20" />
-            {}
-            <div className="absolute top-10 right-14 w-24 h-24 sm:w-30 sm:h-30 rotate-45 rounded-xl bg-gradient-to-br from-[#011337] to-[#2E54AD] opacity-90 shadow-xl shadow-[#2E54AD]/20" />
-            {}
-            <div className="absolute top-2 right-32 w-3 h-3 rounded-full bg-[#16A5CE]" />
-            <div className="absolute top-36 right-6 w-2.5 h-2.5 rounded-full bg-[#2E54AD]" />
-          </div>
+        {/* Ambient Subtle Glows */}
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#16A5CE]/15 rounded-full blur-3xl" />
+          <div className="absolute -bottom-10 left-10 w-80 h-80 bg-[#2E54AD]/25 rounded-full blur-2xl" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight font-heading">
-            Our Portfolio & Top Projects
-          </h1>
-          <p className="text-[#D8E6F8] text-base sm:text-xl max-w-3xl mx-auto leading-relaxed font-sans">
-            Explore our curated showcase of production-grade decentralized protocols, institutional FinTech applications, enterprise mobile ecosystems, and high-performance Web3 solutions.
-          </p>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
+            
+            {/* Left Content */}
+            <div className="max-w-2xl space-y-5 text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#16A5CE]/15 border border-[#16A5CE]/30 text-[#16A5CE] text-xs font-bold uppercase tracking-wider font-heading">
+                <span>Verified Client Case Studies & Deliverables</span>
+              </div>
+
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.12] font-heading">
+                Our Portfolio &{' '}
+                <span className="bg-gradient-to-r from-[#16A5CE] via-[#D8E6F8] to-[#16A5CE] bg-clip-text text-transparent">
+                  Top Projects
+                </span>
+              </h1>
+
+              <p className="text-[#D8E6F8] text-sm sm:text-lg leading-relaxed font-sans max-w-xl">
+                Explore our delivered enterprise solutions spanning bespoke software engineering, global Business Process Outsourcing (BPO) hubs, local search visibility engines, and high-performance financial architectures.
+              </p>
+
+              <div className="flex items-center justify-center lg:justify-start gap-3 pt-2 font-heading">
+                <span className="text-base sm:text-lg font-extrabold text-white">Delivered Solutions</span>
+                <span className="h-[2px] w-16 bg-gradient-to-r from-[#16A5CE] to-transparent rounded-full" />
+              </div>
+            </div>
+
+            {/* Right Side: Exact Navbar Logo */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.92, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              className="shrink-0 flex items-center justify-center py-4 lg:py-0"
+            >
+              <BetureLogo size="3xl" showText={true} isDark={true} />
+            </motion.div>
+
+          </div>
         </div>
       </section>
 
-      {}
-      <section className="w-full py-16 sm:py-20">
+      {/* 2. Filter & Search Bar */}
+      <section className="w-full pt-10 sm:pt-12 pb-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-white rounded-2xl sm:rounded-3xl border border-[#D8E6F8] p-4 sm:p-6 shadow-xs flex flex-col md:flex-row items-center justify-between gap-4">
+          
+          {/* Category Tabs */}
+          <div className="flex flex-wrap items-center gap-2 w-full md:w-auto">
+            {categories.map((cat) => {
+              const isSelected = activeCategory === cat;
+              return (
+                <button
+                  key={cat}
+                  onClick={() => setActiveCategory(cat)}
+                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer font-heading ${
+                    isSelected
+                      ? 'bg-[#011337] text-white shadow-md'
+                      : 'bg-[#F5F8FC] hover:bg-[#EBF3FC] text-[#334A60] border border-[#D8E6F8]/80'
+                  }`}
+                >
+                  {cat}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Search Box */}
+          <div className="relative w-full md:w-72 shrink-0">
+            <Search className="w-4 h-4 text-[#2E54AD] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+            <input
+              type="text"
+              placeholder="Search projects by tech or name..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#F5F8FC] border border-[#D8E6F8] text-xs sm:text-sm text-[#011337] placeholder-[#7B91A4] focus:outline-none focus:border-[#16A5CE] focus:bg-white transition-all font-sans"
+            />
+          </div>
+
+        </div>
+      </section>
+
+      {/* 3. Projects Grid Showcase */}
+      <section className="w-full py-8 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
-            {projects.map((project, idx) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 35 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.1 }}
-                transition={{ duration: 0.6, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className="group flex flex-col bg-white rounded-2xl sm:rounded-3xl border border-[#D8E6F8]/80 shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden"
+          {filteredProjects.length === 0 ? (
+            <div className="text-center py-16 bg-white rounded-3xl border border-[#D8E6F8] p-8">
+              <Building2 className="w-12 h-12 text-[#2E54AD]/50 mx-auto mb-3" />
+              <h3 className="text-lg font-bold text-[#011337] font-heading">No projects found</h3>
+              <p className="text-sm text-[#4A5D6E] mt-1 font-sans">
+                Try selecting a different category or clearing your search query.
+              </p>
+              <button
+                onClick={() => { setActiveCategory('All'); setSearchQuery(''); }}
+                className="mt-4 px-5 py-2 rounded-xl bg-[#2E54AD] text-white text-xs font-bold font-heading cursor-pointer"
               >
-                {}
-                <div className="relative aspect-[16/10] overflow-hidden bg-[#EBF3FC]">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover object-center transform transition-transform duration-700 ease-out group-hover:scale-108"
-                    referrerPolicy="no-referrer"
-                  />
-                  
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
+                Reset Filters
+              </button>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+              <AnimatePresence mode="popLayout">
+                {filteredProjects.map((project, idx) => (
+                  <motion.div
+                    key={project.id}
+                    layout
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.45, delay: idx * 0.05 }}
+                    className="group flex flex-col bg-white rounded-3xl border border-[#D8E6F8] shadow-sm hover:shadow-xl hover:border-[#16A5CE]/70 transition-all duration-300 overflow-hidden"
+                  >
+                    
+                    {/* Project Image Container */}
+                    <div className="relative aspect-[16/10] overflow-hidden bg-[#EBF3FC]">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover object-center transform transition-transform duration-700 ease-out group-hover:scale-108"
+                        referrerPolicy="no-referrer"
+                        loading="lazy"
+                      />
+                      
+                      {/* Gradient Ambient Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#011337]/70 via-transparent to-black/20 opacity-70 group-hover:opacity-85 transition-opacity duration-300" />
 
-                  {}
-                  <div className="absolute inset-0 bg-black/55 backdrop-blur-[2.5px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center p-4">
-                    <button
-                      onClick={(e) => handleOpenLiveSite(e, project.liveUrl)}
-                      className="transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#2E54AD] hover:bg-[#16A5CE] text-white font-extrabold text-sm sm:text-base shadow-xl hover:shadow-cyan-500/30 hover:scale-105 transition-transform duration-200 cursor-pointer font-heading"
-                    >
-                      <span>View Live Project</span>
-                      <ExternalLink className="w-4 h-4" />
-                    </button>
-                  </div>
-                </div>
+                      {/* Top Badges */}
+                      <div className="absolute top-3 left-3 right-3 flex items-center justify-between gap-2 z-10">
+                        <span className="px-3 py-1 rounded-full bg-[#011337]/85 backdrop-blur-md text-[#D8E6F8] text-[11px] font-bold border border-white/20 font-heading">
+                          {project.category}
+                        </span>
+                        {project.client && (
+                          <span className="px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md text-[#011337] text-[10px] font-extrabold shadow-sm font-heading line-clamp-1 max-w-[140px]">
+                            {project.client}
+                          </span>
+                        )}
+                      </div>
 
-                {}
-                <div className="relative -mt-6 mx-auto z-10 px-4">
-                  <div className="bg-white px-6 py-2.5 rounded-xl shadow-lg border border-[#D8E6F8]/90 text-center min-w-[200px]">
-                    <h3 className="text-lg sm:text-xl font-extrabold text-[#011337] tracking-tight font-heading">
-                      {project.title}
-                    </h3>
-                  </div>
-                </div>
+                      {/* Hover Action Button */}
+                      <div className="absolute inset-0 bg-[#011337]/60 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center p-4 z-20">
+                        <button
+                          onClick={(e) => handleOpenLiveSite(e, project.liveUrl)}
+                          className="transform translate-y-3 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#16A5CE] hover:bg-[#2E54AD] text-[#011337] hover:text-white font-extrabold text-xs sm:text-sm shadow-xl transition-colors cursor-pointer font-heading"
+                        >
+                          <span>Explore Project</span>
+                          <ExternalLink className="w-4 h-4" />
+                        </button>
+                      </div>
+                    </div>
 
-                {}
-                <div className="p-6 sm:p-8 pt-4 flex-1 flex flex-col justify-between space-y-4">
-                  <p className="text-[#4A5D6E] text-sm sm:text-base leading-relaxed font-sans">
-                    {project.description}
-                  </p>
+                    {/* Card Body */}
+                    <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-5">
+                      
+                      {/* Title & Description */}
+                      <div className="space-y-2.5">
+                        <div className="flex items-start justify-between gap-2">
+                          <h3 className="text-xl font-extrabold text-[#011337] group-hover:text-[#2E54AD] transition-colors tracking-tight font-heading">
+                            {project.title}
+                          </h3>
+                        </div>
 
-                  {}
-                  <div className="flex flex-wrap gap-1.5 pt-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2.5 py-1 rounded-md bg-[#F0F6F8] text-[#2E54AD] text-xs font-semibold"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                        <p className="text-[#4A5D6E] text-xs sm:text-sm leading-relaxed font-sans line-clamp-3">
+                          {project.description}
+                        </p>
+                      </div>
+
+                      {/* Performance Stats */}
+                      {project.stats && project.stats.length > 0 && (
+                        <div className="grid grid-cols-3 gap-2 py-3 px-3.5 bg-[#F5F8FC] rounded-2xl border border-[#D8E6F8]/70">
+                          {project.stats.map((st, sIdx) => (
+                            <div key={sIdx} className="text-center">
+                              <div className="text-xs sm:text-sm font-extrabold text-[#011337] font-heading line-clamp-1">
+                                {st.value}
+                              </div>
+                              <div className="text-[10px] text-[#7B91A4] font-medium leading-tight mt-0.5 line-clamp-1 font-sans">
+                                {st.label}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+
+                      {/* Tech Stack Pills */}
+                      <div className="space-y-3 pt-1">
+                        <div className="flex flex-wrap gap-1.5">
+                          {project.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="px-2.5 py-1 rounded-lg bg-[#EBF3FC] text-[#2E54AD] text-[11px] font-bold border border-[#D8E6F8]/60 font-heading"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+
+                        {/* Card Footer Link */}
+                        <div className="pt-2 border-t border-[#D8E6F8]/60 flex items-center justify-between">
+                          <span className="text-[11px] text-[#7B91A4] font-semibold font-sans">
+                            Delivered by Beture Web
+                          </span>
+                          <button
+                            onClick={(e) => handleOpenLiveSite(e, project.liveUrl)}
+                            className="inline-flex items-center gap-1.5 text-xs font-bold text-[#2E54AD] hover:text-[#16A5CE] transition-colors cursor-pointer font-heading"
+                          >
+                            <span>Live Details</span>
+                            <ExternalLink className="w-3.5 h-3.5" />
+                          </button>
+                        </div>
+                      </div>
+
+                    </div>
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </div>
+          )}
 
         </div>
       </section>
 
-      {}
-      <section className="relative w-full py-16 sm:py-24 bg-white border-t border-[#D8E6F8] overflow-hidden">
-        
-        {}
-        <div 
-          aria-hidden="true" 
-          className="pointer-events-none absolute -top-8 -right-6 sm:right-4 md:right-10 w-60 h-60 sm:w-72 sm:h-72 z-0 opacity-80"
-        >
-          <div className="relative w-full h-full">
-            {}
-            <div className="absolute top-0 right-4 w-40 h-40 sm:w-52 sm:h-52 rotate-45 rounded-3xl border-2 border-[#16A5CE]/35 bg-gradient-to-br from-[#D8E6F8]/50 to-[#16A5CE]/15 backdrop-blur-xs" />
-            {}
-            <div className="absolute top-5 right-9 w-32 h-32 sm:w-40 sm:h-40 rotate-45 rounded-2xl border border-[#2E54AD]/40 bg-gradient-to-br from-[#2E54AD]/20 to-[#162E66]/15" />
-            {}
-            <div className="absolute top-10 right-14 w-20 h-20 sm:w-28 sm:h-28 rotate-45 rounded-xl bg-gradient-to-br from-[#011337] to-[#2E54AD] opacity-90 shadow-lg shadow-[#2E54AD]/20" />
-            {}
-            <div className="absolute top-2 right-28 w-3 h-3 rounded-full bg-[#16A5CE]" />
-            <div className="absolute top-32 right-6 w-2.5 h-2.5 rounded-full bg-[#2E54AD]" />
-          </div>
-        </div>
-
-        {}
-        <div 
-          aria-hidden="true" 
-          className="pointer-events-none absolute -bottom-10 -left-6 sm:left-4 md:left-8 w-56 h-56 sm:w-68 sm:h-68 z-0 opacity-75"
-        >
-          <div className="relative w-full h-full">
-            {}
-            <div className="absolute bottom-0 left-4 w-36 h-36 sm:w-48 sm:h-48 rotate-45 rounded-3xl border-2 border-[#16A5CE]/35 bg-gradient-to-br from-[#D8E6F8]/50 to-[#16A5CE]/15 backdrop-blur-xs" />
-            {}
-            <div className="absolute bottom-5 left-9 w-28 h-28 sm:w-36 sm:h-36 rotate-45 rounded-2xl border border-[#2E54AD]/40 bg-gradient-to-br from-[#2E54AD]/20 to-[#162E66]/15" />
-            {}
-            <div className="absolute bottom-10 left-14 w-18 h-18 sm:w-24 sm:h-24 rotate-45 rounded-xl bg-gradient-to-br from-[#011337] to-[#2E54AD] opacity-90 shadow-lg shadow-[#2E54AD]/20" />
-            {}
-            <div className="absolute bottom-2 left-28 w-2.5 h-2.5 rounded-full bg-[#16A5CE]" />
-            <div className="absolute bottom-28 left-6 w-2 h-2 rounded-full bg-[#2E54AD]" />
-          </div>
-        </div>
-
+      {/* 4. Enterprise Capabilities Breakdown (Clean - No Geometric Diamond Accents) */}
+      <section className="relative w-full py-16 sm:py-20 bg-white border-t border-[#D8E6F8] overflow-hidden">
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
-          <div className="text-center max-w-3xl mx-auto space-y-4">
-            <div className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-[#2E54AD]/10 text-[#2E54AD] text-xs sm:text-sm font-bold font-heading">
-              <span>Full-Stack Engineering & Growth Capabilities</span>
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <div className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-[#2E54AD]/10 text-[#2E54AD] text-xs font-bold font-heading">
+              <span>Enterprise Delivery Standards</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-[#011337] tracking-tight font-heading">
-              Have a Project in Mind? Let's Build Something Exceptional.
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#011337] tracking-tight font-heading">
+              What We Build Across Our Specialized Domains
             </h2>
-            <p className="text-[#4A5D6E] text-base sm:text-lg leading-relaxed font-sans">
-              Our expert engineers, smart contract architects, AI researchers, and digital marketing specialists deliver end-to-end technology solutions tailored to scale your vision.
+            <p className="text-[#4A5D6E] text-sm sm:text-base leading-relaxed font-sans">
+              Our multidisciplinary engineers, BPO operation managers, and digital growth specialists build tailored technology solutions engineered for scale.
             </p>
           </div>
 
-          {/* Detailed Paragraph Breakdown Covering All Our Services */}
-          <div className="bg-[#F5F8FC] rounded-3xl border border-[#D8E6F8] p-6 sm:p-10 shadow-xs space-y-8">
-            <div className="border-b border-[#D8E6F8]/80 pb-4">
-              <h3 className="text-xl font-extrabold text-[#011337] font-heading">
-                What We Build Across Our Specialized Domains:
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+            
+            {/* 1. BPO Operations */}
+            <div className="p-6 rounded-2xl bg-[#F5F8FC] border border-[#D8E6F8] hover:border-[#16A5CE] transition-all space-y-2">
+              <div className="w-10 h-10 rounded-xl bg-[#EAF4FC] text-[#2E54AD] flex items-center justify-center">
+                <Headphones className="w-5 h-5" />
+              </div>
+              <h4 className="font-extrabold text-base text-[#011337] font-heading">
+                BPO & Operations Outsourcing
+              </h4>
+              <p className="text-xs sm:text-sm text-[#4A5D6E] leading-relaxed font-sans">
+                Dedicated customer service teams, technical helpdesks, back-office data processing, and 24/7 SLA-governed support funnels.
+              </p>
+            </div>
+
+            {/* 2. Full-Stack Web Development */}
+            <div className="p-6 rounded-2xl bg-[#F5F8FC] border border-[#D8E6F8] hover:border-[#16A5CE] transition-all space-y-2">
+              <div className="w-10 h-10 rounded-xl bg-[#EAF4FC] text-[#2E54AD] flex items-center justify-center">
+                <Code2 className="w-5 h-5" />
+              </div>
+              <h4 className="font-extrabold text-base text-[#011337] font-heading">
+                Full-Stack Web Engineering
+              </h4>
+              <p className="text-xs sm:text-sm text-[#4A5D6E] leading-relaxed font-sans">
+                Modern microservices, React, Next.js, TypeScript, and Node.js architectures engineered for sub-second load speeds and security.
+              </p>
+            </div>
+
+            {/* 3. GMB & Local SEO */}
+            <div className="p-6 rounded-2xl bg-[#F5F8FC] border border-[#D8E6F8] hover:border-[#16A5CE] transition-all space-y-2">
+              <div className="w-10 h-10 rounded-xl bg-[#EAF4FC] text-[#2E54AD] flex items-center justify-center">
+                <TrendingUp className="w-5 h-5" />
+              </div>
+              <h4 className="font-extrabold text-base text-[#011337] font-heading">
+                GMB & Local SEO 3-Pack Growth
+              </h4>
+              <p className="text-xs sm:text-sm text-[#4A5D6E] leading-relaxed font-sans">
+                Local citation synchronization, automated 5-star review funnels, geo-grid heatmap tracking, and inbound phone call generation.
+              </p>
+            </div>
+
+            {/* 4. Mobile Apps */}
+            <div className="p-6 rounded-2xl bg-[#F5F8FC] border border-[#D8E6F8] hover:border-[#16A5CE] transition-all space-y-2">
+              <div className="w-10 h-10 rounded-xl bg-[#EAF4FC] text-[#2E54AD] flex items-center justify-center">
+                <Smartphone className="w-5 h-5" />
+              </div>
+              <h4 className="font-extrabold text-base text-[#011337] font-heading">
+                iOS & Android Mobile Applications
+              </h4>
+              <p className="text-xs sm:text-sm text-[#4A5D6E] leading-relaxed font-sans">
+                Cross-platform Flutter & React Native mobile experiences with offline caching, push messaging, and biometric authentication.
+              </p>
+            </div>
+
+            {/* 5. Cloud & DevOps */}
+            <div className="p-6 rounded-2xl bg-[#F5F8FC] border border-[#D8E6F8] hover:border-[#16A5CE] transition-all space-y-2">
+              <div className="w-10 h-10 rounded-xl bg-[#EAF4FC] text-[#2E54AD] flex items-center justify-center">
+                <Cpu className="w-5 h-5" />
+              </div>
+              <h4 className="font-extrabold text-base text-[#011337] font-heading">
+                Cloud Architecture & DevOps
+              </h4>
+              <p className="text-xs sm:text-sm text-[#4A5D6E] leading-relaxed font-sans">
+                Containerized Docker/Kubernetes clusters on AWS/GCP, automated CI/CD pipelines, and high-availability server monitoring.
+              </p>
+            </div>
+
+            {/* 6. UI/UX Product Design */}
+            <div className="p-6 rounded-2xl bg-[#F5F8FC] border border-[#D8E6F8] hover:border-[#16A5CE] transition-all space-y-2">
+              <div className="w-10 h-10 rounded-xl bg-[#EAF4FC] text-[#2E54AD] flex items-center justify-center">
+                <Layout className="w-5 h-5" />
+              </div>
+              <h4 className="font-extrabold text-base text-[#011337] font-heading">
+                UI/UX Product Design Systems
+              </h4>
+              <p className="text-xs sm:text-sm text-[#4A5D6E] leading-relaxed font-sans">
+                Figma component libraries, user journey mapping, interactive prototypes, and design systems built for friction-free adoption.
+              </p>
+            </div>
+
+          </div>
+
+          {/* 5. Direct Project Consultation CTA Banner */}
+          <div className="bg-gradient-to-r from-[#011337] via-[#162E66] to-[#2E54AD] rounded-3xl p-8 sm:p-12 text-white border border-[#16A5CE]/40 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
+            
+            <div className="space-y-4 max-w-xl text-center lg:text-left">
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-white font-heading">
+                Have a Project in Mind? Let's Build It Together.
               </h3>
-            </div>
+              <p className="text-xs sm:text-sm text-[#D8E6F8] font-sans leading-relaxed">
+                Reach out directly to discuss your requirements, request an architectural estimate, or assemble a dedicated engineering & BPO team.
+              </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 text-left">
-              {/* Digital Marketing */}
-              <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-white border border-[#D8E6F8]/70 shadow-2xs hover:border-[#2E54AD] transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-[#EAF4FC] text-[#2E54AD] flex items-center justify-center shrink-0 mt-0.5">
-                  <TrendingUp className="w-5 h-5" />
-                </div>
-                <div className="space-y-1">
-                  <h4 className="font-extrabold text-sm sm:text-base text-[#011337] font-heading">Digital Marketing & SEO Growth</h4>
-                  <p className="text-xs sm:text-sm text-[#4A5D6E] leading-relaxed font-sans">
-                    Data-driven organic search engine optimization (SEO), Meta & Google ad campaigns, high-converting funnel architectures, and quantitative ROI tracking to scale market presence.
-                  </p>
-                </div>
-              </div>
-
-              {/* Facebook Monetization */}
-              <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-white border border-[#D8E6F8]/70 shadow-2xs hover:border-[#2E54AD] transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-[#EAF4FC] text-[#2E54AD] flex items-center justify-center shrink-0 mt-0.5">
-                  <Globe className="w-5 h-5" />
-                </div>
-                <div className="space-y-1">
-                  <h4 className="font-extrabold text-sm sm:text-base text-[#011337] font-heading">Facebook & Content Monetization</h4>
-                  <p className="text-xs sm:text-sm text-[#4A5D6E] leading-relaxed font-sans">
-                    End-to-end Facebook page audience scaling, In-Stream Ads compliance, viral content strategy, policy violation troubleshooting, and automated banking payout structures.
-                  </p>
-                </div>
-              </div>
-
-              {/* Blockchain Development */}
-              <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-white border border-[#D8E6F8]/70 shadow-2xs hover:border-[#2E54AD] transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-[#EAF4FC] text-[#2E54AD] flex items-center justify-center shrink-0 mt-0.5">
-                  <Layers className="w-5 h-5" />
-                </div>
-                <div className="space-y-1">
-                  <h4 className="font-extrabold text-sm sm:text-base text-[#011337] font-heading">Blockchain & Web3 Engineering</h4>
-                  <p className="text-xs sm:text-sm text-[#4A5D6E] leading-relaxed font-sans">
-                    Audited Solidity & Rust smart contracts, decentralized finance (DeFi) protocols, EVM/Solana cross-chain integrations, and custom tokenomics for institutional-grade reliability.
-                  </p>
-                </div>
-              </div>
-
-              {/* DevOps Development */}
-              <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-white border border-[#D8E6F8]/70 shadow-2xs hover:border-[#2E54AD] transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-[#EAF4FC] text-[#2E54AD] flex items-center justify-center shrink-0 mt-0.5">
-                  <Cpu className="w-5 h-5" />
-                </div>
-                <div className="space-y-1">
-                  <h4 className="font-extrabold text-sm sm:text-base text-[#011337] font-heading">DevOps & Cloud Infrastructure</h4>
-                  <p className="text-xs sm:text-sm text-[#4A5D6E] leading-relaxed font-sans">
-                    Containerized microservices via Kubernetes & Docker, automated CI/CD deployment pipelines on AWS/GCP, Terraform IaC, and 24/7 high-availability system monitoring.
-                  </p>
-                </div>
-              </div>
-
-              {/* Full-Stack Web Development */}
-              <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-white border border-[#D8E6F8]/70 shadow-2xs hover:border-[#2E54AD] transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-[#EAF4FC] text-[#2E54AD] flex items-center justify-center shrink-0 mt-0.5">
-                  <Code2 className="w-5 h-5" />
-                </div>
-                <div className="space-y-1">
-                  <h4 className="font-extrabold text-sm sm:text-base text-[#011337] font-heading">Full-Stack Web Development</h4>
-                  <p className="text-xs sm:text-sm text-[#4A5D6E] leading-relaxed font-sans">
-                    High-performance modern web platforms using React, Next.js, Node.js, and TypeScript, engineered with micro-frontend architectures, top-tier security, and fast page speeds.
-                  </p>
-                </div>
-              </div>
-
-              {/* Ecommerce & Shopify */}
-              <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-white border border-[#D8E6F8]/70 shadow-2xs hover:border-[#2E54AD] transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-[#EAF4FC] text-[#2E54AD] flex items-center justify-center shrink-0 mt-0.5">
-                  <ShoppingBag className="w-5 h-5" />
-                </div>
-                <div className="space-y-1">
-                  <h4 className="font-extrabold text-sm sm:text-base text-[#011337] font-heading">Ecommerce & Custom Storefronts</h4>
-                  <p className="text-xs sm:text-sm text-[#4A5D6E] leading-relaxed font-sans">
-                    Scalable Shopify Plus and custom headless ecommerce platforms integrated with multi-currency payment gateways, inventory sync, and seamless 1-click checkout experiences.
-                  </p>
-                </div>
-              </div>
-
-              {/* Mobile App Development */}
-              <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-white border border-[#D8E6F8]/70 shadow-2xs hover:border-[#2E54AD] transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-[#EAF4FC] text-[#2E54AD] flex items-center justify-center shrink-0 mt-0.5">
-                  <Smartphone className="w-5 h-5" />
-                </div>
-                <div className="space-y-1">
-                  <h4 className="font-extrabold text-sm sm:text-base text-[#011337] font-heading">iOS & Android Mobile Apps</h4>
-                  <p className="text-xs sm:text-sm text-[#4A5D6E] leading-relaxed font-sans">
-                    Native-performance mobile applications built with Flutter and React Native, featuring real-time push notifications, offline data caching, and frictionless UX design.
-                  </p>
-                </div>
-              </div>
-
-              {/* AI & Machine Learning */}
-              <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-white border border-[#D8E6F8]/70 shadow-2xs hover:border-[#2E54AD] transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-[#EAF4FC] text-[#2E54AD] flex items-center justify-center shrink-0 mt-0.5">
-                  <Cpu className="w-5 h-5" />
-                </div>
-                <div className="space-y-1">
-                  <h4 className="font-extrabold text-sm sm:text-base text-[#011337] font-heading">AI & Machine Learning Solutions</h4>
-                  <p className="text-xs sm:text-sm text-[#4A5D6E] leading-relaxed font-sans">
-                    Custom Large Language Model (LLM) fine-tuning, automated AI agents, predictive business analytics, and computer vision pipelines to eliminate manual operational friction.
-                  </p>
-                </div>
-              </div>
-
-              {/* UI/UX Product Design */}
-              <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-white border border-[#D8E6F8]/70 shadow-2xs hover:border-[#2E54AD] transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-[#EAF4FC] text-[#2E54AD] flex items-center justify-center shrink-0 mt-0.5">
-                  <Layout className="w-5 h-5" />
-                </div>
-                <div className="space-y-1">
-                  <h4 className="font-extrabold text-sm sm:text-base text-[#011337] font-heading">UI/UX Product Design & Prototyping</h4>
-                  <p className="text-xs sm:text-sm text-[#4A5D6E] leading-relaxed font-sans">
-                    Figma design systems, interactive wireframing, heuristic evaluations, and human-centered design principles that reduce churn and turn casual visitors into loyal users.
-                  </p>
-                </div>
-              </div>
-
-              {/* Graphic & Brand Identity */}
-              <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-white border border-[#D8E6F8]/70 shadow-2xs hover:border-[#2E54AD] transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-[#EAF4FC] text-[#2E54AD] flex items-center justify-center shrink-0 mt-0.5">
-                  <Palette className="w-5 h-5" />
-                </div>
-                <div className="space-y-1">
-                  <h4 className="font-extrabold text-sm sm:text-base text-[#011337] font-heading">Graphic Design & Brand Identity</h4>
-                  <p className="text-xs sm:text-sm text-[#4A5D6E] leading-relaxed font-sans">
-                    Cohesive visual identities, typography guidelines, vector assets, marketing collaterals, and 3D digital illustrations crafted for modern tech and financial brands.
-                  </p>
-                </div>
+              {/* Direct Company Contact Details */}
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-1 text-xs sm:text-sm font-semibold">
+                <a 
+                  href="tel:+923290781709" 
+                  className="flex items-center gap-2 hover:text-[#16A5CE] transition-colors"
+                >
+                  <Phone className="w-4 h-4 text-[#16A5CE]" />
+                  <span>+92 329 078 1709</span>
+                </a>
+                <a 
+                  href="mailto:betureweb@gmail.com" 
+                  className="flex items-center gap-2 hover:text-[#16A5CE] transition-colors"
+                >
+                  <Mail className="w-4 h-4 text-[#16A5CE]" />
+                  <span>betureweb@gmail.com</span>
+                </a>
+                <span className="flex items-center gap-1.5 text-[#D8E6F8]/80">
+                  <MapPin className="w-4 h-4 text-[#16A5CE]" />
+                  <span>Lahore</span>
+                </span>
               </div>
             </div>
+
+            <div className="shrink-0 flex items-center justify-center">
+              <button
+                onClick={onNavigateToContact}
+                className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-2xl bg-[#16A5CE] hover:bg-white text-[#011337] font-extrabold text-sm sm:text-base shadow-xl hover:shadow-2xl transition-all cursor-pointer font-heading"
+              >
+                <span>Start a Project Consultation</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
+
           </div>
 
-          {/* CTA Action Button */}
-          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button
-              onClick={onNavigateToContact}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-[#2E54AD] hover:bg-[#16A5CE] text-white font-extrabold text-base shadow-xl hover:shadow-cyan-500/25 transition-all duration-300 hover:scale-105 cursor-pointer font-heading"
-            >
-              <span>Start a Project Consultation</span>
-              <ArrowRight className="w-5 h-5" />
-            </button>
-          </div>
         </div>
       </section>
 
