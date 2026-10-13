@@ -14,9 +14,10 @@ export const BusinessNeedsSection: React.FC<BusinessNeedsSectionProps> = ({
   onNavigateToServices,
   onSelectService,
 }) => {
-  // Ordered exact 7 services requested by user:
-  // Digital Marketing, SEO, Web Development, IoT, GLM, Facebook Monetization, E-Commerce
+  // Ordered services with GMB and Citation Landing Pages as the first cards:
   const requestedServiceIds = [
+    'gmb-services',
+    'citation-landing-pages',
     'digital-marketing',
     'seo-services',
     'web-development',

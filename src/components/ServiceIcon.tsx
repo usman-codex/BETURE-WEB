@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface ServiceIconProps {
-  name: 'blockchain' | 'devops' | 'web' | 'ecommerce' | 'mobile' | 'ai' | 'uiux' | 'digital-marketing' | 'facebook-monetization' | 'graphic-design' | 'wordpress' | string;
+  name: 'blockchain' | 'devops' | 'web' | 'ecommerce' | 'mobile' | 'ai' | 'uiux' | 'digital-marketing' | 'facebook-monetization' | 'graphic-design' | 'wordpress' | 'seo' | 'iot' | 'glm' | 'gmb' | 'citation' | string;
   className?: string;
   size?: number;
   color?: string;
@@ -16,6 +16,95 @@ export const ServiceIcon: React.FC<ServiceIconProps> = ({
   accentColor = '#16A5CE'
 }) => {
   switch (name) {
+    case 'gmb':
+      return (
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 48 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className={className}
+        >
+          {/* Map Pin Outline */}
+          <path
+            d="M24 4C15.7157 4 9 10.7157 9 19C9 29.5 24 44 24 44C24 44 39 29.5 39 19C39 10.7157 32.2843 4 24 4Z"
+            stroke={color}
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          {/* Inside Store Awning / Building */}
+          <path
+            d="M17 17H31M17 17L18.5 21H29.5L31 17M17 17L19 12H29L31 17"
+            stroke={accentColor}
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M19 21V27H29V21"
+            stroke={color}
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          {/* Store Door */}
+          <path
+            d="M22 27V23H26V27"
+            stroke={accentColor}
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          {/* Star review indicator above */}
+          <circle cx="24" cy="8.5" r="2" fill={accentColor} />
+        </svg>
+      );
+
+    case 'citation':
+      return (
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 48 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className={className}
+        >
+          {/* Landing Page Browser Window */}
+          <rect
+            x="7"
+            y="7"
+            width="34"
+            height="26"
+            rx="3"
+            stroke={color}
+            strokeWidth="2.5"
+          />
+          {/* Browser header */}
+          <path d="M7 14H41" stroke={color} strokeWidth="2" />
+          <circle cx="12" cy="10.5" r="1.5" fill={accentColor} />
+          <circle cx="16" cy="10.5" r="1.5" fill={color} />
+          {/* Citation Rows / Content */}
+          <path d="M12 20H24" stroke={color} strokeWidth="2" strokeLinecap="round" />
+          <path d="M12 25H20" stroke={color} strokeWidth="2" strokeLinecap="round" />
+          {/* Citation Quotation / Verified Badge */}
+          <rect x="27" y="18" width="10" height="11" rx="2" fill={accentColor} fillOpacity="0.2" stroke={accentColor} strokeWidth="1.8" />
+          <path d="M30 23L32 25L35 21" stroke={accentColor} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+          {/* Connected Citation / Directory Node Link underneath */}
+          <path
+            d="M16 33V39C16 40.1 16.9 41 18 41H30C31.1 41 32 40.1 32 39V33"
+            stroke={color}
+            strokeWidth="2.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path d="M24 33V37" stroke={accentColor} strokeWidth="2" strokeLinecap="round" />
+          <circle cx="24" cy="41" r="2" fill={accentColor} />
+        </svg>
+      );
+
     case 'graphic-design':
       return (
         <svg

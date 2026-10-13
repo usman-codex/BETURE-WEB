@@ -2,6 +2,110 @@ import { ServiceItem } from '../types';
 
 export const SERVICES_DATA: ServiceItem[] = [
   {
+    id: 'gmb-services',
+    slug: 'gmb-google-my-business',
+    shortTitle: 'GMB ( Google my Business )',
+    title: 'GMB (Google My Business) Optimization & Local SEO',
+    shortDescription: 'Dominate Google Maps and local 3-pack search results with verified GMB profile optimization, review management, geo-grid ranking, and local lead generation.',
+    fullDescription: 'Dominate Google 3-Pack and Maps search rankings with end-to-end Google My Business (GMB / Google Business Profile) optimization. We handle profile verification, geo-tagged photo uploads, category audit, automated review funnels, local citation synchronization, and geo-grid rank tracking to funnel high-intent local phone calls and foot traffic directly to your business.',
+    bannerHeadline: 'Dominate Local Search: Google My Business (GMB) & Google Maps 3-Pack Growth',
+    bannerDescription: 'Capture customers searching near you. We optimize your Google Business Profile to rank #1 in local map packs, drive daily inbound calls, maximize verified 5-star customer reviews, and protect your local presence against competitor hijackings.',
+    accentColor: '#2E54AD',
+    iconName: 'gmb',
+    tools: [
+      { name: 'Google Business Profile', color: '#4285F4' },
+      { name: 'Google Maps API', color: '#34A853' },
+      { name: 'Local Falcon', color: '#EA4335' },
+      { name: 'BrightLocal', color: '#FBBC05' },
+      { name: 'Geo-Grid Tracker', color: '#16A5CE' },
+      { name: 'Whitespark', color: '#011337' }
+    ],
+    deliverablesHeading: 'Top Google 3-Pack Rankings, Inbound Calls & Verified Local Authority',
+    deliverablesDescription: 'Our local SEO specialists engineer hyper-targeted Google Business Profile setups that systematically climb geo-grid rankings within your service area radius.',
+    keyFeatures: [
+      'Google Business Profile (GMB) Complete Setup, Verification & Category Optimization',
+      'Google Maps 3-Pack Top Ranking Strategies & Local Keyword Geo-Targeting',
+      'Automated 5-Star Review Generation Funnels & Reputation Management',
+      'Geo-Tagged Image Metadata & High-Converting Product/Service Showcase Posts',
+      'Spam Listing Audits, Competitor Flagging & Duplicate Profile Merging',
+      'Monthly Geo-Grid Heatmap Rank Tracking, Call Analytics & ROI Reporting'
+    ],
+    processSteps: [
+      {
+        number: '01',
+        title: 'Local Market Audit & Category Benchmarking',
+        description: 'Auditing primary/secondary GMB categories, competitor proximity rankings, and citation discrepancies.'
+      },
+      {
+        number: '02',
+        title: 'Profile Optimization & Geo-Tag Enhancement',
+        description: 'Crafting SEO-optimized business descriptions, uploading EXIF geo-tagged images, and configuring service catalogs.'
+      },
+      {
+        number: '03',
+        title: 'Review Funnel & Local Signals Activation',
+        description: 'Setting up automated SMS/email review acquisition workflows and posting weekly engagement updates.'
+      },
+      {
+        number: '04',
+        title: 'Geo-Grid Monitoring & Proximity Scaling',
+        description: 'Tracking local rank radius across neighborhoods and optimizing signals to expand geographic reach.'
+      }
+    ]
+  },
+  {
+    id: 'citation-landing-pages',
+    slug: 'citation-landing-pages',
+    shortTitle: 'Citation ( Landing Pages )',
+    title: 'Citation Building & High-Converting Local Landing Pages',
+    shortDescription: 'Consistent NAP business directory citations, niche backlinks, and lightning-fast geo-targeted landing pages engineered to boost organic rankings and convert local clicks into leads.',
+    fullDescription: 'Accelerate local organic visibility and convert search traffic into booked appointments with structured local citation distribution and bespoke geo-targeted landing pages. We build 100% NAP-consistent (Name, Address, Phone) citations across top global and local business directories paired with ultra-fast, mobile-optimized landing pages that rank for high-intent neighborhood keywords.',
+    bannerHeadline: 'Build Local Trust & Scale Leads: Authority Citations & Geo-Targeted Landing Pages',
+    bannerDescription: 'Supercharge your domain trust and geographic relevance. We build authoritative citations across high-DA business directories and craft bespoke local landing pages that outrank competitors and convert clicks into paying customers.',
+    accentColor: '#2E54AD',
+    iconName: 'citation',
+    tools: [
+      { name: 'Yelp & YellowPages', color: '#D32323' },
+      { name: 'Bing Places', color: '#008373' },
+      { name: 'Apple Business Connect', color: '#000000' },
+      { name: 'Moz Local', color: '#2E54AD' },
+      { name: 'Next.js / Tailwind', color: '#16A5CE' },
+      { name: 'Schema Markup Validator', color: '#34A853' }
+    ],
+    deliverablesHeading: '100% Consistent Directory Citations & High-Performance Geo-Funnels',
+    deliverablesDescription: 'We eliminate inconsistent business information, secure high-authority backlinks, and launch fast-loading localized landing pages that turn searchers into calls and form submissions.',
+    keyFeatures: [
+      '100+ High Domain Authority (DA) Manual Business Directory Citations',
+      '100% NAP (Name, Address, Phone) Consistency Across Web Directories & GPS Aggregators',
+      'Geo-Targeted City & Service Area Landing Pages with Localized Schema Markup (JSON-LD)',
+      'Conversion-Optimized UI/UX with Click-to-Call Buttons & Instant Lead Capture Forms',
+      'Duplicate Citation Cleanup, Bad Link Removal & Tier-2 Indexing',
+      'PageSpeed 95+ Mobile Optimization & A/B Tested Call-to-Action Funnels'
+    ],
+    processSteps: [
+      {
+        number: '01',
+        title: 'NAP Consistency Audit & Citation Cleansing',
+        description: 'Scanning the web for duplicate, mismatched, or outdated business phone numbers, addresses, and website URLs.'
+      },
+      {
+        number: '02',
+        title: 'Tier-1 Authority Directory Submissions',
+        description: 'Manually submitting verified listings to top data aggregators, local directories, industry portals, and mapping engines.'
+      },
+      {
+        number: '03',
+        title: 'Custom Geo Landing Page Engineering',
+        description: 'Designing lightning-fast, mobile-first service-area landing pages complete with LocalBusiness Schema markup.'
+      },
+      {
+        number: '04',
+        title: 'Indexation Tracking & Conversion Optimization',
+        description: 'Ensuring all directory citations are indexed by Google and continuously testing landing page conversion rates.'
+      }
+    ]
+  },
+  {
     id: 'digital-marketing',
     slug: 'digital-marketing',
     shortTitle: 'Digital Marketing',
