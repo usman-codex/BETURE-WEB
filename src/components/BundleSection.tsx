@@ -1,7 +1,5 @@
 import React from 'react';
 import { 
-  CheckCircle, 
-  Sparkles, 
   PhoneCall, 
   ArrowRight,
   ShieldCheck,
@@ -30,23 +28,12 @@ export const BundleSection: React.FC<BundleSectionProps> = ({
         {/* Main Card Container */}
         <div className="bg-white rounded-3xl border-2 border-[#2E54AD]/30 p-8 sm:p-12 shadow-xl relative overflow-hidden text-[#011337]">
           
-          {/* Top Badge */}
-          <div className="absolute top-0 right-0 bg-gradient-to-r from-[#2E54AD] to-[#16A5CE] text-white font-extrabold text-xs px-6 py-2 rounded-bl-2xl uppercase tracking-wider flex items-center gap-2 shadow-md">
-            <Sparkles className="w-4 h-4 fill-white text-white" />
-            <span>End-to-End Digital Solutions</span>
-          </div>
-
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             
             {/* Left Content Column */}
             <div className="lg:col-span-7 space-y-6">
               
               <div className="space-y-3">
-                <span className="text-xs font-black uppercase tracking-[0.2em] text-[#16A5CE] flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#16A5CE] animate-pulse" />
-                  Software House & Growth Engine
-                </span>
-                
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[#011337] leading-[1.15] font-heading">
                   Accelerate Your Business With <span className="text-[#2E54AD]">Enterprise-Grade</span> Digital Solutions
                 </h2>
