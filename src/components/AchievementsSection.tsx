@@ -11,34 +11,32 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = () => {
   // Classic regular pointy-top hexagon polygon clip path
   const hexClip = 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)';
 
-  // We want EXACTLY 2 clean rows of hexagons that fit seamlessly!
-  // Row 1: 7 hexagons
-  // Row 2: 6 or 7 hexagons nested cleanly in the interstice with a slight horizontal offset
-  // We use the real user company images from achievements
+  // Row 1 items (7 hexagons)
   const row1 = [
-    HEXAGON_GALLERY[3],  // building / lab
-    HEXAGON_GALLERY[1],  // img2
-    HEXAGON_GALLERY[2],  // img3
-    HEXAGON_GALLERY[4],  // img5
-    HEXAGON_GALLERY[5],  // img6
-    HEXAGON_GALLERY[6],  // img7
-    HEXAGON_GALLERY[7],  // img8
+    { ...HEXAGON_GALLERY[3], yOffset: 'translate-y-2 sm:translate-y-3', zIndex: 'z-10' },
+    { ...HEXAGON_GALLERY[1], yOffset: '-translate-y-3 sm:-translate-y-5', zIndex: 'z-20' },
+    { ...HEXAGON_GALLERY[2], yOffset: 'translate-y-1 sm:translate-y-2', zIndex: 'z-10' },
+    { ...HEXAGON_GALLERY[4], yOffset: '-translate-y-4 sm:-translate-y-6', zIndex: 'z-20' },
+    { ...HEXAGON_GALLERY[5], yOffset: 'translate-y-2 sm:translate-y-3', zIndex: 'z-10' },
+    { ...HEXAGON_GALLERY[6], yOffset: '-translate-y-3 sm:-translate-y-5', zIndex: 'z-20' },
+    { ...HEXAGON_GALLERY[7], yOffset: 'translate-y-1 sm:translate-y-2', zIndex: 'z-10' },
   ];
 
+  // Row 2 items (7 hexagons, nested interlocking honeycomb with random up-down offset)
   const row2 = [
-    HEXAGON_GALLERY[0],  // img1
-    HEXAGON_GALLERY[8],  // img9
-    HEXAGON_GALLERY[9],  // img10
-    HEXAGON_GALLERY[10], // img11
-    HEXAGON_GALLERY[11], // img12
-    HEXAGON_GALLERY[12], // Web3
-    HEXAGON_GALLERY[13], // Cybersecurity
+    { ...HEXAGON_GALLERY[0], yOffset: '-translate-y-2 sm:-translate-y-3', zIndex: 'z-20' },
+    { ...HEXAGON_GALLERY[8], yOffset: 'translate-y-3 sm:translate-y-5', zIndex: 'z-10' },
+    { ...HEXAGON_GALLERY[9], yOffset: '-translate-y-3 sm:-translate-y-4', zIndex: 'z-20' },
+    { ...HEXAGON_GALLERY[10], yOffset: 'translate-y-4 sm:translate-y-6', zIndex: 'z-10' },
+    { ...HEXAGON_GALLERY[11], yOffset: '-translate-y-2 sm:-translate-y-3', zIndex: 'z-20' },
+    { ...HEXAGON_GALLERY[12], yOffset: 'translate-y-3 sm:translate-y-5', zIndex: 'z-10' },
+    { ...HEXAGON_GALLERY[13], yOffset: '-translate-y-1 sm:-translate-y-2', zIndex: 'z-20' },
   ];
 
   return (
     <section 
       id="fintech-achievements-section" 
-      className="relative w-full pt-10 pb-16 sm:pt-14 sm:pb-20 bg-white overflow-hidden"
+      className="relative w-full pt-8 pb-12 sm:pt-12 sm:pb-16 bg-white overflow-hidden"
     >
       {/* Subtle modern geometric background accents */}
       <div 
@@ -63,10 +61,10 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = () => {
         </div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
         
         {/* Header */}
-        <div className="text-center max-w-4xl mx-auto space-y-2 mb-8 sm:mb-12">
+        <div className="text-center max-w-4xl mx-auto space-y-2 mb-6 sm:mb-10">
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight font-heading leading-tight">
             <span className="bg-gradient-to-r from-[#2E54AD] via-[#16A5CE] to-[#162E66] bg-clip-text text-transparent">
               Beture Web
@@ -79,23 +77,23 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = () => {
           </p>
         </div>
 
-        {/* 2 ROWS HEXAGON GALLERY */}
-        <div className="w-full flex flex-col items-center justify-center overflow-x-auto py-4 select-none">
+        {/* 2 ROWS HONEYCOMB GALLERY - STRICTLY FITS WITHIN SECTION WIDTH (NO HORIZONTAL SCROLLBAR) */}
+        <div className="w-full flex flex-col items-center justify-center overflow-hidden py-6 sm:py-10 md:py-12 select-none">
           
-          {/* ROW 1 */}
-          <div className="flex items-center justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-5 min-w-max pb-0 z-10">
+          {/* ROW 1: Sized proportionally to viewport so it fits 100% on screen with slight overlap & vertical offsets */}
+          <div className="flex items-center justify-center -space-x-2 sm:-space-x-3.5 md:-space-x-5 lg:-space-x-7 xl:-space-x-8 w-full max-w-full">
             {row1.map((item, idx) => (
               <motion.div
                 key={`r1-${item.id || idx}`}
-                initial={{ opacity: 0, y: -20, scale: 0.9 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                initial={{ opacity: 0, scale: 0.88 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.05 }}
-                className="w-24 h-28 sm:w-32 sm:h-36 md:w-40 md:h-46 lg:w-48 lg:h-54 shrink-0 group cursor-pointer transition-transform duration-300 hover:scale-105 hover:z-30"
+                transition={{ duration: 0.4, delay: idx * 0.04 }}
+                className={`w-[13.5%] max-w-[170px] min-w-[44px] aspect-[1/1.15] shrink-0 group cursor-pointer transition-transform duration-300 hover:scale-110 hover:z-40 drop-shadow-[0_4px_8px_rgba(1,19,55,0.18)] ${item.yOffset} ${item.zIndex}`}
               >
                 <div 
                   style={{ clipPath: hexClip, WebkitClipPath: hexClip }} 
-                  className="w-full h-full bg-white p-[2px] sm:p-[3px] shadow-md group-hover:shadow-xl transition-all duration-300"
+                  className="w-full h-full bg-white p-[1.5px] sm:p-[2px] md:p-[2.5px] lg:p-[3px] transition-all duration-300"
                 >
                   <div 
                     style={{ clipPath: hexClip, WebkitClipPath: hexClip }} 
@@ -104,7 +102,7 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = () => {
                     <img
                       src={item.image}
                       alt={item.alt}
-                      className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover object-center group-hover:scale-115 transition-transform duration-500"
                       referrerPolicy="no-referrer"
                       loading="lazy"
                     />
@@ -115,20 +113,20 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = () => {
             ))}
           </div>
 
-          {/* ROW 2 (Tightly nested interlock with top negative margin for natural honeycomb fit) */}
-          <div className="flex items-center justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-5 min-w-max -mt-4 sm:-mt-6 md:-mt-8 lg:-mt-10 z-20">
+          {/* ROW 2: Interlocks with Row 1 through negative margin, slightly overlapping with random alternating up/down shifts */}
+          <div className="flex items-center justify-center -space-x-2 sm:-space-x-3.5 md:-space-x-5 lg:-space-x-7 xl:-space-x-8 w-full max-w-full -mt-2 sm:-mt-4 md:-mt-6 lg:-mt-8 xl:-mt-10">
             {row2.map((item, idx) => (
               <motion.div
                 key={`r2-${item.id || idx}`}
-                initial={{ opacity: 0, y: 20, scale: 0.9 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                initial={{ opacity: 0, scale: 0.88 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.15 + (idx * 0.05) }}
-                className="w-24 h-28 sm:w-32 sm:h-36 md:w-40 md:h-46 lg:w-48 lg:h-54 shrink-0 group cursor-pointer transition-transform duration-300 hover:scale-105 hover:z-30"
+                transition={{ duration: 0.4, delay: 0.12 + (idx * 0.04) }}
+                className={`w-[13.5%] max-w-[170px] min-w-[44px] aspect-[1/1.15] shrink-0 group cursor-pointer transition-transform duration-300 hover:scale-110 hover:z-40 drop-shadow-[0_4px_8px_rgba(1,19,55,0.18)] ${item.yOffset} ${item.zIndex}`}
               >
                 <div 
                   style={{ clipPath: hexClip, WebkitClipPath: hexClip }} 
-                  className="w-full h-full bg-white p-[2px] sm:p-[3px] shadow-md group-hover:shadow-xl transition-all duration-300"
+                  className="w-full h-full bg-white p-[1.5px] sm:p-[2px] md:p-[2.5px] lg:p-[3px] transition-all duration-300"
                 >
                   <div 
                     style={{ clipPath: hexClip, WebkitClipPath: hexClip }} 
@@ -137,7 +135,7 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = () => {
                     <img
                       src={item.image}
                       alt={item.alt}
-                      className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover object-center group-hover:scale-115 transition-transform duration-500"
                       referrerPolicy="no-referrer"
                       loading="lazy"
                     />
