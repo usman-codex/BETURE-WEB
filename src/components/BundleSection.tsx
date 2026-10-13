@@ -8,6 +8,7 @@ import {
   BarChart3
 } from 'lucide-react';
 import { motion } from 'motion/react';
+import logoImg from '../assets/beture-logo.png';
 
 interface BundleSectionProps {
   onNavigateToServices?: () => void;
@@ -110,31 +111,40 @@ export const BundleSection: React.FC<BundleSectionProps> = ({
 
             </div>
 
-            {/* Right Visual Card */}
-            <div className="lg:col-span-5 relative">
-              <div className="relative rounded-2xl overflow-hidden border border-[#D8E6F8] shadow-2xl group">
-                <img
-                  src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80"
-                  alt="Beture Web Modern Software Development & Engineering"
-                  referrerPolicy="no-referrer"
-                  className="w-full h-80 object-cover object-center transform transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#011337]/90 via-[#011337]/30 to-transparent" />
-                
-                {/* Floating Bottom Card */}
-                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-4 rounded-xl border border-[#D8E6F8] shadow-lg text-[#011337] space-y-2">
-                  <div className="flex items-center justify-between text-xs font-bold text-[#2E54AD]">
-                    <span className="flex items-center gap-1.5">
-                      <ShieldCheck className="w-4 h-4 text-[#16A5CE]" />
-                      Production Guarantee
+            {/* Right Visual Card: Company Image Logo & Brand Text */}
+            <div className="lg:col-span-5 flex items-center justify-center">
+              <div className="w-full h-full min-h-[300px] sm:min-h-[360px] rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#011337] via-[#081B45] to-[#12285E] border-2 border-[#2E54AD]/40 p-8 sm:p-12 shadow-2xl flex flex-col items-center justify-center text-center relative overflow-hidden group">
+                {/* Decorative Glowing Radial Lights */}
+                <div className="absolute -top-16 -right-16 w-52 h-52 bg-[#16A5CE]/25 rounded-full blur-3xl pointer-events-none" />
+                <div className="absolute -bottom-16 -left-16 w-52 h-52 bg-[#2E54AD]/35 rounded-full blur-3xl pointer-events-none" />
+                <div className="absolute inset-0 bg-[radial-gradient(#16A5CE_1px,transparent_1px)] [background-size:20px_20px] opacity-10 pointer-events-none" />
+
+                {/* Brand Showcase: Image Logo + Text (Same as Navbar) */}
+                <div className="relative z-10 flex flex-col items-center justify-center gap-5 sm:gap-6 transform transition-transform duration-500 group-hover:scale-105 select-none">
+                  {/* Official Company Image Logo */}
+                  <div className="relative p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/10 shadow-[0_4px_30px_rgba(22,165,206,0.25)] flex items-center justify-center">
+                    <img
+                      src={logoImg}
+                      onError={(e) => {
+                        const target = e.currentTarget;
+                        if (target.src !== '/beture-logo.png') {
+                          target.src = '/beture-logo.png';
+                        }
+                      }}
+                      alt="Beture Web Official Logo"
+                      className="h-20 sm:h-24 md:h-28 w-auto object-contain drop-shadow-[0_4px_24px_rgba(22,165,206,0.45)]"
+                    />
+                  </div>
+
+                  {/* Brand Typography: BETURE (White) + WEB (#16A5CE) */}
+                  <div className="flex items-center gap-2.5 sm:gap-3 leading-none">
+                    <span className="font-black text-2xl sm:text-3xl lg:text-4xl tracking-[0.14em] text-white font-poppins">
+                      BETURE
                     </span>
-                    <span className="text-[#162E66] font-extrabold text-[11px] bg-[#D8E6F8]/40 px-2 py-0.5 rounded-md">
-                      100% Agile Sprints
+                    <span className="font-black text-2xl sm:text-3xl lg:text-4xl tracking-[0.14em] text-[#16A5CE] font-poppins">
+                      WEB
                     </span>
                   </div>
-                  <p className="text-[11px] text-[#4A5D6E] leading-relaxed">
-                    Dedicated project managers, transparent milestone tracking, strict QA testing, and guaranteed post-launch technical support.
-                  </p>
                 </div>
               </div>
             </div>

@@ -5,12 +5,13 @@ interface BetureLogoProps {
   className?: string;
   showText?: boolean;
   isDark?: boolean;
-  size?: 'sm' | 'md' | 'lg' | 'xl';
+  size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 }
 
 export const BetureLogo: React.FC<BetureLogoProps> = ({
   className = '',
   showText = true,
+  isDark = true,
   size = 'md',
 }) => {
   const sizeMap = {
@@ -18,6 +19,7 @@ export const BetureLogo: React.FC<BetureLogoProps> = ({
     md: { img: 'h-9 sm:h-10 w-auto', textTitle: 'text-base sm:text-lg' },
     lg: { img: 'h-12 sm:h-14 w-auto', textTitle: 'text-xl sm:text-2xl' },
     xl: { img: 'h-16 sm:h-20 w-auto', textTitle: 'text-2xl sm:text-3xl' },
+    '2xl': { img: 'h-20 sm:h-24 w-auto', textTitle: 'text-3xl sm:text-4xl' },
   };
 
   const currentSize = sizeMap[size] || sizeMap.md;
@@ -39,11 +41,11 @@ export const BetureLogo: React.FC<BetureLogoProps> = ({
         />
       </div>
 
-      {/* Brand Typography: BETURE (White) + WEB (#16A5CE) */}
+      {/* Brand Typography: BETURE (White or Dark) + WEB (#16A5CE) */}
       {showText && (
         <div className="flex items-center gap-2 leading-none">
           <span
-            className={`font-black uppercase tracking-[0.14em] text-white ${currentSize.textTitle}`}
+            className={`font-black uppercase tracking-[0.14em] ${isDark ? 'text-white' : 'text-[#011337]'} ${currentSize.textTitle}`}
           >
             BETURE
           </span>
