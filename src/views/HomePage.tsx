@@ -64,6 +64,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       {/* Designers & Developers Section */}
       <DesignersDevelopersSection
         onNavigateToAbout={onNavigateToAbout}
+        onNavigateToServices={onNavigateToServices}
       />
 
       {/* Top Projects Section */}
