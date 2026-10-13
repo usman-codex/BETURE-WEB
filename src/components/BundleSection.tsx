@@ -1,101 +1,152 @@
 import React from 'react';
-import { Course } from '../types';
 import { 
   CheckCircle, 
-  Crown, 
-  Zap, 
-  Users, 
-  ShieldCheck, 
   Sparkles, 
-  Gift
+  PhoneCall, 
+  ArrowRight,
+  ShieldCheck,
+  Code2,
+  Cpu,
+  BarChart3
 } from 'lucide-react';
+import { motion } from 'motion/react';
 
 interface BundleSectionProps {
-  bundleCourse: Course;
-  onSelectCourse: (course: Course) => void;
+  onNavigateToServices?: () => void;
+  onNavigateToContact?: () => void;
 }
 
 export const BundleSection: React.FC<BundleSectionProps> = ({
-  bundleCourse,
-  onSelectCourse,
+  onNavigateToServices,
+  onNavigateToContact,
 }) => {
   return (
     <section className="py-20 bg-[#D8E6F8]/15 text-[#011337] relative overflow-hidden border-b border-[#D8E6F8]">
-      
-      {}
+      {/* Ambient background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-r from-[#2E54AD]/15 via-[#16A5CE]/15 to-transparent rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {}
-        <div className="bg-white rounded-3xl border-2 border-[#2E54AD]/40 p-8 sm:p-12 shadow-xl relative overflow-hidden text-[#011337]">
+        {/* Main Card Container */}
+        <div className="bg-white rounded-3xl border-2 border-[#2E54AD]/30 p-8 sm:p-12 shadow-xl relative overflow-hidden text-[#011337]">
           
-          {}
-          <div className="absolute top-0 right-0 bg-[#2E54AD] text-white font-extrabold text-xs px-6 py-1.5 rounded-bl-2xl uppercase tracking-wider flex items-center gap-1.5 shadow-md">
-            <Crown className="w-4 h-4 fill-white text-white" />
-            <span>VIP Unlimited Access</span>
+          {/* Top Badge */}
+          <div className="absolute top-0 right-0 bg-gradient-to-r from-[#2E54AD] to-[#16A5CE] text-white font-extrabold text-xs px-6 py-2 rounded-bl-2xl uppercase tracking-wider flex items-center gap-2 shadow-md">
+            <Sparkles className="w-4 h-4 fill-white text-white" />
+            <span>End-to-End Digital Solutions</span>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             
-            {}
+            {/* Left Content Column */}
             <div className="lg:col-span-7 space-y-6">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#011337] leading-tight">
-                Get <span className="text-[#2E54AD]">Unlimited Access</span> to Every Course + 1-on-1 Mentorship
-              </h2>
+              
+              <div className="space-y-3">
+                <span className="text-xs font-black uppercase tracking-[0.2em] text-[#16A5CE] flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#16A5CE] animate-pulse" />
+                  Software House & Growth Engine
+                </span>
+                
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[#011337] leading-[1.15] font-heading">
+                  Accelerate Your Business With <span className="text-[#2E54AD]">Enterprise-Grade</span> Digital Solutions
+                </h2>
+              </div>
 
-              <p className="text-[#011337]/80 text-sm sm:text-base leading-relaxed">
-                Why buy individual courses when you can unlock our complete educational vault? Gain lifetime access to every existing and future course, plus weekly live mentorship calls, private wallet audits, and exclusive VIP community membership.
+              <p className="text-[#4A5D6E] text-base leading-relaxed">
+                Whether launching a high-performance web platform, scaling an e-commerce store, automating workflows with custom AI agents, or dominating Google search rankings — Beture Web turns ambitious ideas into scalable market leaders.
               </p>
 
-              {}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm font-medium text-[#011337] pt-2">
-                <div className="flex items-center gap-2.5 bg-[#D8E6F8]/20 p-2.5 rounded-xl border border-[#D8E6F8]">
-                  <CheckCircle className="w-4 h-4 text-[#2E54AD] shrink-0" />
-                  <span>Unlimited Lifetime Course Vault Access</span>
+              {/* 4 Core Service Deliverables */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+                <div className="flex items-start gap-3 bg-[#F5F8FC] p-3.5 rounded-2xl border border-[#D8E6F8] hover:border-[#16A5CE] transition-colors">
+                  <div className="w-8 h-8 rounded-lg bg-[#2E54AD]/10 text-[#2E54AD] flex items-center justify-center shrink-0 mt-0.5">
+                    <Code2 className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-extrabold text-[#011337]">Web & E-Commerce</h4>
+                    <p className="text-xs text-[#4A5D6E] mt-0.5">Custom React, Next.js, and Shopify stores built for scale.</p>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2.5 bg-[#D8E6F8]/20 p-2.5 rounded-xl border border-[#D8E6F8]">
-                  <CheckCircle className="w-4 h-4 text-[#2E54AD] shrink-0" />
-                  <span>Monthly 1-on-1 Private Coaching Session</span>
+
+                <div className="flex items-start gap-3 bg-[#F5F8FC] p-3.5 rounded-2xl border border-[#D8E6F8] hover:border-[#16A5CE] transition-colors">
+                  <div className="w-8 h-8 rounded-lg bg-[#16A5CE]/10 text-[#16A5CE] flex items-center justify-center shrink-0 mt-0.5">
+                    <BarChart3 className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-extrabold text-[#011337]">SEO & Performance Ads</h4>
+                    <p className="text-xs text-[#4A5D6E] mt-0.5">Top-tier Google rankings and high-ROAS paid media.</p>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2.5 bg-[#D8E6F8]/20 p-2.5 rounded-xl border border-[#D8E6F8]">
-                  <CheckCircle className="w-4 h-4 text-[#2E54AD] shrink-0" />
-                  <span>VIP Telegram Emergency Airdrop Channel</span>
+
+                <div className="flex items-start gap-3 bg-[#F5F8FC] p-3.5 rounded-2xl border border-[#D8E6F8] hover:border-[#16A5CE] transition-colors">
+                  <div className="w-8 h-8 rounded-lg bg-[#2E54AD]/10 text-[#2E54AD] flex items-center justify-center shrink-0 mt-0.5">
+                    <Cpu className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-extrabold text-[#011337]">GLM AI & IoT Labs</h4>
+                    <p className="text-xs text-[#4A5D6E] mt-0.5">Autonomous agents, RAG models, and smart IoT device telemetry.</p>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2.5 bg-[#D8E6F8]/20 p-2.5 rounded-xl border border-[#D8E6F8]">
-                  <CheckCircle className="w-4 h-4 text-[#2E54AD] shrink-0" />
-                  <span>CV & Portfolio Review + Job Referral</span>
+
+                <div className="flex items-start gap-3 bg-[#F5F8FC] p-3.5 rounded-2xl border border-[#D8E6F8] hover:border-[#16A5CE] transition-colors">
+                  <div className="w-8 h-8 rounded-lg bg-[#16A5CE]/10 text-[#16A5CE] flex items-center justify-center shrink-0 mt-0.5">
+                    <ShieldCheck className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-extrabold text-[#011337]">Monetization & Design</h4>
+                    <p className="text-xs text-[#4A5D6E] mt-0.5">Facebook page monetization and brand-defining graphic design.</p>
+                  </div>
                 </div>
+              </div>
+
+              {/* CTA Actions */}
+              <div className="flex flex-wrap items-center gap-4 pt-3">
+                <a
+                  href="tel:+923111222595"
+                  className="px-6 py-3.5 rounded-full bg-gradient-to-r from-[#2E54AD] to-[#16A5CE] hover:brightness-110 text-white font-extrabold text-sm shadow-md shadow-[#16A5CE]/25 transition-all duration-300 hover:scale-105 flex items-center gap-2 cursor-pointer"
+                >
+                  <PhoneCall className="w-4 h-4" />
+                  <span>Call Us: +92 311 1222 595</span>
+                </a>
+
+                {onNavigateToServices && (
+                  <button
+                    onClick={onNavigateToServices}
+                    className="group relative inline-flex items-center gap-2 text-sm font-bold text-[#2E54AD] hover:text-[#16A5CE] transition-colors duration-300 pb-1 cursor-pointer font-heading"
+                  >
+                    <span>View All Services</span>
+                    <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform" />
+                    <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#2E54AD] to-[#16A5CE] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out rounded-full" />
+                  </button>
+                )}
               </div>
 
             </div>
 
-            {}
+            {/* Right Visual Card */}
             <div className="lg:col-span-5 relative">
-              <div className="relative rounded-2xl overflow-hidden border border-[#2E54AD]/30 shadow-xl">
+              <div className="relative rounded-2xl overflow-hidden border border-[#D8E6F8] shadow-2xl group">
                 <img
-                  src={bundleCourse.image}
-                  alt="VIP Bundle"
+                  src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80"
+                  alt="Beture Web Modern Software Development & Engineering"
                   referrerPolicy="no-referrer"
-                  onError={(e) => {
-                    const target = e.currentTarget;
-                    target.onerror = null;
-                    target.src = 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&q=80';
-                  }}
-                  className="w-full h-72 object-cover"
+                  className="w-full h-80 object-cover object-center transform transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#011337]/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#011337]/90 via-[#011337]/30 to-transparent" />
                 
-                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-4 rounded-xl border border-[#D8E6F8] shadow-md text-[#011337] space-y-2">
+                {/* Floating Bottom Card */}
+                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-4 rounded-xl border border-[#D8E6F8] shadow-lg text-[#011337] space-y-2">
                   <div className="flex items-center justify-between text-xs font-bold text-[#2E54AD]">
-                    <span className="flex items-center gap-1">
-                      <Gift className="w-4 h-4 text-[#2E54AD]" />
-                      Bonus Included
+                    <span className="flex items-center gap-1.5">
+                      <ShieldCheck className="w-4 h-4 text-[#16A5CE]" />
+                      Production Guarantee
                     </span>
-                    <span className="text-[#162E66] font-extrabold">100% Satisfaction Guarantee</span>
+                    <span className="text-[#162E66] font-extrabold text-[11px] bg-[#D8E6F8]/40 px-2 py-0.5 rounded-md">
+                      100% Agile Sprints
+                    </span>
                   </div>
-                  <p className="text-[11px] text-[#011337]/80 leading-snug">
-                    Includes all 5 flagship courses, future curriculum drops, 1-on-1 strategy call booking code, and verified certification.
+                  <p className="text-[11px] text-[#4A5D6E] leading-relaxed">
+                    Dedicated project managers, transparent milestone tracking, strict QA testing, and guaranteed post-launch technical support.
                   </p>
                 </div>
               </div>

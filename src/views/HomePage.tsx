@@ -44,8 +44,6 @@ export const HomePage: React.FC<HomePageProps> = ({
   onNavigateToProjects,
   onNavigateToContact,
 }) => {
-  const bundleCourse = courses.find((c) => c.id === 'all-access-bundle-coaching') || courses[courses.length - 1];
-
   return (
     <div className="space-y-0">
       {/* Hero Section */}
@@ -78,10 +76,10 @@ export const HomePage: React.FC<HomePageProps> = ({
       {/* Our Founders Section */}
       <OurFoundersSection />
 
-      {/* Bundle Coaching Section */}
+      {/* Enterprise Digital Solutions Section */}
       <BundleSection
-        bundleCourse={bundleCourse}
-        onSelectCourse={onSelectCourse}
+        onNavigateToServices={onNavigateToServices}
+        onNavigateToContact={onNavigateToContact}
       />
 
       {/* Testimonials */}
