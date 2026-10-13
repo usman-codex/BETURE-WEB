@@ -110,7 +110,7 @@ export interface ServiceItem {
   bannerHeadline: string;
   bannerDescription: string;
   accentColor?: string;
-  iconName: 'blockchain' | 'devops' | 'web' | 'ecommerce' | 'mobile' | 'ai' | 'uiux' | 'digital-marketing' | 'facebook-monetization' | 'graphic-design' | 'wordpress' | 'seo' | 'iot' | 'glm' | 'gmb' | 'citation' | string;
+  iconName: 'blockchain' | 'devops' | 'web' | 'ecommerce' | 'mobile' | 'ai' | 'uiux' | 'digital-marketing' | 'facebook-monetization' | 'graphic-design' | 'wordpress' | 'seo' | 'iot' | 'glm' | 'gmb' | 'citation' | 'bpo' | string;
   tools: ToolTechnology[];
   deliverablesHeading: string;
   deliverablesDescription: string;

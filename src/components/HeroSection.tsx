@@ -69,7 +69,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
             transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="text-[#D8E6F8]/95 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto font-normal tracking-wide"
           >
-            At Beture Web, we build cutting-edge custom software, enterprise web applications, and intelligent automated systems designed to scale modern businesses seamlessly.
+            At Beture Web, our primary objective is delivering end-to-end <span className="text-[#16A5CE] font-bold">BPO (Business Process Outsourcing)</span>, cutting-edge software development, and digital marketing engines to scale modern businesses worldwide.
           </motion.p>
         </motion.div>
 
@@ -120,16 +120,16 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
             </p>
           </div>
 
-          {/* Box 4: Dedicated Software Support */}
+          {/* Box 4: BPO Operations */}
           <div className="p-6 rounded-2xl bg-black/40 backdrop-blur-md border border-white/15 shadow-md hover:border-[#16A5CE] hover:bg-black/55 transition-all duration-300 group flex flex-col justify-start space-y-3.5">
             <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#16A5CE]/20 to-[#2E54AD]/30 border border-[#16A5CE]/40 flex items-center justify-center text-[#16A5CE] shadow-lg shadow-[#16A5CE]/15 group-hover:scale-110 group-hover:bg-[#16A5CE] group-hover:text-[#011337] transition-all duration-300">
               <Headphones className="w-6 h-6" />
             </div>
             <h3 className="text-base font-extrabold text-white group-hover:text-[#16A5CE] transition-colors">
-              Agile Delivery & QA
+              BPO Outsourcing Ops
             </h3>
             <p className="text-xs text-[#D8E6F8]/80 leading-relaxed">
-              Strict quality assurance, transparent sprint progress, and dedicated post-launch maintenance for your projects.
+              Business Process Outsourcing for customer support, tech operations, lead generation, and workflow management.
             </p>
           </div>
         </motion.div>

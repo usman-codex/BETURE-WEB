@@ -106,6 +106,58 @@ export const SERVICES_DATA: ServiceItem[] = [
     ]
   },
   {
+    id: 'bpo-services',
+    slug: 'bpo-business-process-outsourcing',
+    shortTitle: 'BPO ( Business Process Outsourcing )',
+    title: 'BPO (Business Process Outsourcing) & Dedicated Operations',
+    shortDescription: 'Scale your business efficiency and cut operating costs with end-to-end BPO solutions: dedicated 24/7 technical customer support, lead generation, digital operations, and workflow automation.',
+    fullDescription: 'Empower your enterprise with seamless Business Process Outsourcing (BPO) solutions designed to reduce overhead, eliminate operational bottlenecks, and accelerate growth. Beture Web delivers dedicated 24/7 technical support desks, inbound/outbound customer care, lead qualification, back-office data processing, and IT workflow management tailored to modern startups and expanding corporations worldwide.',
+    bannerHeadline: 'Scale Smarter: End-to-End BPO (Business Process Outsourcing) & Dedicated Operations',
+    bannerDescription: 'Delegate repetitive, complex, and high-volume business processes to our expert teams. Save up to 60% on operational costs while boosting service quality, customer satisfaction, and 24/7 business continuity.',
+    accentColor: '#16A5CE',
+    iconName: 'bpo',
+    tools: [
+      { name: 'Zendesk & Freshdesk', color: '#03363D' },
+      { name: 'Salesforce & HubSpot CRM', color: '#00A1E0' },
+      { name: 'Intercom & LiveChat', color: '#1F8CEB' },
+      { name: 'Jira & ClickUp', color: '#0052CC' },
+      { name: 'Slack & Teams Connect', color: '#4A154B' },
+      { name: 'VoIP Cloud Systems', color: '#2E54AD' }
+    ],
+    deliverablesHeading: '24/7 Operations Continuity, Reduced Overhead & Streamlined Workflows',
+    deliverablesDescription: 'Our certified BPO professionals manage your frontline customer touchpoints and back-office pipelines with enterprise-grade SLA compliance and rigorous quality control.',
+    keyFeatures: [
+      'Dedicated 24/7/365 Tier-1 & Tier-2 Customer & Technical Support Desks',
+      'Inbound & Outbound Lead Qualification, Appointment Setting & Prospect Nurturing',
+      'Back-Office Operations: Data Enrichment, Invoice Processing & Documentation',
+      'Multi-Channel Omni-Support: Email, Live Web Chat, WhatsApp & Cloud VoIP Calling',
+      'Strict SLA Compliance, Daily Quality Assurance (QA) & Productivity Metrics',
+      'Scalable Team Pods with Flexible Hourly or Dedicated Monthly Retainers'
+    ],
+    processSteps: [
+      {
+        number: '01',
+        title: 'Workflow Discovery & Process Mapping',
+        description: 'Analyzing your current operational SOPs, identifying bottlenecks, and defining clear performance KPIs.'
+      },
+      {
+        number: '02',
+        title: 'Talent Selection & Team Alignment',
+        description: 'Handpicking domain-expert agents, configuring communication channels, and running comprehensive product training.'
+      },
+      {
+        number: '03',
+        title: 'Live Deployment & Operational Integration',
+        description: 'Rolling out the dedicated pod with synchronized software tools, real-time dashboards, and escalation matrices.'
+      },
+      {
+        number: '04',
+        title: 'Continuous QA & Efficiency Optimization',
+        description: 'Auditing call/ticket resolution scores weekly, refining scripts, and driving continuous cost-per-ticket reductions.'
+      }
+    ]
+  },
+  {
     id: 'digital-marketing',
     slug: 'digital-marketing',
     shortTitle: 'Digital Marketing',

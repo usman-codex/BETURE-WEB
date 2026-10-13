@@ -47,9 +47,10 @@ export const AboutPage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             
             {/* Left Content Column */}
+            {/* Left Content Column */}
             <div className="lg:col-span-7 space-y-5">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight font-poppins drop-shadow-sm">
-                Our Vision
+                Our Vision & Core Objectives
               </h1>
 
               <motion.p
@@ -62,7 +63,7 @@ export const AboutPage: React.FC = () => {
                 }}
                 className="text-base sm:text-lg lg:text-xl text-white/95 leading-relaxed font-poppins font-normal max-w-3xl drop-shadow-xs"
               >
-                At <strong className="font-extrabold text-white underline decoration-[#16A5CE] underline-offset-4">Beture Web</strong>, our vision is to empower modern businesses, innovative startups, and visionary enterprises with world-class digital solutions. We engineer high-performance web applications, scalable mobile apps, bespoke enterprise software, intuitive UI/UX design, and data-driven digital marketing growth engines. By bridging cutting-edge technology with creative precision, we transform ambitious ideas into robust, secure, and revenue-driving digital products that stand out globally.
+                At <strong className="font-extrabold text-white underline decoration-[#16A5CE] underline-offset-4">Beture Web</strong>, our primary objective is to empower global businesses through full-scale <strong className="text-[#16A5CE] font-bold">BPO (Business Process Outsourcing)</strong> and modern digital technology. We serve as a trusted outsourcing partner, delivering end-to-end IT services, high-performance web & mobile engineering, Google My Business (GMB) optimization, citation authority building, and data-driven marketing. By combining business process outsourcing efficiency with innovative software development, we streamline operations and drive exponential business growth worldwide.
               </motion.p>
             </div>
 
@@ -94,9 +95,9 @@ export const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {}
-      {}
-      {}
+      {/* ========================================================================= */}
+      {/* 2. SECTION 2: WHO WE ARE & OUR MISSION (With Animated Geometry)           */}
+      {/* ========================================================================= */}
       <section 
         ref={missionRef}
         className="relative w-full py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden border-b border-[#F1F5F9]"
@@ -104,7 +105,7 @@ export const AboutPage: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
-            {}
+            {/* Left Column: Image with Floating Geometric Diamond Accents */}
             <motion.div
               initial={{ x: '-60vw', opacity: 0 }}
               animate={isMissionInView ? { x: 0, opacity: 1 } : { x: '-60vw', opacity: 0 }}
@@ -113,55 +114,46 @@ export const AboutPage: React.FC = () => {
             >
               <div className="relative w-full max-w-lg">
                 
-                {}
+                {/* Top-Right Geometrics */}
                 <div className="absolute -top-12 -right-8 w-44 h-44 pointer-events-none z-0">
-                  {}
                   <div className="absolute top-0 right-0 w-36 h-36 rotate-45 rounded-2xl border-2 border-[#16A5CE]/30 bg-gradient-to-br from-[#D8E6F8]/50 to-[#16A5CE]/20 backdrop-blur-xs" />
-                  {}
                   <div className="absolute top-4 right-4 w-28 h-28 rotate-45 rounded-xl border border-[#2E54AD]/40 bg-gradient-to-br from-[#2E54AD]/25 to-[#162E66]/20" />
-                  {}
                   <div className="absolute top-8 right-8 w-20 h-20 rotate-45 rounded-lg bg-gradient-to-br from-[#011337] to-[#2E54AD] opacity-90 shadow-md shadow-[#2E54AD]/20" />
-                  {}
                   <div className="absolute top-2 right-28 w-2.5 h-2.5 rounded-full bg-[#16A5CE]" />
                 </div>
 
-                {}
+                {/* Bottom-Left Geometrics */}
                 <div className="absolute -bottom-10 -left-10 w-44 h-44 pointer-events-none z-0">
-                  {}
                   <div className="absolute bottom-0 left-0 w-36 h-36 rotate-45 rounded-2xl border-2 border-[#16A5CE]/30 bg-gradient-to-br from-[#D8E6F8]/50 to-[#16A5CE]/20 backdrop-blur-xs" />
-                  {}
                   <div className="absolute bottom-4 left-4 w-28 h-28 rotate-45 rounded-xl border border-[#2E54AD]/40 bg-gradient-to-br from-[#2E54AD]/25 to-[#162E66]/20" />
-                  {}
                   <div className="absolute bottom-8 left-8 w-20 h-20 rotate-45 rounded-lg bg-gradient-to-br from-[#011337] to-[#2E54AD] opacity-90 shadow-md shadow-[#2E54AD]/20" />
-                  {}
                   <div className="absolute bottom-2 left-28 w-2.5 h-2.5 rounded-full bg-[#2E54AD]" />
                 </div>
 
-                {}
+                {/* Main Asymmetrical Rounded Image */}
                 <div className="relative z-10 overflow-hidden rounded-tr-[56px] rounded-bl-[56px] rounded-tl-2xl rounded-br-2xl shadow-xl border-4 border-white bg-[#F8FAFC]">
                   <img
                     src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&auto=format&fit=crop&q=80"
-                    alt="Beture Web Mentorship & Labs"
+                    alt="Beture Web BPO & Software House"
                     className="w-full h-[380px] sm:h-[460px] object-cover object-center hover:scale-103 transition-transform duration-700"
                     loading="lazy"
                   />
                   
-                  {}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
                 </div>
 
-                {}
+                {/* Bottom Floating Badge */}
                 <div className="absolute -bottom-4 -right-4 bg-white px-5 py-3 rounded-2xl shadow-lg border border-[#D8E6F8] z-20 flex items-center gap-3">
                   <div className="w-3 h-3 rounded-full bg-[#2E54AD] animate-ping" />
                   <span className="text-xs sm:text-sm font-bold text-[#011337] font-poppins">
-                    Software House & Digital Solutions
+                    BPO & Digital Software House
                   </span>
                 </div>
 
               </div>
             </motion.div>
 
-            {}
+            {/* Right Column: Mission Content */}
             <motion.div
               initial={{ x: '60vw', opacity: 0 }}
               animate={isMissionInView ? { x: 0, opacity: 1 } : { x: '60vw', opacity: 0 }}
@@ -176,17 +168,17 @@ export const AboutPage: React.FC = () => {
                 
                 {/* Main Heading */}
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#011337] tracking-tight font-poppins">
-                  Our Mission
+                  Our Mission & BPO Purpose
                 </h2>
               </div>
 
               {/* Mission Paragraphs */}
               <p className="text-sm sm:text-base text-[#475569] leading-relaxed font-poppins font-normal">
-                <strong className="font-bold text-[#2E54AD] bg-[#2E54AD]/10 px-1.5 py-0.5 rounded-md">Beture Web</strong> is a modern software house, creative design studio, and full-funnel digital growth agency. We partner with ambitious startups, expanding enterprises, and digital brands to build robust web and mobile applications, high-converting digital marketing campaigns, intuitive UI/UX experiences, and automated e-commerce solutions.
+                <strong className="font-bold text-[#2E54AD] bg-[#2E54AD]/10 px-1.5 py-0.5 rounded-md">Beture Web</strong> is a premier software house and <strong className="font-bold text-[#011337]">BPO (Business Process Outsourcing)</strong> solutions partner. We specialize in delegating and optimizing critical business operations — from dedicated technical support, GMB citation and local visibility management, to custom software engineering, e-commerce automation, and digital marketing growth.
               </p>
 
               <p className="text-sm sm:text-base text-[#475569] leading-relaxed font-poppins font-normal">
-                Our mission is to translate complex business challenges into sleek, high-performing digital realities. Through transparent communication, agile development sprints, and data-backed marketing strategies, our cross-functional team delivers scalable technology solutions that drive measurable ROI and lasting competitive advantages.
+                Our main objective is to help global enterprises reduce operational overhead, streamline workflow bottlenecks, and scale rapidly by outsourcing repetitive and tech-heavy processes to our expert agile teams. We combine industry-proven outsourcing workflows with top-tier development standards to deliver measurable efficiency, faster turnaround times, and maximum ROI.
               </p>
 
               {/* Quick Feature Grid */}
@@ -196,7 +188,7 @@ export const AboutPage: React.FC = () => {
                     <CheckCircle className="w-4.5 h-4.5" />
                   </div>
                   <span className="text-xs sm:text-sm font-semibold text-[#011337]">
-                    Custom Web & Mobile Apps
+                    BPO Outsourcing Operations
                   </span>
                 </div>
 
@@ -205,7 +197,7 @@ export const AboutPage: React.FC = () => {
                     <Zap className="w-4.5 h-4.5 text-[#16A5CE]" />
                   </div>
                   <span className="text-xs sm:text-sm font-semibold text-[#011337]">
-                    High-ROI Digital Growth
+                    End-to-End Digital Solutions
                   </span>
                 </div>
               </div>
@@ -257,14 +249,14 @@ export const AboutPage: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="text-base sm:text-lg text-[#475569] leading-relaxed font-poppins"
             >
-              We have managed to build a team of developers with exceptional interpersonal skills. Here are some qualities of our fintech engineers and developers that you would love to learn about:
+              We have built a dedicated team of software developers, BPO outsourcing specialists, and digital marketers with exceptional interpersonal skills. Here are the core pillars our clients rely on every day:
             </motion.p>
           </div>
 
-          {}
+          {/* 3 Skill Feature Cards */}
           <div className="space-y-10 pt-4">
 
-            {}
+            {/* Feature 1 */}
             <motion.div
               initial={{ x: '-60vw', opacity: 0 }}
               animate={isTeamSkillsInView ? { x: 0, opacity: 1 } : { x: '-60vw', opacity: 0 }}
@@ -280,11 +272,11 @@ export const AboutPage: React.FC = () => {
                 </h3>
               </div>
               <p className="text-sm sm:text-base text-[#475569] leading-relaxed font-poppins font-normal">
-                At <strong className="font-bold text-[#2E54AD] bg-[#2E54AD]/10 px-1.5 py-0.5 rounded-md">Beture Web</strong>, we have curated a team of blockchain and software engineers who consistently deliver their best work. They invest their time and effort into your project to meet your specific needs. By hiring professional developers with practical knowledge, you gain an advantage over your competitors, enabling you to grow and reach potential customers in more innovative ways.
+                At <strong className="font-bold text-[#2E54AD] bg-[#2E54AD]/10 px-1.5 py-0.5 rounded-md">Beture Web</strong>, our engineering and BPO operations teams consistently deliver exceptional results. We take full ownership of your delegated tasks and technical projects, treating your business goals as our own to help you outperform competitors and scale customer reach.
               </p>
             </motion.div>
 
-            {}
+            {/* Feature 2 */}
             <motion.div
               initial={{ x: '60vw', opacity: 0 }}
               animate={isTeamSkillsInView ? { x: 0, opacity: 1 } : { x: '60vw', opacity: 0 }}
@@ -296,15 +288,15 @@ export const AboutPage: React.FC = () => {
                   <DollarSign className="w-5 h-5 text-[#16A5CE]" />
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-[#011337] font-poppins">
-                  Budget Friendly
+                  Cost-Effective Outsourcing
                 </h3>
               </div>
               <p className="text-sm sm:text-base text-[#475569] leading-relaxed font-poppins font-normal">
-                Our services and institutional programs are designed to be cost-effective without compromising on quality. We understand the importance of budget constraints, and our team works diligently to provide solutions that align with your financial resources. We strive to deliver excellent value for your investment, ensuring that you receive high-quality development and education services within your budget.
+                Our BPO models and custom software delivery pipelines are structured to reduce client operating costs by up to 60% without compromising on quality or speed. We provide transparent pricing, flexible hiring packages, and maximum return on investment for businesses of every scale.
               </p>
             </motion.div>
 
-            {}
+            {/* Feature 3 */}
             <motion.div
               initial={{ x: '-60vw', opacity: 0 }}
               animate={isTeamSkillsInView ? { x: 0, opacity: 1 } : { x: '-60vw', opacity: 0 }}
@@ -316,11 +308,11 @@ export const AboutPage: React.FC = () => {
                   <Headphones className="w-5 h-5 text-[#2E54AD]" />
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-[#011337] font-poppins">
-                  24/7 Support Team
+                  24/7 BPO & Technical Support
                 </h3>
               </div>
               <p className="text-sm sm:text-base text-[#475569] leading-relaxed font-poppins font-normal">
-                We have a dedicated support team available round-the-clock to address any concerns or queries you may have. Whether its technical assistance or general inquiries, our support team is committed to providing prompt and reliable assistance. We understand the importance of uninterrupted support, and our team is always ready to assist you, ensuring a smooth and hassle-free experience throughout your fintech development journey.
+                We operate round-the-clock shift rotations to guarantee seamless 24/7 business continuity. Whether handling critical customer service desks, live troubleshooting, GMB updates, or server monitoring, our dedicated teams ensure zero downtime for your operations.
               </p>
             </motion.div>
 
@@ -329,34 +321,30 @@ export const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {}
-      {}
-      {}
+      {/* ========================================================================= */}
+      {/* 4. ACHIEVEMENTS SECTION (DYNAMIC ACCORDION TABS)                           */}
+      {/* ========================================================================= */}
       <AchievementsSection />
 
-      {}
-      {}
-      {}
+      {/* ========================================================================= */}
+      {/* 5. OUR FOUNDERS SECTION                                                   */}
+      {/* ========================================================================= */}
       <OurFoundersSection />
 
-      {}
-      {}
-      {}
+      {/* ========================================================================= */}
+      {/* 6. GUIDING PRINCIPLES SECTION                                             */}
+      {/* ========================================================================= */}
       <section className="relative py-16 sm:py-24 bg-[#FAFAFA] border-t border-[#E2E8F0] overflow-hidden">
         
-        {}
+        {/* Subtle Decorative Geometry */}
         <div 
           aria-hidden="true" 
           className="pointer-events-none absolute -top-10 right-0 sm:right-6 md:right-12 w-64 h-64 sm:w-80 sm:h-80 z-0 opacity-70"
         >
           <div className="relative w-full h-full">
-            {}
             <div className="absolute top-0 right-4 w-44 h-44 sm:w-56 sm:h-56 rotate-45 rounded-3xl border-2 border-[#16A5CE]/30 bg-gradient-to-br from-[#D8E6F8]/40 to-[#16A5CE]/10 backdrop-blur-[1px]" />
-            {}
             <div className="absolute top-5 right-9 w-36 h-36 sm:w-44 sm:h-44 rotate-45 rounded-2xl border-2 border-[#2E54AD]/40 bg-gradient-to-br from-[#2E54AD]/20 to-[#162E66]/20" />
-            {}
             <div className="absolute top-10 right-14 w-24 h-24 sm:w-30 sm:h-30 rotate-45 rounded-xl bg-gradient-to-br from-[#011337] to-[#2E54AD] opacity-90 shadow-xl shadow-[#2E54AD]/20" />
-            {}
             <div className="absolute top-2 right-32 w-3 h-3 rounded-full bg-[#16A5CE]" />
             <div className="absolute top-36 right-6 w-2.5 h-2.5 rounded-full bg-[#2E54AD]" />
           </div>
@@ -371,7 +359,7 @@ export const AboutPage: React.FC = () => {
               How We Deliver Groundbreaking Impact
             </h2>
             <p className="text-sm sm:text-base text-[#64748B] font-poppins">
-              Every training module and research track is powered by systematic execution, modern engineering standards, and unmatched dedication.
+              Every software delivery sprint and BPO outsourcing operation is powered by rigorous quality control, modern standards, and round-the-clock reliability.
             </p>
           </div>
 
@@ -380,20 +368,20 @@ export const AboutPage: React.FC = () => {
               {
                 icon: <Cpu className="w-6 h-6 text-[#2E54AD]" />,
                 iconBg: 'bg-[#EAF4FC] border-[#16A5CE]/40 shadow-xs text-[#2E54AD]',
-                title: 'Applied FinTech Mastery',
-                desc: 'Immersive hands-on bootcamps with real-world smart contracts, algorithmic trading bots, and API integrations.',
+                title: 'High-Performance Engineering',
+                desc: 'Scalable cloud web applications, mobile platforms, and automated workflow pipelines engineered for enterprise resilience.',
               },
               {
                 icon: <ShieldCheck className="w-6 h-6 text-[#162E66]" />,
                 iconBg: 'bg-[#EBF3F7] border-[#2E54AD]/30 shadow-xs text-[#162E66]',
-                title: 'Institutional Standards & Security',
-                desc: 'Industry-grade security frameworks, smart contract auditing methodologies, and quantitative risk management.',
+                title: 'Enterprise BPO Reliability',
+                desc: 'Industry-grade SLA guarantees, ISO-standard data security, confidentiality protocols, and 24/7 business process coverage.',
               },
               {
                 icon: <Rocket className="w-6 h-6 text-[#16A5CE]" />,
                 iconBg: 'bg-[#F0FAFC] border-[#16A5CE]/40 shadow-xs text-[#16A5CE]',
-                title: 'Career & Venture Incubation',
-                desc: 'Direct global job placement assistance, portfolio reviews, and decentralized venture capital networking.',
+                title: 'Accelerated Business Growth',
+                desc: 'Rapid local search ranking via GMB & Citation networks, multi-channel customer acquisition funnels, and measurable ROI.',
               },
             ].map((v, i) => (
               <div 

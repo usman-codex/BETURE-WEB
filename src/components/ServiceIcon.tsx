@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface ServiceIconProps {
-  name: 'blockchain' | 'devops' | 'web' | 'ecommerce' | 'mobile' | 'ai' | 'uiux' | 'digital-marketing' | 'facebook-monetization' | 'graphic-design' | 'wordpress' | 'seo' | 'iot' | 'glm' | 'gmb' | 'citation' | string;
+  name: 'blockchain' | 'devops' | 'web' | 'ecommerce' | 'mobile' | 'ai' | 'uiux' | 'digital-marketing' | 'facebook-monetization' | 'graphic-design' | 'wordpress' | 'seo' | 'iot' | 'glm' | 'gmb' | 'citation' | 'bpo' | string;
   className?: string;
   size?: number;
   color?: string;
@@ -16,6 +16,41 @@ export const ServiceIcon: React.FC<ServiceIconProps> = ({
   accentColor = '#16A5CE'
 }) => {
   switch (name) {
+    case 'bpo':
+      return (
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 48 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className={className}
+        >
+          {/* Headset & Operations Globe / Workflow */}
+          <path
+            d="M9 25V22C9 13.7157 15.7157 7 24 7C32.2843 7 39 13.7157 39 22V25"
+            stroke={color}
+            strokeWidth="2.5"
+            strokeLinecap="round"
+          />
+          {/* Left Earpad */}
+          <rect x="6" y="23" width="6" height="12" rx="3" fill={accentColor} fillOpacity="0.2" stroke={color} strokeWidth="2.2" />
+          {/* Right Earpad */}
+          <rect x="36" y="23" width="6" height="12" rx="3" fill={accentColor} fillOpacity="0.2" stroke={color} strokeWidth="2.2" />
+          {/* Microphone arm */}
+          <path
+            d="M39 31V37C39 39.2 37.2 41 35 41H28"
+            stroke={color}
+            strokeWidth="2.2"
+            strokeLinecap="round"
+          />
+          <circle cx="26" cy="41" r="2.5" fill={accentColor} />
+          {/* Central Process Sync Arrows / Gear */}
+          <circle cx="24" cy="22" r="5" stroke={accentColor} strokeWidth="2" strokeDasharray="3 3" />
+          <path d="M22 20L24 18L26 20" stroke={accentColor} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M26 24L24 26L22 24" stroke={accentColor} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      );
     case 'gmb':
       return (
         <svg

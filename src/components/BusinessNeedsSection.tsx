@@ -14,10 +14,11 @@ export const BusinessNeedsSection: React.FC<BusinessNeedsSectionProps> = ({
   onNavigateToServices,
   onSelectService,
 }) => {
-  // Ordered services with GMB and Citation Landing Pages as the first cards:
+  // Ordered services with GMB and Citation Landing Pages as the first cards, plus BPO:
   const requestedServiceIds = [
     'gmb-services',
     'citation-landing-pages',
+    'bpo-services',
     'digital-marketing',
     'seo-services',
     'web-development',
