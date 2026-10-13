@@ -168,34 +168,35 @@ export const AboutPage: React.FC = () => {
               transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
               className="lg:col-span-6 space-y-6"
             >
-              {}
+              {/* Top Accent Subtitle */}
               <div className="space-y-1">
                 <span className="text-base sm:text-lg font-bold text-[#2E54AD] font-poppins">
                   Who We Are
                 </span>
                 
-                {}
+                {/* Main Heading */}
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#011337] tracking-tight font-poppins">
                   Our Mission
                 </h2>
               </div>
 
-              {}
+              {/* Mission Paragraphs */}
               <p className="text-sm sm:text-base text-[#475569] leading-relaxed font-poppins font-normal">
-                <strong className="font-bold text-[#2E54AD] bg-[#2E54AD]/10 px-1.5 py-0.5 rounded-md">Beture Web</strong> is a full-service software development agency, digital engineering company, and technology innovation partner. We specialize in custom web applications, native and cross-platform mobile apps, cloud infrastructure, blockchain development, and full-funnel digital marketing strategies that power scalable business growth.
+                <strong className="font-bold text-[#2E54AD] bg-[#2E54AD]/10 px-1.5 py-0.5 rounded-md">Beture Web</strong> is a modern software house, creative design studio, and full-funnel digital growth agency. We partner with ambitious startups, expanding enterprises, and digital brands to build robust web and mobile applications, high-converting digital marketing campaigns, intuitive UI/UX experiences, and automated e-commerce solutions.
               </p>
 
               <p className="text-sm sm:text-base text-[#475569] leading-relaxed font-poppins font-normal">
-                At <strong className="font-bold text-[#2E54AD] bg-[#2E54AD]/10 px-1.5 py-0.5 rounded-md">Beture Web</strong>, our mission is to turn ambitious business visions into high-performing digital realities. Through agile engineering sprints, rigorous quality assurance, modern UI/UX design, and zero-downtime deployments, our expert developers and digital marketers deliver dependable technology solutions that generate measurable value for our partners worldwide.
+                Our mission is to translate complex business challenges into sleek, high-performing digital realities. Through transparent communication, agile development sprints, and data-backed marketing strategies, our cross-functional team delivers scalable technology solutions that drive measurable ROI and lasting competitive advantages.
               </p>
 
+              {/* Quick Feature Grid */}
               <div className="grid grid-cols-2 gap-4 pt-4 border-t border-[#F1F5F9]">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-[#2E54AD]/10 text-[#2E54AD] flex items-center justify-center font-bold">
                     <CheckCircle className="w-4.5 h-4.5" />
                   </div>
                   <span className="text-xs sm:text-sm font-semibold text-[#011337]">
-                    End-to-End Agile Development
+                    Custom Web & Mobile Apps
                   </span>
                 </div>
 
@@ -204,7 +205,7 @@ export const AboutPage: React.FC = () => {
                     <Zap className="w-4.5 h-4.5 text-[#16A5CE]" />
                   </div>
                   <span className="text-xs sm:text-sm font-semibold text-[#011337]">
-                    Scalable Cloud & App Solutions
+                    High-ROI Digital Growth
                   </span>
                 </div>
               </div>
