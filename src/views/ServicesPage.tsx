@@ -4,7 +4,6 @@ import {
   ArrowRight, 
   ChevronRight, 
   CheckCircle2, 
-  Sparkles, 
   ArrowLeft,
   Calendar,
   Layers,
@@ -302,14 +301,8 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
           <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-14">
             
             {/* Left Content Column */}
-            <div className="max-w-2xl space-y-5 text-center lg:text-left">
+            <div className="max-w-2xl space-y-6 text-center lg:text-left">
               
-              {/* Category / Scope Pill */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#16A5CE]/15 border border-[#16A5CE]/30 text-[#16A5CE] text-xs font-bold uppercase tracking-wider font-heading">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>BPO & Enterprise Technology Solutions</span>
-              </div>
-
               {/* Main Headline */}
               <h1 className="text-3xl sm:text-5xl lg:text-5xl font-black text-white tracking-tight leading-[1.15] font-heading">
                 Empowering Business Growth With Premier{' '}
@@ -323,21 +316,8 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                 <strong className="font-bold text-white">Beture Web</strong> delivers cutting-edge <strong className="text-white font-semibold">Business Process Outsourcing (BPO)</strong>, bespoke software engineering, enterprise cloud architectures, and high-impact local search visibility (GMB & Citations). We enable companies worldwide to streamline operations, cut overhead costs, and scale with velocity.
               </p>
 
-              {/* Feature Highlights Pills */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 pt-1">
-                {['Business Process Outsourcing (BPO)', 'Full-Stack Software Dev', 'GMB & Local SEO Growth', 'Dedicated Global Teams'].map((tag, tIdx) => (
-                  <span 
-                    key={tIdx} 
-                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-white/10 border border-white/15 text-xs text-white font-medium"
-                  >
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#16A5CE]" />
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
               {/* Section Anchor */}
-              <div className="flex items-center justify-center lg:justify-start gap-3 pt-3 font-heading">
+              <div className="flex items-center justify-center lg:justify-start gap-3 pt-2 font-heading">
                 <span className="text-base sm:text-lg font-extrabold text-white">Explore Our Services</span>
                 <span className="h-[2px] w-16 bg-gradient-to-r from-[#16A5CE] to-transparent rounded-full" />
               </div>
