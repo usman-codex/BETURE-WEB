@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
+import logoImg from '../assets/beture-logo.png';
 import { OurFoundersSection } from '../components/OurFoundersSection';
 import { AchievementsSection } from '../components/AchievementsSection';
 import { 
@@ -33,44 +34,80 @@ export const AboutPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-white text-[#011337] font-poppins overflow-x-hidden">
       
-      {}
-      {}
-      {}
+      {/* ========================================================================= */}
+      {/* 1. HERO SECTION: OUR VISION & OFFICIAL COMPANY LOGO SHOWCASE               */}
+      {/* ========================================================================= */}
       <section className="relative w-full bg-gradient-to-r from-[#011337] via-[#162E66] to-[#2E54AD] py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden shadow-lg">
         
-        {}
-        <div className="absolute right-[-40px] sm:right-10 top-1/2 -translate-y-1/2 pointer-events-none opacity-40 lg:opacity-60 overflow-hidden w-72 h-72 sm:w-96 sm:h-96">
-          {}
-          <div className="absolute top-0 right-4 w-48 h-48 sm:w-60 sm:h-60 rotate-45 rounded-3xl border-2 border-[#16A5CE]/40 bg-gradient-to-br from-[#D8E6F8]/30 to-[#16A5CE]/20 backdrop-blur-xs" />
-          {}
-          <div className="absolute top-6 right-10 w-38 h-38 sm:w-48 sm:h-48 rotate-45 rounded-2xl border-2 border-[#2E54AD]/50 bg-gradient-to-br from-[#2E54AD]/30 to-[#162E66]/30" />
-          {}
-          <div className="absolute top-12 right-16 w-26 h-26 sm:w-32 sm:h-32 rotate-45 rounded-xl bg-gradient-to-br from-[#011337] to-[#16A5CE] opacity-90 shadow-xl shadow-[#2E54AD]/30" />
-          {}
-          <div className="absolute top-4 right-36 w-3 h-3 rounded-full bg-[#16A5CE] animate-pulse" />
-          <div className="absolute top-44 right-8 w-2.5 h-2.5 rounded-full bg-[#D8E6F8]" />
-        </div>
+        {/* Ambient subtle glow lights */}
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 bg-[#16A5CE]/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute right-1/4 bottom-0 w-64 h-64 bg-[#2E54AD]/30 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="max-w-4xl space-y-5">
-            {}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight font-poppins drop-shadow-sm">
-              Our Vision
-            </h1>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            
+            {/* Left Content Column */}
+            <div className="lg:col-span-7 space-y-5">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight font-poppins drop-shadow-sm">
+                Our Vision
+              </h1>
 
-            {}
-            <motion.p
-              initial={{ x: '80vw', opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
+              <motion.p
+                initial={{ x: '-40px', opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{
+                  duration: 0.8,
+                  ease: [0.16, 1, 0.3, 1],
+                  delay: 0.15,
+                }}
+                className="text-base sm:text-lg lg:text-xl text-white/95 leading-relaxed font-poppins font-normal max-w-3xl drop-shadow-xs"
+              >
+                With a relentless focus on practical mastery, financial technology innovation, and decentralized architecture, <strong className="font-extrabold text-white underline decoration-[#16A5CE] underline-offset-4">Beture Web</strong> empowers the next generation of fintech engineers, Web3 developers, and digital finance leaders. We bridge cutting-edge blockchain protocols, quantitative trading algorithms, and modern software engineering to prepare ambitious professionals for global fintech careers and high-impact digital ventures.
+              </motion.p>
+            </div>
+
+            {/* Right Logo Showcase: Official Company Image Logo & Brand Typography */}
+            <motion.div
+              initial={{ scale: 0.88, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
               transition={{
-                duration: 1.0,
+                duration: 0.8,
                 ease: [0.16, 1, 0.3, 1],
-                delay: 0.15,
+                delay: 0.2,
               }}
-              className="text-base sm:text-lg lg:text-xl text-white/95 leading-relaxed font-poppins font-normal max-w-3xl drop-shadow-xs"
+              className="lg:col-span-5 flex items-center justify-center lg:justify-end"
             >
-              With a relentless focus on practical mastery, financial technology innovation, and decentralized architecture, <strong className="font-extrabold text-white underline decoration-[#16A5CE] underline-offset-4">Beture Web</strong> empowers the next generation of fintech engineers, Web3 developers, and digital finance leaders. We bridge cutting-edge blockchain protocols, quantitative trading algorithms, and modern software engineering to prepare ambitious professionals for global fintech careers and high-impact digital ventures.
-            </motion.p>
+              <div className="w-full max-w-md p-8 sm:p-10 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/15 shadow-[0_8px_35px_rgba(1,19,55,0.45)] flex flex-col items-center justify-center gap-5 group hover:border-[#16A5CE]/50 transition-all duration-300 relative overflow-hidden select-none">
+                {/* Decorative inner light */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#16A5CE]/10 via-transparent to-[#2E54AD]/20 rounded-3xl pointer-events-none" />
+
+                {/* Real User Company Logo Image (Matching Navbar) */}
+                <div className="relative p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/10 shadow-[0_4px_24px_rgba(22,165,206,0.3)] flex items-center justify-center">
+                  <img
+                    src={logoImg}
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (target.src !== '/beture-logo.png') {
+                        target.src = '/beture-logo.png';
+                      }
+                    }}
+                    alt="Beture Web Official Logo"
+                    className="h-20 sm:h-24 md:h-28 w-auto object-contain drop-shadow-[0_4px_20px_rgba(22,165,206,0.5)] transform transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Brand Typography: BETURE (White) + WEB (#16A5CE) */}
+                <div className="flex items-center gap-2.5 sm:gap-3 leading-none">
+                  <span className="font-black text-2xl sm:text-3xl lg:text-4xl uppercase tracking-[0.14em] text-white font-poppins">
+                    BETURE
+                  </span>
+                  <span className="font-black text-2xl sm:text-3xl lg:text-4xl uppercase tracking-[0.14em] text-[#16A5CE] font-poppins">
+                    WEB
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+
           </div>
         </div>
       </section>
