@@ -90,11 +90,11 @@ export const BundleSection: React.FC<BundleSectionProps> = ({
               {/* CTA Actions */}
               <div className="flex flex-wrap items-center gap-4 pt-3">
                 <a
-                  href="tel:+923111222595"
+                  href="tel:+923290781709"
                   className="px-6 py-3.5 rounded-full bg-gradient-to-r from-[#2E54AD] to-[#16A5CE] hover:brightness-110 text-white font-extrabold text-sm shadow-md shadow-[#16A5CE]/25 transition-all duration-300 hover:scale-105 flex items-center gap-2 cursor-pointer"
                 >
                   <PhoneCall className="w-4 h-4" />
-                  <span>Call Us: +92 311 1222 595</span>
+                  <span>Call Us: +92 329 078 1709</span>
                 </a>
 
                 {onNavigateToServices && (

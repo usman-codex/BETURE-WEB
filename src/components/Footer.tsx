@@ -117,20 +117,20 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
               <div className="flex items-center justify-center md:justify-start gap-2.5 text-[#D8E6F8]">
                 <Mail className="w-4 h-4 text-[#16A5CE] shrink-0" />
                 <a 
-                  href="mailto:info@betureweb.com" 
+                  href="mailto:betureweb@gmail.com" 
                   className="hover:text-[#16A5CE] text-white/90 hover:underline transition-colors"
                 >
-                  info@betureweb.com
+                  betureweb@gmail.com
                 </a>
               </div>
 
               <div className="flex items-center justify-center md:justify-start gap-2.5 text-[#D8E6F8] pt-0.5">
                 <Phone className="w-4 h-4 text-[#16A5CE] shrink-0" />
                 <a 
-                  href="tel:+923111222595" 
+                  href="tel:+923290781709" 
                   className="hover:text-[#16A5CE] font-bold text-white transition-colors tracking-wide"
                 >
-                  +92 311 1222 595
+                  +92 329 078 1709
                 </a>
               </div>
             </div>
@@ -297,7 +297,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
                       <div className="flex items-center gap-2 text-white font-bold">
                         <Phone className="w-4 h-4 text-[#16A5CE]" />
                         <span>Direct Help Hotline:</span>
-                        <a href="tel:+923111222595" className="text-[#16A5CE] underline">+92 311 1222 595</a>
+                        <a href="tel:+923290781709" className="text-[#16A5CE] underline">+92 329 078 1709</a>
                       </div>
                       <div className="flex items-start gap-2 text-xs text-[#D8E6F8]">
                         <MapPin className="w-4 h-4 text-[#16A5CE] shrink-0 mt-0.5" />

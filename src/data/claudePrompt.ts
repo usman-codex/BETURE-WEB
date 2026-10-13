@@ -74,7 +74,7 @@ PAGE 1: HOME PAGE (/)
    - "Ready to Transform Your Career in FinTech & Web3?" with instant "Get Started Today" button.
 
 10. Footer
-   - Company Overview, Quick Links, Direct Contact Info (Email: info@betureweb.com, Phone: +923111222595, Address: Lahore, Pakistan), Newsletter subscribe box, Social Media links (Facebook, LinkedIn, X/Twitter, Telegram, YouTube), and Copyright notice.
+   - Company Overview, Quick Links, Direct Contact Info (Email: betureweb@gmail.com, Phone: +92 329 078 1709, Address: Lahore, Pakistan), Newsletter subscribe box, Social Media links (Facebook, LinkedIn, X/Twitter, Telegram, YouTube), and Copyright notice.
 
 PAGE 2: ALL COURSES CATALOG (/courses)
 - Search filter bar (Instant title/keyword search).
@@ -101,7 +101,7 @@ PAGE 5: BLOG / COMMUNITY (/blog)
 
 PAGE 6: CONTACT US (/contact)
 - Interactive contact form with real-time feedback (Name, Email, Subject, Phone, Message).
-- Direct email (info@betureweb.com), phone (+923111222595), and location details (Lahore, Pakistan).
+- Direct email (betureweb@gmail.com), phone (+92 329 078 1709), and location details (Lahore, Pakistan).
 
 PAGE 7: AUTHENTICATION MODAL / PAGE (/login & /signup)
 - Student Login and Registration with tab switching, password visibility toggle, and instant user profile state.

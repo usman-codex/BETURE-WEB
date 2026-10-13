@@ -226,7 +226,7 @@ export const ClaudePromptModal: React.FC<ClaudePromptModalProps> = ({ isOpen, on
                 </div>
                 <div className="p-3 bg-[#162E66]/40 rounded-xl border border-[#2E54AD]/30">
                   <div className="font-bold text-[#16A5CE]">6. Contact Us (/contact)</div>
-                  <p className="text-[#D8E6F8] mt-1">Validated contact form, direct email (info@betureweb.com), phone (+923111222595), and Lahore address.</p>
+                  <p className="text-[#D8E6F8] mt-1">Validated contact form, direct email (betureweb@gmail.com), phone (+92 329 078 1709), and Lahore address.</p>
                 </div>
               </div>
             </div>

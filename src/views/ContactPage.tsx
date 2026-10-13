@@ -118,8 +118,8 @@ export const ContactPage: React.FC = () => {
                   </div>
                   <div>
                     <div className="text-xs text-[#5074A8] font-medium">Email Support</div>
-                    <a href="mailto:info@betureweb.com" className="font-bold text-[#011337] hover:text-[#2E54AD] text-xs sm:text-sm break-all">
-                      info@betureweb.com
+                    <a href="mailto:betureweb@gmail.com" className="font-bold text-[#011337] hover:text-[#2E54AD] text-xs sm:text-sm break-all">
+                      betureweb@gmail.com
                     </a>
                   </div>
                 </div>
@@ -130,8 +130,8 @@ export const ContactPage: React.FC = () => {
                   </div>
                   <div>
                     <div className="text-xs text-[#5074A8] font-medium">Phone & WhatsApp</div>
-                    <a href="tel:+923111222595" className="font-bold text-[#011337] hover:text-[#2E54AD] text-xs sm:text-sm">
-                      +92 311 1222 595
+                    <a href="tel:+923290781709" className="font-bold text-[#011337] hover:text-[#2E54AD] text-xs sm:text-sm">
+                      +92 329 078 1709
                     </a>
                   </div>
                 </div>
@@ -141,9 +141,9 @@ export const ContactPage: React.FC = () => {
                     <MapPin className="w-5 h-5 text-[#2E54AD]" />
                   </div>
                   <div>
-                    <div className="text-xs text-[#5074A8] font-medium">Institute Location</div>
+                    <div className="text-xs text-[#5074A8] font-medium">Head Office Location</div>
                     <div className="font-bold text-[#011337] text-xs sm:text-sm">
-                      Lahore, Punjab, Pakistan
+                      Township, Lahore, Punjab, Pakistan
                     </div>
                   </div>
                 </div>
