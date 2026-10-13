@@ -62,7 +62,7 @@ export const AboutPage: React.FC = () => {
                 }}
                 className="text-base sm:text-lg lg:text-xl text-white/95 leading-relaxed font-poppins font-normal max-w-3xl drop-shadow-xs"
               >
-                With a relentless focus on practical mastery, financial technology innovation, and decentralized architecture, <strong className="font-extrabold text-white underline decoration-[#16A5CE] underline-offset-4">Beture Web</strong> empowers the next generation of fintech engineers, Web3 developers, and digital finance leaders. We bridge cutting-edge blockchain protocols, quantitative trading algorithms, and modern software engineering to prepare ambitious professionals for global fintech careers and high-impact digital ventures.
+                At <strong className="font-extrabold text-white underline decoration-[#16A5CE] underline-offset-4">Beture Web</strong>, our vision is to empower modern businesses, innovative startups, and visionary enterprises with world-class digital solutions. We engineer high-performance web applications, scalable mobile apps, bespoke enterprise software, intuitive UI/UX design, and data-driven digital marketing growth engines. By bridging cutting-edge technology with creative precision, we transform ambitious ideas into robust, secure, and revenue-driving digital products that stand out globally.
               </motion.p>
             </div>
 
@@ -154,7 +154,7 @@ export const AboutPage: React.FC = () => {
                 <div className="absolute -bottom-4 -right-4 bg-white px-5 py-3 rounded-2xl shadow-lg border border-[#D8E6F8] z-20 flex items-center gap-3">
                   <div className="w-3 h-3 rounded-full bg-[#2E54AD] animate-ping" />
                   <span className="text-xs sm:text-sm font-bold text-[#011337] font-poppins">
-                    FinTech & Web3 Institute
+                    Software House & Digital Solutions
                   </span>
                 </div>
 
@@ -182,22 +182,20 @@ export const AboutPage: React.FC = () => {
 
               {}
               <p className="text-sm sm:text-base text-[#475569] leading-relaxed font-poppins font-normal">
-                <strong className="font-bold text-[#2E54AD] bg-[#2E54AD]/10 px-1.5 py-0.5 rounded-md">Beture Web</strong> stands as a premier specialized education institute and technology hub dedicated to decentralized finance (DeFi), algorithmic trading, blockchain engineering, and modern full-stack financial software. Our commitment to rigorous practical training, live testnet simulations, and verified industry mentorship defines our core essence.
+                <strong className="font-bold text-[#2E54AD] bg-[#2E54AD]/10 px-1.5 py-0.5 rounded-md">Beture Web</strong> is a full-service software development agency, digital engineering company, and technology innovation partner. We specialize in custom web applications, native and cross-platform mobile apps, cloud infrastructure, blockchain development, and full-funnel digital marketing strategies that power scalable business growth.
               </p>
 
-              {}
               <p className="text-sm sm:text-base text-[#475569] leading-relaxed font-poppins font-normal">
-                At <strong className="font-bold text-[#2E54AD] bg-[#2E54AD]/10 px-1.5 py-0.5 rounded-md">Beture Web</strong>, we go beyond conventional theory. We immerse our students in real-world smart contract development, quantitative market modeling, automated bot algorithms, and institutional financial security protocols. Our dedicated faculty and industry practitioners take immense pride in engineering career-ready skills that empower learners to secure top global remote roles and build groundbreaking fintech solutions.
+                At <strong className="font-bold text-[#2E54AD] bg-[#2E54AD]/10 px-1.5 py-0.5 rounded-md">Beture Web</strong>, our mission is to turn ambitious business visions into high-performing digital realities. Through agile engineering sprints, rigorous quality assurance, modern UI/UX design, and zero-downtime deployments, our expert developers and digital marketers deliver dependable technology solutions that generate measurable value for our partners worldwide.
               </p>
 
-              {}
               <div className="grid grid-cols-2 gap-4 pt-4 border-t border-[#F1F5F9]">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-[#2E54AD]/10 text-[#2E54AD] flex items-center justify-center font-bold">
                     <CheckCircle className="w-4.5 h-4.5" />
                   </div>
                   <span className="text-xs sm:text-sm font-semibold text-[#011337]">
-                    Hands-on FinTech & DeFi Labs
+                    End-to-End Agile Development
                   </span>
                 </div>
 
@@ -206,7 +204,7 @@ export const AboutPage: React.FC = () => {
                     <Zap className="w-4.5 h-4.5 text-[#16A5CE]" />
                   </div>
                   <span className="text-xs sm:text-sm font-semibold text-[#011337]">
-                    1-on-1 Industry Mentorship
+                    Scalable Cloud & App Solutions
                   </span>
                 </div>
               </div>
