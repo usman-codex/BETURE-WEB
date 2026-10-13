@@ -143,8 +143,7 @@ export const AboutPage: React.FC = () => {
                 </div>
 
                 {/* Bottom Floating Badge */}
-                <div className="absolute -bottom-4 -right-4 bg-white px-5 py-3 rounded-2xl shadow-lg border border-[#D8E6F8] z-20 flex items-center gap-3">
-                  <div className="w-3 h-3 rounded-full bg-[#2E54AD] animate-ping" />
+                <div className="absolute -bottom-4 -right-4 bg-white px-5 py-3 rounded-2xl shadow-lg border border-[#D8E6F8] z-20 flex items-center">
                   <span className="text-xs sm:text-sm font-bold text-[#011337] font-poppins">
                     BPO & Digital Software House
                   </span>
