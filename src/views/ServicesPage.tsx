@@ -14,6 +14,8 @@ import {
 import { ServiceIcon } from '../components/ServiceIcon';
 import { SERVICES_DATA } from '../data/services';
 import { ServiceItem } from '../types';
+import betureLogoImg from '../assets/beture-logo.png';
+import betureLogoTransparent from '../assets/beture-logo-transparent.png';
 
 interface ServicesPageProps {
   selectedServiceSlug?: string | null;
@@ -45,13 +47,19 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
         {}
         <div className="relative bg-gradient-to-r from-[#011337] via-[#162E66] to-[#2E54AD] text-white overflow-hidden py-16 sm:py-22 border-b border-[#2E54AD]/30">
           
-          {}
-          <div aria-hidden="true" className="pointer-events-none absolute -top-10 right-0 sm:right-10 w-72 h-72 sm:w-96 sm:h-96 opacity-60">
-            <div className="relative w-full h-full">
-              <div className="absolute top-0 right-4 w-52 h-52 rotate-45 rounded-3xl border-2 border-[#16A5CE]/40 bg-[#16A5CE]/10 backdrop-blur-xs" />
-              <div className="absolute top-8 right-12 w-40 h-40 rotate-45 rounded-2xl border-2 border-[#D8E6F8]/50 bg-[#D8E6F8]/15" />
-              <div className="absolute top-14 right-20 w-28 h-28 rotate-45 rounded-xl bg-gradient-to-br from-[#2E54AD] to-[#16A5CE] shadow-2xl opacity-90" />
-            </div>
+          {/* Ambient Company Logo Watermark */}
+          <div aria-hidden="true" className="pointer-events-none absolute -top-4 right-0 sm:right-8 w-60 h-60 sm:w-72 sm:h-72 opacity-20 flex items-center justify-center">
+            <img 
+              src={betureLogoTransparent} 
+              onError={(e) => {
+                const target = e.currentTarget;
+                if (target.src !== betureLogoImg) {
+                  target.src = betureLogoImg;
+                }
+              }}
+              alt="" 
+              className="w-full h-full object-contain filter drop-shadow-[0_0_30px_rgba(22,165,206,0.5)]" 
+            />
           </div>
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
@@ -281,31 +289,110 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
   return (
     <div className="min-h-screen bg-[#F5F8FC] text-[#011337] pb-24">
       
-      {}
-      <div className="relative bg-gradient-to-r from-[#011337] via-[#162E66] to-[#2E54AD] text-white overflow-hidden py-16 sm:py-24 border-b border-[#2E54AD]/30">
+      {/* Hero Section */}
+      <div className="relative bg-gradient-to-r from-[#011337] via-[#162E66] to-[#2E54AD] text-white overflow-hidden py-16 sm:py-20 lg:py-24 border-b border-[#2E54AD]/30">
         
-        {}
-        <div aria-hidden="true" className="pointer-events-none absolute -top-12 right-0 sm:right-10 w-72 h-72 sm:w-96 sm:h-96 opacity-65">
-          <div className="relative w-full h-full">
-            <div className="absolute top-0 right-4 w-52 h-52 rotate-45 rounded-3xl border-2 border-[#16A5CE]/40 bg-[#16A5CE]/10 backdrop-blur-xs" />
-            <div className="absolute top-8 right-12 w-40 h-40 rotate-45 rounded-2xl border-2 border-[#D8E6F8]/50 bg-[#D8E6F8]/15" />
-            <div className="absolute top-14 right-20 w-28 h-28 rotate-45 rounded-xl bg-gradient-to-br from-[#2E54AD] to-[#16A5CE] shadow-2xl opacity-90" />
-          </div>
+        {/* Ambient background glows */}
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#16A5CE]/15 rounded-full blur-3xl" />
+          <div className="absolute -bottom-10 right-10 w-80 h-80 bg-[#2E54AD]/25 rounded-full blur-2xl" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-          <div className="max-w-3xl space-y-4">
-            <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight font-heading">
-              Everything Your Business Needs Under One Roof
-            </h1>
-            <p className="text-[#D8E6F8] text-sm sm:text-base leading-relaxed font-sans max-w-2xl">
-              <strong className="font-bold text-white">Beture Web</strong> provides cutting-edge technology training, development, and innovative solutions for your digital journey. We leverage blockchain architectures, algorithmic trading, Web3 systems, and modern full-stack development to empower your financial technology capabilities.
-            </p>
-          </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-14">
+            
+            {/* Left Content Column */}
+            <div className="max-w-2xl space-y-5 text-center lg:text-left">
+              
+              {/* Category / Scope Pill */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#16A5CE]/15 border border-[#16A5CE]/30 text-[#16A5CE] text-xs font-bold uppercase tracking-wider font-heading">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>BPO & Enterprise Technology Solutions</span>
+              </div>
 
-          <div className="flex items-center gap-3 pt-4 font-heading">
-            <span className="text-lg sm:text-xl font-extrabold text-white">Our Services</span>
-            <span className="h-[2px] w-16 bg-gradient-to-r from-[#16A5CE] to-transparent rounded-full" />
+              {/* Main Headline */}
+              <h1 className="text-3xl sm:text-5xl lg:text-5xl font-black text-white tracking-tight leading-[1.15] font-heading">
+                Empowering Business Growth With Premier{' '}
+                <span className="bg-gradient-to-r from-[#16A5CE] via-[#D8E6F8] to-[#16A5CE] bg-clip-text text-transparent">
+                  BPO & Tech Services
+                </span>
+              </h1>
+
+              {/* Description */}
+              <p className="text-[#D8E6F8] text-sm sm:text-base leading-relaxed font-sans max-w-xl">
+                <strong className="font-bold text-white">Beture Web</strong> delivers cutting-edge <strong className="text-white font-semibold">Business Process Outsourcing (BPO)</strong>, bespoke software engineering, enterprise cloud architectures, and high-impact local search visibility (GMB & Citations). We enable companies worldwide to streamline operations, cut overhead costs, and scale with velocity.
+              </p>
+
+              {/* Feature Highlights Pills */}
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 pt-1">
+                {['Business Process Outsourcing (BPO)', 'Full-Stack Software Dev', 'GMB & Local SEO Growth', 'Dedicated Global Teams'].map((tag, tIdx) => (
+                  <span 
+                    key={tIdx} 
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-white/10 border border-white/15 text-xs text-white font-medium"
+                  >
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#16A5CE]" />
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* Section Anchor */}
+              <div className="flex items-center justify-center lg:justify-start gap-3 pt-3 font-heading">
+                <span className="text-base sm:text-lg font-extrabold text-white">Explore Our Services</span>
+                <span className="h-[2px] w-16 bg-gradient-to-r from-[#16A5CE] to-transparent rounded-full" />
+              </div>
+            </div>
+
+            {/* Right Column: Prominent Company Logo Card */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.92, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="w-full max-w-sm sm:max-w-md lg:max-w-sm shrink-0"
+            >
+              <div className="relative rounded-3xl p-8 sm:p-10 bg-white/[0.08] backdrop-blur-xl border border-white/20 shadow-2xl overflow-hidden group hover:border-[#16A5CE]/60 transition-all duration-300 flex flex-col items-center text-center">
+                
+                {/* Ambient Radial glow */}
+                <div className="absolute inset-0 bg-radial from-[#16A5CE]/20 via-transparent to-transparent pointer-events-none" />
+                
+                {/* Floating logo card */}
+                <div className="relative mb-4 flex items-center justify-center">
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-[#16A5CE]/30 to-[#2E54AD]/30 blur-lg group-hover:blur-xl transition-all" />
+                  <div className="relative p-3.5 rounded-2xl bg-[#011337]/70 border border-white/20 shadow-inner">
+                    <img
+                      src={betureLogoTransparent}
+                      onError={(e) => {
+                        const target = e.currentTarget;
+                        if (target.src !== betureLogoImg) {
+                          target.src = betureLogoImg;
+                        }
+                      }}
+                      alt="Beture Web Official Logo"
+                      className="w-28 h-28 sm:w-32 sm:h-32 object-contain drop-shadow-[0_8px_24px_rgba(22,165,206,0.5)] group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                </div>
+
+                {/* Company Name */}
+                <div className="space-y-1 relative z-10">
+                  <div className="text-2xl sm:text-3xl font-black tracking-[0.16em] uppercase leading-tight font-heading">
+                    <span className="text-white">BETURE </span>
+                    <span className="text-[#16A5CE]">WEB</span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-[#D8E6F8]/85 font-medium tracking-wide font-sans">
+                    Business Process Outsourcing & Tech Solutions
+                  </p>
+                </div>
+
+                {/* Trust indicator */}
+                <div className="mt-5 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#16A5CE]/20 border border-[#16A5CE]/40 text-[#D8E6F8] text-[11px] font-bold tracking-wide">
+                  <span className="w-2 h-2 rounded-full bg-[#16A5CE] animate-pulse" />
+                  <span>Verified Technology Partner</span>
+                </div>
+
+              </div>
+            </motion.div>
+
           </div>
         </div>
       </div>
@@ -349,6 +436,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
       {}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16 space-y-8">
         {SERVICES_DATA.map((service, index) => {
+          const isEven = index % 2 === 0;
           return (
             <motion.div
               key={service.id}
@@ -357,7 +445,9 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="bg-white rounded-3xl border border-[#D8E6F8] hover:border-[#16A5CE] p-6 sm:p-8 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row items-start md:items-center gap-6 sm:gap-8 group"
+              className={`bg-white rounded-3xl border border-[#D8E6F8] hover:border-[#16A5CE] p-6 sm:p-8 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col ${
+                isEven ? 'md:flex-row' : 'md:flex-row-reverse'
+              } items-start md:items-center gap-6 sm:gap-8 group`}
             >
               
               {}
