@@ -38,29 +38,6 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = () => {
       id="fintech-achievements-section" 
       className="relative w-full pt-8 pb-12 sm:pt-12 sm:pb-16 bg-white overflow-hidden"
     >
-      {/* Subtle modern geometric background accents */}
-      <div 
-        aria-hidden="true" 
-        className="pointer-events-none absolute -top-10 -left-10 sm:-left-4 md:left-2 w-48 h-48 sm:w-64 sm:h-64 z-0 opacity-40"
-      >
-        <div className="relative w-full h-full">
-          <div className="absolute top-0 left-4 w-32 h-32 sm:w-44 sm:h-44 rotate-45 rounded-3xl border-2 border-[#16A5CE]/30 bg-gradient-to-br from-[#D8E6F8]/40 to-[#16A5CE]/10" />
-          <div className="absolute top-4 left-8 w-24 h-24 sm:w-34 sm:h-34 rotate-45 rounded-2xl border border-[#2E54AD]/30 bg-gradient-to-br from-[#2E54AD]/15 to-[#162E66]/10" />
-          <div className="absolute top-2 left-24 w-2.5 h-2.5 rounded-full bg-[#16A5CE]" />
-        </div>
-      </div>
-
-      <div 
-        aria-hidden="true" 
-        className="pointer-events-none absolute -bottom-10 -right-10 sm:-right-4 md:right-2 w-48 h-48 sm:w-64 sm:h-64 z-0 opacity-40"
-      >
-        <div className="relative w-full h-full">
-          <div className="absolute bottom-0 right-4 w-32 h-32 sm:w-44 sm:h-44 rotate-45 rounded-3xl border-2 border-[#16A5CE]/30 bg-gradient-to-br from-[#D8E6F8]/40 to-[#16A5CE]/10" />
-          <div className="absolute bottom-4 right-8 w-24 h-24 sm:w-34 sm:h-34 rotate-45 rounded-2xl border border-[#2E54AD]/30 bg-gradient-to-br from-[#2E54AD]/15 to-[#162E66]/10" />
-          <div className="absolute bottom-2 right-24 w-2.5 h-2.5 rounded-full bg-[#16A5CE]" />
-        </div>
-      </div>
-
       <div className="relative z-10 w-full max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
         
         {/* Header */}

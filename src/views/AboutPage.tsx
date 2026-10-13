@@ -113,23 +113,6 @@ export const AboutPage: React.FC = () => {
               className="lg:col-span-6 relative flex justify-center lg:justify-start"
             >
               <div className="relative w-full max-w-lg">
-                
-                {/* Top-Right Geometrics */}
-                <div className="absolute -top-12 -right-8 w-44 h-44 pointer-events-none z-0">
-                  <div className="absolute top-0 right-0 w-36 h-36 rotate-45 rounded-2xl border-2 border-[#16A5CE]/30 bg-gradient-to-br from-[#D8E6F8]/50 to-[#16A5CE]/20 backdrop-blur-xs" />
-                  <div className="absolute top-4 right-4 w-28 h-28 rotate-45 rounded-xl border border-[#2E54AD]/40 bg-gradient-to-br from-[#2E54AD]/25 to-[#162E66]/20" />
-                  <div className="absolute top-8 right-8 w-20 h-20 rotate-45 rounded-lg bg-gradient-to-br from-[#011337] to-[#2E54AD] opacity-90 shadow-md shadow-[#2E54AD]/20" />
-                  <div className="absolute top-2 right-28 w-2.5 h-2.5 rounded-full bg-[#16A5CE]" />
-                </div>
-
-                {/* Bottom-Left Geometrics */}
-                <div className="absolute -bottom-10 -left-10 w-44 h-44 pointer-events-none z-0">
-                  <div className="absolute bottom-0 left-0 w-36 h-36 rotate-45 rounded-2xl border-2 border-[#16A5CE]/30 bg-gradient-to-br from-[#D8E6F8]/50 to-[#16A5CE]/20 backdrop-blur-xs" />
-                  <div className="absolute bottom-4 left-4 w-28 h-28 rotate-45 rounded-xl border border-[#2E54AD]/40 bg-gradient-to-br from-[#2E54AD]/25 to-[#162E66]/20" />
-                  <div className="absolute bottom-8 left-8 w-20 h-20 rotate-45 rounded-lg bg-gradient-to-br from-[#011337] to-[#2E54AD] opacity-90 shadow-md shadow-[#2E54AD]/20" />
-                  <div className="absolute bottom-2 left-28 w-2.5 h-2.5 rounded-full bg-[#2E54AD]" />
-                </div>
-
                 {/* Main Asymmetrical Rounded Image */}
                 <div className="relative z-10 overflow-hidden rounded-tr-[56px] rounded-bl-[56px] rounded-tl-2xl rounded-br-2xl shadow-xl border-4 border-white bg-[#F8FAFC]">
                   <img
@@ -335,20 +318,6 @@ export const AboutPage: React.FC = () => {
       {/* ========================================================================= */}
       <section className="relative py-16 sm:py-24 bg-[#FAFAFA] border-t border-[#E2E8F0] overflow-hidden">
         
-        {/* Subtle Decorative Geometry */}
-        <div 
-          aria-hidden="true" 
-          className="pointer-events-none absolute -top-10 right-0 sm:right-6 md:right-12 w-64 h-64 sm:w-80 sm:h-80 z-0 opacity-70"
-        >
-          <div className="relative w-full h-full">
-            <div className="absolute top-0 right-4 w-44 h-44 sm:w-56 sm:h-56 rotate-45 rounded-3xl border-2 border-[#16A5CE]/30 bg-gradient-to-br from-[#D8E6F8]/40 to-[#16A5CE]/10 backdrop-blur-[1px]" />
-            <div className="absolute top-5 right-9 w-36 h-36 sm:w-44 sm:h-44 rotate-45 rounded-2xl border-2 border-[#2E54AD]/40 bg-gradient-to-br from-[#2E54AD]/20 to-[#162E66]/20" />
-            <div className="absolute top-10 right-14 w-24 h-24 sm:w-30 sm:h-30 rotate-45 rounded-xl bg-gradient-to-br from-[#011337] to-[#2E54AD] opacity-90 shadow-xl shadow-[#2E54AD]/20" />
-            <div className="absolute top-2 right-32 w-3 h-3 rounded-full bg-[#16A5CE]" />
-            <div className="absolute top-36 right-6 w-2.5 h-2.5 rounded-full bg-[#2E54AD]" />
-          </div>
-        </div>
-
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
             <span className="text-sm sm:text-base font-bold text-[#2E54AD] font-poppins">
