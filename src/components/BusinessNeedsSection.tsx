@@ -122,9 +122,9 @@ export const BusinessNeedsSection: React.FC<BusinessNeedsSectionProps> = ({
                   </h3>
                 </div>
 
-                {/* 2. Slide-Up Overlay Layer with Frosted Glass Blur (Transparent blur background) */}
+                {/* 2. Slide-Up Overlay Layer (Original rich deep dark navy brand color) */}
                 <div 
-                  className="absolute inset-0 w-full h-full rounded-2xl bg-[#011337]/50 backdrop-blur-2xl backdrop-saturate-150 p-5 text-white flex flex-col justify-between translate-y-full group-hover:translate-y-0 transition-transform duration-400 ease-out border border-[#16A5CE]/50 shadow-2xl z-20"
+                  className="absolute inset-0 w-full h-full rounded-2xl bg-gradient-to-b from-[#011337] via-[#06183F] to-[#011337] p-5 text-white flex flex-col justify-between translate-y-full group-hover:translate-y-0 transition-transform duration-400 ease-out border-2 border-[#16A5CE] shadow-2xl z-20"
                 >
                   {/* Clean Top Title */}
                   <div className="border-b border-white/15 pb-2.5">
