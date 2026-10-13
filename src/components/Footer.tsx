@@ -110,7 +110,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
               <div className="flex items-start justify-center md:justify-start gap-2.5 text-[#D8E6F8]">
                 <MapPin className="w-4 h-4 text-[#16A5CE] shrink-0 mt-0.5" />
                 <span className="leading-snug">
-                  Plot #40, Sector B1, Block 1, Abubakar Rd, Township, Lahore.
+                  Lahore
                 </span>
               </div>
 
@@ -301,7 +301,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
                       </div>
                       <div className="flex items-start gap-2 text-xs text-[#D8E6F8]">
                         <MapPin className="w-4 h-4 text-[#16A5CE] shrink-0 mt-0.5" />
-                        <span>Head Office: Plot #40, Sector B1, Block 1, Abubakar Rd, Township, Lahore.</span>
+                        <span>Head Office: Lahore</span>
                       </div>
                     </div>
                     <p className="text-xs text-[#D8E6F8]/70">

@@ -143,7 +143,7 @@ export const ContactPage: React.FC = () => {
                   <div>
                     <div className="text-xs text-[#5074A8] font-medium">Head Office Location</div>
                     <div className="font-bold text-[#011337] text-xs sm:text-sm">
-                      Township, Lahore, Punjab, Pakistan
+                      Lahore
                     </div>
                   </div>
                 </div>
