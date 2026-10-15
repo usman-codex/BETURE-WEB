@@ -355,88 +355,61 @@ export const BlogPage: React.FC<BlogPageProps> = ({
   return (
     <div className="min-h-screen bg-[#F5F8FC] text-[#011337]">
       
-      {}
-      <section className="relative w-full bg-gradient-to-r from-[#011337] via-[#162E66] to-[#2E54AD] py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden shadow-lg">
+      {/* Hero Section */}
+      <section className="relative w-full bg-gradient-to-r from-[#011337] via-[#162E66] to-[#2E54AD] py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden shadow-lg border-b border-[#2E54AD]/30">
         
-        {}
-        <div className="absolute right-[-30px] sm:right-2 lg:right-8 top-[-30px] sm:top-[-20px] lg:top-[-10px] pointer-events-none opacity-40 lg:opacity-60 overflow-hidden w-72 h-72 sm:w-96 sm:h-96">
-          {}
-          <div className="absolute top-4 right-4 w-48 h-48 sm:w-60 sm:h-60 rotate-45 rounded-3xl border-2 border-[#16A5CE]/40 bg-gradient-to-br from-[#D8E6F8]/30 to-[#16A5CE]/20 backdrop-blur-xs" />
-          {}
-          <div className="absolute top-10 right-10 w-38 h-38 sm:w-48 sm:h-48 rotate-45 rounded-2xl border-2 border-[#2E54AD]/50 bg-gradient-to-br from-[#2E54AD]/30 to-[#162E66]/30" />
-          {}
-          <div className="absolute top-16 right-16 w-26 h-26 sm:w-32 sm:h-32 rotate-45 rounded-xl bg-gradient-to-br from-[#011337] to-[#16A5CE] opacity-90 shadow-xl shadow-[#2E54AD]/30" />
-          {}
-          <div className="absolute top-6 right-36 w-3 h-3 rounded-full bg-[#16A5CE] animate-pulse" />
-          <div className="absolute top-48 right-8 w-2.5 h-2.5 rounded-full bg-[#D8E6F8]" />
-        </div>
-
-        {}
-        <div className="absolute left-[-40px] sm:left-[-15px] top-1/2 -translate-y-1/2 pointer-events-none opacity-20 lg:opacity-30 overflow-hidden w-56 h-56">
-          <div className="w-40 h-40 rotate-45 rounded-3xl border border-[#16A5CE]/35 bg-[#16A5CE]/10" />
+        {/* Ambient Subtle Glows */}
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#16A5CE]/15 rounded-full blur-3xl opacity-70" />
+          <div className="absolute -bottom-10 left-10 w-80 h-80 bg-[#2E54AD]/25 rounded-full blur-2xl opacity-60" />
         </div>
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 z-10">
-          
-          {}
-          <motion.div
+
+          {/* Heading */}
+          <motion.h1
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
-              duration: 0.7,
-              ease: [0.16, 1, 0.3, 1],
-              delay: 0.05,
-            }}
-            className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-[#D8E6F8]/25 shadow-xs text-xs font-semibold text-[#D8E6F8]"
-          >
-            <span>Beture Web Insights & Research</span>
-          </motion.div>
-
-          {}
-          <motion.h1
-            initial={{ y: 40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{
               duration: 0.8,
               ease: [0.16, 1, 0.3, 1],
-              delay: 0.15,
             }}
             className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.15] drop-shadow-sm font-poppins"
           >
-            Web3, FinTech & AI <br className="hidden sm:block" />
+            Insights, Guides & <br className="hidden sm:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D8E6F8] via-[#16A5CE] to-[#16A5CE]">
-              Engineering Insights
+              Industry Case Studies
             </span>
           </motion.h1>
 
-          {}
+          {/* Subtitle / Paragraph */}
           <motion.p
-            initial={{ y: 40, opacity: 0 }}
+            initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
               duration: 0.8,
               ease: [0.16, 1, 0.3, 1],
-              delay: 0.25,
+              delay: 0.1,
             }}
-            className="text-base sm:text-lg lg:text-xl text-white/95 max-w-2xl mx-auto leading-relaxed font-normal drop-shadow-xs font-poppins"
+            className="text-base sm:text-lg lg:text-xl text-[#D8E6F8] max-w-2xl mx-auto leading-relaxed font-normal drop-shadow-xs font-poppins"
           >
-            Explore curated analyses, airdrop strategies, smart contract engineering guides, and AI quantitative models written by industry practitioners and Beture Web mentors.
+            Explore actionable guides, digital marketing strategies, modern web engineering, and monetization tutorials published by Beture Web practitioners.
           </motion.p>
 
-          {}
+          {/* Meta Badges */}
           <motion.div
-            initial={{ y: 35, opacity: 0 }}
+            initial={{ y: 25, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
               duration: 0.8,
               ease: [0.16, 1, 0.3, 1],
-              delay: 0.35,
+              delay: 0.2,
             }}
             className="pt-2 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-[#D8E6F8] font-medium"
           >
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-xs px-3.5 py-1.5 rounded-xl border border-white/10">
               <BookOpen className="w-4 h-4 text-[#16A5CE]" />
-              <span>{blogs.length} Deep-Dive Articles</span>
+              <span>{blogs.length} Expert Articles</span>
             </div>
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-xs px-3.5 py-1.5 rounded-xl border border-white/10">
               <TrendingUp className="w-4 h-4 text-[#16A5CE]" />
@@ -444,7 +417,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
             </div>
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-xs px-3.5 py-1.5 rounded-xl border border-white/10">
               <User className="w-4 h-4 text-[#16A5CE]" />
-              <span>Verified On-Chain Analysts</span>
+              <span>Industry Practitioners</span>
             </div>
           </motion.div>
 
