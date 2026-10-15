@@ -9,9 +9,7 @@ import {
   Copy, 
   Check, 
   BookOpen, 
-  ChevronRight,
-  TrendingUp,
-  User
+  ChevronRight
 } from 'lucide-react';
 import { motion } from 'motion/react';
 import Markdown from 'react-markdown';
@@ -395,32 +393,6 @@ export const BlogPage: React.FC<BlogPageProps> = ({
           >
             Explore actionable guides, digital marketing strategies, modern web engineering, and monetization tutorials published by Beture Web practitioners.
           </motion.p>
-
-          {/* Meta Badges */}
-          <motion.div
-            initial={{ y: 25, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{
-              duration: 0.8,
-              ease: [0.16, 1, 0.3, 1],
-              delay: 0.2,
-            }}
-            className="pt-2 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-[#D8E6F8] font-medium"
-          >
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-xs px-3.5 py-1.5 rounded-xl border border-white/10">
-              <BookOpen className="w-4 h-4 text-[#16A5CE]" />
-              <span>{blogs.length} Expert Articles</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-xs px-3.5 py-1.5 rounded-xl border border-white/10">
-              <TrendingUp className="w-4 h-4 text-[#16A5CE]" />
-              <span>Updated Weekly</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-xs px-3.5 py-1.5 rounded-xl border border-white/10">
-              <User className="w-4 h-4 text-[#16A5CE]" />
-              <span>Industry Practitioners</span>
-            </div>
-          </motion.div>
-
         </div>
       </section>
 
