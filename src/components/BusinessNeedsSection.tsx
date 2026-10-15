@@ -38,20 +38,7 @@ export const BusinessNeedsSection: React.FC<BusinessNeedsSectionProps> = ({
       id="business-needs-section" 
       className="relative w-full py-16 sm:py-20 bg-[#F5F8FC] overflow-hidden border-b border-[#D8E6F8]/50"
     >
-      {/* Decorative Brand Shapes */}
-      <div 
-        aria-hidden="true" 
-        className="pointer-events-none absolute -top-12 right-0 sm:right-6 md:right-12 w-64 h-64 sm:w-88 sm:h-88 z-0 opacity-70"
-      >
-        <div className="relative w-full h-full">
-          <div className="absolute top-0 right-4 w-48 h-48 sm:w-60 sm:h-60 rotate-45 rounded-3xl border-2 border-[#16A5CE]/30 bg-gradient-to-br from-[#D8E6F8]/40 to-[#16A5CE]/10 backdrop-blur-[1px]" />
-          <div className="absolute top-6 right-10 w-38 h-38 sm:w-48 sm:h-48 rotate-45 rounded-2xl border-2 border-[#2E54AD]/40 bg-gradient-to-br from-[#2E54AD]/20 to-[#162E66]/20" />
-          <div className="absolute top-12 right-16 w-26 h-26 sm:w-32 sm:h-32 rotate-45 rounded-xl bg-gradient-to-br from-[#011337] to-[#2E54AD] opacity-90 shadow-xl shadow-[#2E54AD]/20" />
-          <div className="absolute top-2 right-36 w-3 h-3 rounded-full bg-[#16A5CE]" />
-          <div className="absolute top-40 right-6 w-2.5 h-2.5 rounded-full bg-[#2E54AD]" />
-        </div>
-      </div>
-
+      {/* Section Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
