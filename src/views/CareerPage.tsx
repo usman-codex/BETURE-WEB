@@ -5,9 +5,7 @@ import {
   ArrowRight, 
   Rocket, 
   Network, 
-  Coins,
-  Briefcase,
-  Building
+  Coins
 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { CAREERS_DATA } from '../data/careers';
@@ -28,48 +26,29 @@ export const CareerPage: React.FC<CareerPageProps> = ({
   return (
     <div className="relative py-16 bg-[#D8E6F8]/10 min-h-screen text-[#011337] space-y-16 overflow-hidden">
       
-      {}
-      <div className="absolute -top-12 -left-12 sm:-top-8 sm:-left-8 pointer-events-none z-0">
-        <div className="relative w-40 h-40 sm:w-56 sm:h-56 rounded-3xl bg-gradient-to-br from-[#2E54AD]/20 via-[#16A5CE]/10 to-transparent border-2 border-[#16A5CE]/30 shadow-xl backdrop-blur-xs -rotate-12">
-          {}
-          <div className="absolute -bottom-4 -right-4 w-24 h-24 sm:w-32 sm:h-32 rounded-2xl bg-gradient-to-tr from-[#162E66]/25 to-[#D8E6F8]/50 border border-[#2E54AD]/40 shadow-md rotate-24" />
-          {}
-          <div className="absolute top-4 left-4 w-8 h-8 rounded-lg bg-white/60 border border-[#16A5CE]/40 rotate-45 shadow-xs" />
-        </div>
-      </div>
-
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
-        {}
+        {/* Hero Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 pt-2">
-          <motion.div 
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
-            className="inline-flex items-center px-3.5 py-1 rounded-full bg-white/80 border border-[#D8E6F8] shadow-2xs text-[#2E54AD] text-xs font-bold"
-          >
-            <span>Join Beture Web Team & Ecosystem</span>
-          </motion.div>
-
           <motion.h1 
             initial={{ opacity: 0, y: 20, filter: 'blur(4px)' }}
             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight bg-gradient-to-r from-[#162E66] via-[#2E54AD] to-[#16A5CE] bg-clip-text text-transparent pb-1"
           >
-            Careers & Graduate Placements
+            Build Your Career With <span className="text-[#16A5CE]">Beture Web</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
-            className="text-[#162E66] text-sm sm:text-base leading-relaxed"
+            className="text-[#162E66] text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl mx-auto"
           >
-            Build your career at the forefront of financial technology and decentralized networks. We hire top instructors, researchers, and directly place certified graduates with partner Web3 firms.
+            Join our fast-growing team of engineers, digital marketers, and monetization specialists. Work on high-impact global projects, master industry-standard tools, and accelerate your career.
           </motion.p>
         </div>
 
-        {}
+        {/* Value Pillars */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <motion.div 
             whileHover={{ y: -4 }}
@@ -81,7 +60,7 @@ export const CareerPage: React.FC<CareerPageProps> = ({
             </div>
             <h3 className="text-lg font-bold text-[#011337]">High-Impact Work</h3>
             <p className="text-xs text-[#011337]/75 leading-relaxed">
-              Shape the next generation of financial leaders and crypto analysts across Pakistan and international markets.
+              Build cutting-edge digital products, scalable software architectures, and high-performance monetization engines for global clients.
             </p>
           </motion.div>
 
@@ -93,9 +72,9 @@ export const CareerPage: React.FC<CareerPageProps> = ({
             <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#162E66] to-[#2E54AD] text-white flex items-center justify-center font-bold shadow-md shadow-[#162E66]/25 group-hover:scale-105 transition-transform">
               <Network className="w-6 h-6" />
             </div>
-            <h3 className="text-lg font-bold text-[#011337]">Graduate Placement Pipeline</h3>
+            <h3 className="text-lg font-bold text-[#011337]">Growth & Career Pathway</h3>
             <p className="text-xs text-[#011337]/75 leading-relaxed">
-              We connect top-performing course alumni directly with hiring Web3 startups, DeFi protocols, and VC funds.
+              We provide hands-on mentorship, enterprise client exposure, and structured pathways to senior and leadership engineering positions.
             </p>
           </motion.div>
 
@@ -109,7 +88,7 @@ export const CareerPage: React.FC<CareerPageProps> = ({
             </div>
             <h3 className="text-lg font-bold text-[#011337]">Competitive Compensation</h3>
             <p className="text-xs text-[#011337]/75 leading-relaxed">
-              Attractive USD & PKR remuneration packages, performance bonuses, and fully sponsored learning certifications.
+              Attractive remuneration packages, performance bonuses, project incentives, and sponsored certifications.
             </p>
           </motion.div>
         </div>
