@@ -3,12 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Course } from '../types';
 import { 
   ArrowRight, 
-  GraduationCap,
-  Sparkles,
-  CheckCircle2,
-  BookOpen,
-  Award,
-  Users
+  CheckCircle2
 } from 'lucide-react';
 import logoImg from '../assets/beture-logo.png';
 
@@ -41,12 +36,6 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
             
             {/* Left Content Column */}
             <div className="max-w-2xl space-y-5 text-center lg:text-left">
-              
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 bg-[#16A5CE]/15 border border-[#16A5CE]/40 backdrop-blur-md px-4 py-1.5 rounded-full text-xs sm:text-sm text-[#D8E6F8] font-bold">
-                <GraduationCap className="w-4 h-4 text-[#16A5CE]" />
-                <span>Beture Web Skill & Career Academy</span>
-              </div>
 
               {/* Main Heading */}
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.14] font-heading">
@@ -80,29 +69,24 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
 
             </div>
 
-            {/* Right Side: Only Company Logo Image */}
+            {/* Right Side: Only Company Logo Image (no box, no background container) */}
             <motion.div 
-              initial={{ opacity: 0, scale: 0.92, y: 15 }}
+              initial={{ opacity: 0, scale: 0.95, y: 10 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               className="shrink-0 flex items-center justify-center py-4 lg:py-0"
             >
-              <div className="relative group">
-                <div className="absolute -inset-3 bg-gradient-to-r from-[#16A5CE]/30 to-[#2E54AD]/40 rounded-3xl blur-2xl opacity-70 group-hover:opacity-100 transition duration-500" />
-                <div className="relative bg-white/10 backdrop-blur-md border border-white/20 p-6 sm:p-8 rounded-3xl shadow-2xl flex items-center justify-center">
-                  <img
-                    src={logoImg}
-                    alt="Beture Logo"
-                    onError={(e) => {
-                      const target = e.currentTarget;
-                      if (target.src !== '/beture-logo.png') {
-                        target.src = '/beture-logo.png';
-                      }
-                    }}
-                    className="h-28 sm:h-36 md:h-44 w-auto object-contain drop-shadow-[0_10px_25px_rgba(22,165,206,0.4)] transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-              </div>
+              <img
+                src={logoImg}
+                alt="Beture Logo"
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (target.src !== '/beture-logo.png') {
+                    target.src = '/beture-logo.png';
+                  }
+                }}
+                className="h-32 sm:h-44 md:h-52 lg:h-60 w-auto object-contain drop-shadow-[0_8px_24px_rgba(0,0,0,0.3)] transition-transform duration-300 hover:scale-105 select-none"
+              />
             </motion.div>
 
           </div>
@@ -122,11 +106,6 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({
           
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16 space-y-4 px-2">
-            <div className="inline-flex items-center gap-2 bg-[#EBF3FC] border border-[#2E54AD]/20 px-3.5 py-1 rounded-full text-xs font-bold text-[#2E54AD]">
-              <Sparkles className="w-3.5 h-3.5 text-[#16A5CE]" />
-              <span>Comprehensive Learning Catalog</span>
-            </div>
-            
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-black font-heading tracking-tight leading-[1.25] text-[#011337]">
               Professional Training Programs
             </h2>
