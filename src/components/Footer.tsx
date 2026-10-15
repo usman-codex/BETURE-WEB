@@ -12,7 +12,6 @@ import {
   Instagram, 
   Youtube, 
   MessageCircle,
-  Briefcase,
   X,
   CheckCircle2,
   HelpCircle,
@@ -32,37 +31,31 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
     { 
       name: 'LinkedIn', 
       icon: Linkedin, 
-      href: 'https://www.linkedin.com/company/fintech-edge-institute', 
+      href: 'https://linkedin.com', 
       color: 'hover:bg-[#0077B5] hover:border-[#0077B5]' 
     },
     { 
       name: 'Facebook', 
       icon: Facebook, 
-      href: 'https://www.facebook.com/FinTechEdge/', 
+      href: 'https://facebook.com', 
       color: 'hover:bg-[#1877F2] hover:border-[#1877F2]' 
     },
     { 
       name: 'Instagram', 
       icon: Instagram, 
-      href: 'https://www.instagram.com/fintechedgeinstitute/', 
+      href: 'https://instagram.com', 
       color: 'hover:bg-gradient-to-tr hover:from-[#F58529] hover:via-[#DD2A7B] hover:to-[#8134AF] hover:border-transparent' 
     },
     { 
       name: 'YouTube', 
       icon: Youtube, 
-      href: 'https://www.youtube.com/@fintechedgeinstitute', 
+      href: 'https://youtube.com', 
       color: 'hover:bg-[#FF0000] hover:border-[#FF0000]' 
-    },
-    { 
-      name: 'beBee', 
-      icon: Briefcase, 
-      href: 'https://bebee.com/pk/companies/fintech-edge-institute', 
-      color: 'hover:bg-[#FF9900] hover:border-[#FF9900]' 
     },
     { 
       name: 'WhatsApp', 
       icon: MessageCircle, 
-      href: 'https://wa.me/923111222595', 
+      href: 'https://wa.me/923290781709', 
       color: 'hover:bg-[#25D366] hover:border-[#25D366]' 
     },
   ];
@@ -76,6 +69,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 items-center pb-8 border-b border-[#2E54AD]/30">
           
+          {/* Brand & Mission Column */}
           <div className="space-y-3 text-center md:text-left">
             <div 
               onClick={() => setActiveTab && setActiveTab('home')} 
@@ -85,7 +79,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
             </div>
 
             <p className="text-xs sm:text-sm text-[#D8E6F8]/80 leading-relaxed max-w-sm mx-auto md:mx-0">
-              Empowering next-gen web developers, AI innovators, and tech pioneers with cutting-edge digital products, verified programs, and practical mentorship.
+              Empowering next-gen web developers, AI innovators, and global enterprises with cutting-edge BPO operations, scalable cloud architectures, and dedicated IT teams.
             </p>
 
             <div className="flex items-center justify-center md:justify-start gap-2.5 pt-1">
@@ -100,6 +94,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
             </div>
           </div>
 
+          {/* Campus & Head Office Column */}
           <div className="space-y-3 text-center md:text-left">
             <h4 className="text-xs font-black uppercase tracking-wider text-white flex items-center justify-center md:justify-start gap-2">
               <span className="w-2 h-2 rounded-full bg-[#16A5CE]" />
@@ -136,6 +131,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
             </div>
           </div>
 
+          {/* Connect With Us / Social Media Icons Column */}
           <div className="space-y-3 text-center md:text-right flex flex-col items-center md:items-end justify-center">
             <h4 className="text-xs font-black uppercase tracking-wider text-white">
               Connect With Us

@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
-import { Instagram, Facebook, Linkedin } from 'lucide-react';
 
 interface Founder {
   id: string;
@@ -12,11 +11,6 @@ interface Founder {
   initials: string;
   phone?: string;
   email?: string;
-  socials: {
-    instagram?: string;
-    facebook?: string;
-    linkedin?: string;
-  };
 }
 
 export const OurFoundersSection: React.FC = () => {
@@ -33,11 +27,6 @@ export const OurFoundersSection: React.FC = () => {
     initials: 'AAK',
     phone: '+92 329 078 1709',
     email: 'betureweb@gmail.com',
-    socials: {
-      instagram: 'https://instagram.com',
-      facebook: 'https://facebook.com',
-      linkedin: 'https://linkedin.com',
-    },
   };
 
   return (
@@ -123,44 +112,6 @@ export const OurFoundersSection: React.FC = () => {
               {founder.bio}
             </p>
 
-            {/* Social Links */}
-            <div className="flex items-center justify-center gap-3.5 mt-2">
-              {founder.socials.instagram && (
-                <a
-                  href={founder.socials.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${founder.name} Instagram`}
-                  className="w-10 h-10 rounded-full bg-[#E2E8F0] text-[#64748B] hover:bg-[#E4405F] hover:text-white flex items-center justify-center shadow-sm hover:shadow-lg hover:shadow-pink-500/25 hover:scale-110 transition-all duration-300"
-                >
-                  <Instagram className="w-4.5 h-4.5" />
-                </a>
-              )}
-
-              {founder.socials.facebook && (
-                <a
-                  href={founder.socials.facebook}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${founder.name} Facebook`}
-                  className="w-10 h-10 rounded-full bg-[#E2E8F0] text-[#64748B] hover:bg-[#1877F2] hover:text-white flex items-center justify-center shadow-sm hover:shadow-lg hover:shadow-blue-500/25 hover:scale-110 transition-all duration-300"
-                >
-                  <Facebook className="w-4.5 h-4.5 fill-current" />
-                </a>
-              )}
-
-              {founder.socials.linkedin && (
-                <a
-                  href={founder.socials.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${founder.name} LinkedIn`}
-                  className="w-10 h-10 rounded-full bg-[#E2E8F0] text-[#64748B] hover:bg-[#0A66C2] hover:text-white flex items-center justify-center shadow-sm hover:shadow-lg hover:shadow-sky-600/25 hover:scale-110 transition-all duration-300"
-                >
-                  <Linkedin className="w-4.5 h-4.5 fill-current" />
-                </a>
-              )}
-            </div>
 
           </motion.div>
         </div>

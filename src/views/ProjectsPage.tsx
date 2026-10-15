@@ -1,21 +1,16 @@
-import React, { useState, useMemo } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import React from 'react';
+import { motion } from 'motion/react';
 import { 
   ExternalLink, 
   ArrowRight,
   Code2,
   TrendingUp,
   Cpu,
-  Layers,
   Smartphone,
   Layout,
-  Globe,
   Phone,
   Mail,
   MapPin,
-  CheckCircle2,
-  Search,
-  Building2,
   Headphones
 } from 'lucide-react';
 import { projects } from '../data/projects';
@@ -29,33 +24,6 @@ interface ProjectsPageProps {
 export const ProjectsPage: React.FC<ProjectsPageProps> = ({
   onNavigateToContact,
 }) => {
-  const [activeCategory, setActiveCategory] = useState<string>('All');
-  const [searchQuery, setSearchQuery] = useState<string>('');
-
-  const categories = [
-    'All',
-    'Web & Software',
-    'BPO & Operations',
-    'FinTech & Web3',
-    'Mobile Apps',
-    'Local SEO & GMB'
-  ];
-
-  const filteredProjects = useMemo(() => {
-    return projects.filter((project) => {
-      const matchesCategory = 
-        activeCategory === 'All' || project.category.toLowerCase() === activeCategory.toLowerCase();
-      
-      const matchesSearch = 
-        !searchQuery.trim() ||
-        project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        project.tags.some((t) => t.toLowerCase().includes(searchQuery.toLowerCase()));
-
-      return matchesCategory && matchesSearch;
-    });
-  }, [activeCategory, searchQuery]);
-
   const handleOpenLiveSite = (e: React.MouseEvent, url?: string) => {
     e.stopPropagation();
     if (url) {
@@ -66,7 +34,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
   return (
     <div className="w-full bg-[#F8FAFB] min-h-screen">
       
-      {/* 1. Hero Section - Clean, Modern & Professional (No geometric diamond distractions) */}
+      {/* 1. Hero Section - Clean & Professional */}
       <section className="relative w-full py-16 sm:py-20 lg:py-24 bg-gradient-to-r from-[#011337] via-[#162E66] to-[#2E54AD] text-white overflow-hidden border-b border-[#2E54AD]/30">
         
         {/* Ambient Subtle Glows */}
@@ -80,10 +48,6 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
             
             {/* Left Content */}
             <div className="max-w-2xl space-y-5 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#16A5CE]/15 border border-[#16A5CE]/30 text-[#16A5CE] text-xs font-bold uppercase tracking-wider font-heading">
-                <span>Verified Client Case Studies & Deliverables</span>
-              </div>
-
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.12] font-heading">
                 Our Portfolio &{' '}
                 <span className="bg-gradient-to-r from-[#16A5CE] via-[#D8E6F8] to-[#16A5CE] bg-clip-text text-transparent">
@@ -115,185 +79,62 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
         </div>
       </section>
 
-      {/* 2. Filter & Search Bar */}
-      <section className="w-full pt-10 sm:pt-12 pb-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-2xl sm:rounded-3xl border border-[#D8E6F8] p-4 sm:p-6 shadow-xs flex flex-col md:flex-row items-center justify-between gap-4">
-          
-          {/* Category Tabs */}
-          <div className="flex flex-wrap items-center gap-2 w-full md:w-auto">
-            {categories.map((cat) => {
-              const isSelected = activeCategory === cat;
-              return (
-                <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer font-heading ${
-                    isSelected
-                      ? 'bg-[#011337] text-white shadow-md'
-                      : 'bg-[#F5F8FC] hover:bg-[#EBF3FC] text-[#334A60] border border-[#D8E6F8]/80'
-                  }`}
-                >
-                  {cat}
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Search Box */}
-          <div className="relative w-full md:w-72 shrink-0">
-            <Search className="w-4 h-4 text-[#2E54AD] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
-            <input
-              type="text"
-              placeholder="Search projects by tech or name..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#F5F8FC] border border-[#D8E6F8] text-xs sm:text-sm text-[#011337] placeholder-[#7B91A4] focus:outline-none focus:border-[#16A5CE] focus:bg-white transition-all font-sans"
-            />
-          </div>
-
-        </div>
-      </section>
-
-      {/* 3. Projects Grid Showcase */}
-      <section className="w-full py-8 sm:py-12">
+      {/* 2. Projects Grid Showcase - Clean Cards without clutter */}
+      <section className="w-full py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {filteredProjects.length === 0 ? (
-            <div className="text-center py-16 bg-white rounded-3xl border border-[#D8E6F8] p-8">
-              <Building2 className="w-12 h-12 text-[#2E54AD]/50 mx-auto mb-3" />
-              <h3 className="text-lg font-bold text-[#011337] font-heading">No projects found</h3>
-              <p className="text-sm text-[#4A5D6E] mt-1 font-sans">
-                Try selecting a different category or clearing your search query.
-              </p>
-              <button
-                onClick={() => { setActiveCategory('All'); setSearchQuery(''); }}
-                className="mt-4 px-5 py-2 rounded-xl bg-[#2E54AD] text-white text-xs font-bold font-heading cursor-pointer"
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+            {projects.map((project, idx) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.45, delay: idx * 0.05 }}
+                onClick={(e) => handleOpenLiveSite(e, project.liveUrl)}
+                className="group flex flex-col bg-white rounded-3xl border border-[#D8E6F8] shadow-sm hover:shadow-xl hover:border-[#16A5CE]/70 transition-all duration-300 overflow-hidden cursor-pointer"
               >
-                Reset Filters
-              </button>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
-              <AnimatePresence mode="popLayout">
-                {filteredProjects.map((project, idx) => (
-                  <motion.div
-                    key={project.id}
-                    layout
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    transition={{ duration: 0.45, delay: idx * 0.05 }}
-                    className="group flex flex-col bg-white rounded-3xl border border-[#D8E6F8] shadow-sm hover:shadow-xl hover:border-[#16A5CE]/70 transition-all duration-300 overflow-hidden"
-                  >
-                    
-                    {/* Project Image Container */}
-                    <div className="relative aspect-[16/10] overflow-hidden bg-[#EBF3FC]">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover object-center transform transition-transform duration-700 ease-out group-hover:scale-108"
-                        referrerPolicy="no-referrer"
-                        loading="lazy"
-                      />
-                      
-                      {/* Gradient Ambient Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#011337]/70 via-transparent to-black/20 opacity-70 group-hover:opacity-85 transition-opacity duration-300" />
+                
+                {/* Project Image Container */}
+                <div className="relative aspect-[16/10] overflow-hidden bg-[#EBF3FC]">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover object-center transform transition-transform duration-700 ease-out group-hover:scale-108"
+                    referrerPolicy="no-referrer"
+                    loading="lazy"
+                  />
+                  
+                  {/* Subtle hover overlay with Explore button */}
+                  <div className="absolute inset-0 bg-[#011337]/50 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center p-4 z-20">
+                    <span
+                      className="transform translate-y-3 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#16A5CE] hover:bg-[#2E54AD] text-[#011337] hover:text-white font-extrabold text-xs sm:text-sm shadow-xl transition-colors font-heading"
+                    >
+                      <span>Explore Project</span>
+                      <ExternalLink className="w-4 h-4" />
+                    </span>
+                  </div>
+                </div>
 
-                      {/* Top Badges */}
-                      <div className="absolute top-3 left-3 right-3 flex items-center justify-between gap-2 z-10">
-                        <span className="px-3 py-1 rounded-full bg-[#011337]/85 backdrop-blur-md text-[#D8E6F8] text-[11px] font-bold border border-white/20 font-heading">
-                          {project.category}
-                        </span>
-                        {project.client && (
-                          <span className="px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md text-[#011337] text-[10px] font-extrabold shadow-sm font-heading line-clamp-1 max-w-[140px]">
-                            {project.client}
-                          </span>
-                        )}
-                      </div>
+                {/* Card Body - Only Title and Description */}
+                <div className="p-6 sm:p-7 flex-1 flex flex-col justify-start space-y-3">
+                  <h3 className="text-xl font-extrabold text-[#011337] group-hover:text-[#2E54AD] transition-colors tracking-tight font-heading">
+                    {project.title}
+                  </h3>
 
-                      {/* Hover Action Button */}
-                      <div className="absolute inset-0 bg-[#011337]/60 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center p-4 z-20">
-                        <button
-                          onClick={(e) => handleOpenLiveSite(e, project.liveUrl)}
-                          className="transform translate-y-3 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#16A5CE] hover:bg-[#2E54AD] text-[#011337] hover:text-white font-extrabold text-xs sm:text-sm shadow-xl transition-colors cursor-pointer font-heading"
-                        >
-                          <span>Explore Project</span>
-                          <ExternalLink className="w-4 h-4" />
-                        </button>
-                      </div>
-                    </div>
+                  <p className="text-[#4A5D6E] text-xs sm:text-sm leading-relaxed font-sans">
+                    {project.description}
+                  </p>
+                </div>
 
-                    {/* Card Body */}
-                    <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-5">
-                      
-                      {/* Title & Description */}
-                      <div className="space-y-2.5">
-                        <div className="flex items-start justify-between gap-2">
-                          <h3 className="text-xl font-extrabold text-[#011337] group-hover:text-[#2E54AD] transition-colors tracking-tight font-heading">
-                            {project.title}
-                          </h3>
-                        </div>
-
-                        <p className="text-[#4A5D6E] text-xs sm:text-sm leading-relaxed font-sans line-clamp-3">
-                          {project.description}
-                        </p>
-                      </div>
-
-                      {/* Performance Stats */}
-                      {project.stats && project.stats.length > 0 && (
-                        <div className="grid grid-cols-3 gap-2 py-3 px-3.5 bg-[#F5F8FC] rounded-2xl border border-[#D8E6F8]/70">
-                          {project.stats.map((st, sIdx) => (
-                            <div key={sIdx} className="text-center">
-                              <div className="text-xs sm:text-sm font-extrabold text-[#011337] font-heading line-clamp-1">
-                                {st.value}
-                              </div>
-                              <div className="text-[10px] text-[#7B91A4] font-medium leading-tight mt-0.5 line-clamp-1 font-sans">
-                                {st.label}
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      )}
-
-                      {/* Tech Stack Pills */}
-                      <div className="space-y-3 pt-1">
-                        <div className="flex flex-wrap gap-1.5">
-                          {project.tags.map((tag) => (
-                            <span
-                              key={tag}
-                              className="px-2.5 py-1 rounded-lg bg-[#EBF3FC] text-[#2E54AD] text-[11px] font-bold border border-[#D8E6F8]/60 font-heading"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-
-                        {/* Card Footer Link */}
-                        <div className="pt-2 border-t border-[#D8E6F8]/60 flex items-center justify-between">
-                          <span className="text-[11px] text-[#7B91A4] font-semibold font-sans">
-                            Delivered by Beture Web
-                          </span>
-                          <button
-                            onClick={(e) => handleOpenLiveSite(e, project.liveUrl)}
-                            className="inline-flex items-center gap-1.5 text-xs font-bold text-[#2E54AD] hover:text-[#16A5CE] transition-colors cursor-pointer font-heading"
-                          >
-                            <span>Live Details</span>
-                            <ExternalLink className="w-3.5 h-3.5" />
-                          </button>
-                        </div>
-                      </div>
-
-                    </div>
-                  </motion.div>
-                ))}
-              </AnimatePresence>
-            </div>
-          )}
+              </motion.div>
+            ))}
+          </div>
 
         </div>
       </section>
 
-      {/* 4. Enterprise Capabilities Breakdown (Clean - No Geometric Diamond Accents) */}
+      {/* 3. Enterprise Capabilities Breakdown */}
       <section className="relative w-full py-16 sm:py-20 bg-white border-t border-[#D8E6F8] overflow-hidden">
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
@@ -391,7 +232,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
 
           </div>
 
-          {/* 5. Direct Project Consultation CTA Banner */}
+          {/* 4. Direct Project Consultation CTA Banner */}
           <div className="bg-gradient-to-r from-[#011337] via-[#162E66] to-[#2E54AD] rounded-3xl p-8 sm:p-12 text-white border border-[#16A5CE]/40 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
             
             <div className="space-y-4 max-w-xl text-center lg:text-left">
